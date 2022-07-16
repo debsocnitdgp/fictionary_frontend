@@ -10,6 +10,10 @@
     font-size: 20px;
     align-items: center;
     gap: 10rem;
+    position: fixed;
+        top: 0%;
+        left: 0%;
+        z-index: 10000;
     }
 
 
@@ -29,6 +33,21 @@ a:hover {
 }
 .si{
     font-family: 'Orbitron', sans-serif;
+    padding: 12px 8px;
+    background: rgba(3, 61, 80, 0.4);
+        /* themeColor */
+    
+        border: 2px solid #58A1B9;
+        box-shadow: 0px 0px 4px #65BEDA;
+        backdrop-filter: blur(12px);
+        
+            font-style: normal;
+            font-weight: 400;
+        
+            /* line-height: 31px; */
+            font-size: 16px;
+        
+            color: #FFFFFF;
     }
 
 
