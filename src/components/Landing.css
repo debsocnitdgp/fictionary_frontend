@@ -1,0 +1,30 @@
+.fic{
+    font-family: 'Iceland', cursive;
+    text-align: center;
+    margin-top: 50px;
+    letter-spacing: 0.1rem;
+    text-shadow: 0 0 10px #00b3ff,
+                0 0 20px #00b3ff;
+        
+                
+    
+    font-size: 180px;
+    color: #9AC8E4;
+    
+}
+.play{
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 30px;
+    margin-top: 5px;
+    color: #AFECFF;
+    padding-right: 4rem;
+    text-shadow:  0 0 5px #AFECFF;
+    
+    
+}
+ a{
+    color: #AFECFF;
+    text-decoration: none;
+
+}
