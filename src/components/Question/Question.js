@@ -7,11 +7,19 @@ const Question = () => {
       <div className="ques">
         <section>
           <div className="ques-box">
-            <p>This is a sample question. hello there how are you  </p>
-            
-              <input className="answer" type="text" placeholder="type your answer  here" />
-            
-           
+            <div className="round">
+              R-1
+            </div>
+            <p>This is a sample question. hello there how are you </p>
+
+            <input
+              className="answer"
+              type="text"
+              placeholder="type your answer  here"
+            />
+
+            <button className="submit">submit</button>
+            <button className="hint">hint</button>
           </div>
         </section>
       </div>

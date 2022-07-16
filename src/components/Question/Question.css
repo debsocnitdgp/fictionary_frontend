@@ -44,6 +44,28 @@ section{
         padding: 8px 16px;
         outline: none;
         color: white;
-
+}
+.submit{
+    font-family: 'Orbitron';
+        font-style: normal;
+        
+        font-size: 15px;
+        line-height: 40px;
+        color: white;
+        background-color: rgba(3, 61, 80, 0.4);
+        
+        padding: 8px 12px;
+    }
+.hint{
+    font-family: 'Orbitron';
+        font-style: normal;
+    
+        font-size: 15px;
+        line-height: 40px;
+        color: white;
+        background-color: rgba(3, 61, 80, 0.4);
+       
+        padding: 8px 12px;
 
 }
+        
