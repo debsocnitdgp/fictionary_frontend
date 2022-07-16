@@ -8,8 +8,10 @@ const Leaderboard = () => {
         <div>
           <h1>Leaderboard</h1>
         </div>
-        <div className='score'>
-          <h3>Player 1</h3>
+        <div className="s">
+          <div className="score">
+            <h3>Player 1</h3>
+          </div>
         </div>
       </div>
     </div>

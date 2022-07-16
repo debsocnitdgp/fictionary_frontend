@@ -7,12 +7,15 @@ import './App.css';
 
 
 const App = () => {
-  return < div className='bg' >
-    <Navbar /> 
-  {/* <Landing /> */}
-  {/* <Question />  */}
-   <Leaderboard />
-  </div>
+  return (
+    <div className="bg">
+      <Navbar />
+      {/* <Landing /> */}
+      {/* <Question />  */}
+      <Leaderboard />
+      
+    </div>
+  );
 
   
 }
