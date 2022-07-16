@@ -7,7 +7,7 @@ const Question = () => {
       <div className="ques">
         <section>
           <div className="ques-box">
-            <div className="round">
+            <div className="round1">
               R-1
             </div>
             <p>This is a sample question. hello there how are you </p>
