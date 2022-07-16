@@ -10,7 +10,7 @@ const Question = () => {
             <div className="round1">
               R-1
             </div>
-            <p>This is a sample question. hello there how are you </p>
+            <p>This is a sample question. hello there how are you . this is a game </p>
 
             <input
               className="answer"
