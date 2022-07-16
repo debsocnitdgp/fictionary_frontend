@@ -50,22 +50,27 @@ section{
         font-style: normal;
         
         font-size: 15px;
-        line-height: 40px;
+        /* line-height: 40px; */
         color: white;
         background-color: rgba(3, 61, 80, 0.4);
-        
+        border: 3px solid #58A1B9;
         padding: 8px 12px;
     }
 .hint{
     font-family: 'Orbitron';
         font-style: normal;
-    
+    border: 3px solid #58A1B9;
         font-size: 15px;
-        line-height: 40px;
+        /* line-height: 40px; */
         color: white;
         background-color: rgba(3, 61, 80, 0.4);
        
         padding: 8px 12px;
 
+}
+::placeholder{
+    color: #FFFFFF;
+    font-family: 'Orbitron';
+        font-style: normal;
 }
         
