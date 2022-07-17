@@ -1,7 +1,7 @@
 .fic{
     font-family: 'Iceland', cursive;
     text-align: center;
-    margin-top: 50px;
+   
     letter-spacing: 0.1rem;
     text-shadow: 0 0 10px #00b3ff,
                 0 0 20px #00b3ff;
@@ -11,6 +11,23 @@
     font-size: 180px;
     color: #9AC8E4;
     padding-top: 20px;
+    /* font-family: 'Iceland';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 250px;
+        line-height: 242px;
+        text-shadow: 0 0 10px #00b3ff,
+                0 0 20px #00b3ff;
+                padding-top: 10px;
+                text-align: center;
+        
+    
+    
+        color: #9AC8E4;
+    
+        mix-blend-mode: hard-light;
+        backdrop-filter: blur(4px); */
+        
     
 }
 .play{
