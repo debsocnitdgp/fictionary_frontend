@@ -1,5 +1,6 @@
 import React from 'react';
 import './Landing.css';
+import { Link } from 'react-router-dom';
 
 
 
@@ -10,7 +11,7 @@ const Landing = () => {
       <h1 className="fic">FICTIONARY </h1>
     </div>
     <div className='play'>
-        < a href='#'>PLAY NOW </a>
+        <Link to='/question'>PLAY NOW </Link>
     </div>
 
 
