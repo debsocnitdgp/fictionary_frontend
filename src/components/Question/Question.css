@@ -66,6 +66,7 @@ section{
         background-color: rgba(3, 61, 80, 0.4);
        
         padding: 8px 12px;
+        
 
 }
 ::placeholder{
@@ -75,4 +76,5 @@ section{
 }
 .round1{
     padding-top: 0%;
+    
 }

@@ -17,6 +17,7 @@ props.handleclose()}}
       <div  id="modalBox" className={'modal'} >
         <h2>Rules</h2>
         <p>1-Rule 1</p>
+        <p>2-Rule is rule</p>
       </div>
     </div>
   );
