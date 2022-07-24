@@ -55,6 +55,8 @@ section{
         background-color: rgba(3, 61, 80, 0.4);
         border: 3px solid #58A1B9;
         padding: 8px 12px;
+        transform: skewX(25deg);
+        width: 15%;
     }
 .hint{
     font-family: 'Orbitron';
@@ -66,6 +68,9 @@ section{
         background-color: rgba(3, 61, 80, 0.4);
        
         padding: 8px 12px;
+        transform: skewX(25deg);
+        width: 10%;
+
         
 
 }
@@ -77,4 +82,10 @@ section{
 .round1{
     padding-top: 0%;
     
+}
+
+button{
+    padding-left: 30px 50px;
+    cursor:pointer;
+    margin:1rem 0.5rem;
 }

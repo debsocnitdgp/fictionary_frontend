@@ -9,7 +9,7 @@ const Rules = (props) => {
     console.log(modalOpen);
     useEffect (()=>{setmodalOpen(props.open)},[props])
     const handleClick = (evt) => {
-if(evt.target != document.getElementById('modalBox')){
+if(evt.target !=document.getElementById('modalBox')){
 setmodalOpen(false) 
 props.handleclose()}}
   return (

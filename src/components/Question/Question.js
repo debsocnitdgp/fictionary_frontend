@@ -19,7 +19,7 @@ const Question = () => {
             />
 
             <button className="submit">submit</button>
-            <button className="hint">hint</button>
+            <button className="hint" >hint</button>
           </div>
         </section>
       </div>
