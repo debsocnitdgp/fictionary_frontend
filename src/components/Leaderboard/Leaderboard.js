@@ -1,5 +1,6 @@
-import React from 'react';
+import React from "react";
 import "./Leaderboard.css";
+import Score from "./Score";
 
 const Leaderboard = () => {
   return (
@@ -8,14 +9,10 @@ const Leaderboard = () => {
         <div>
           <h1>Leaderboard</h1>
         </div>
-        <div className="s">
-          <div className="score">
-            <h3>Player 1</h3>
-          </div>
-        </div>
+        <Score/>
       </div>
-    </div>
+    </div> 
   );
-}
+};
 
 export default Leaderboard;

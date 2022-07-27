@@ -1,91 +1,220 @@
-.ques{
-    width: 100%;
-        height: 100vh;
-        background: url('/public/question.png');
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        position: fixed;
-        top: 0%;
-        left: 0%;
+.ques {
+  width: 100%;
+  height: 100vh;
+  background: url("/public/question.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: fixed;
+  top: 0%;
+  left: 0%;
 }
-section{
-    padding: 0 100px;
-    height: 100vh;
-    display:flex ;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Orbitron';
-        font-style: normal;
-        
-        font-size: 20px;
-        line-height: 50px;
-    
-        color: #FFFFFF;
+section {
+  padding: 0 100px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Orbitron";
+  font-style: normal;
+  font-size: 20px;
+  color: #ffffff;
+}
+.ques-box {
+  position: relative;
+  max-width: 900px;
+  padding: 0 30px;
+  background: rgba(3, 61, 80, 0.4);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 3px solid #58a1b9;
+  backdrop-filter: blur(16px);
+  border-radius: 0px 12px;
+}
+.question{
+  font-size: large;
+  text-align: justify;
+}
+.answer {
+  width: 90%;
+  height: 3rem;
+  background: rgba(116, 160, 192, 0.6);
+  border: none;
+  border-bottom: 4px solid #58a1b9;
+  padding: 8px 16px;
+  outline: none;
+  color: white;
+  font-size: 1.2rem;
+  margin: auto;
+}
+.btns{
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  top: 30px
+}
+.hint:hover{
+  color: #adff2f;
+}
+.hint_bg:hover{
+  box-shadow: 0px 0px 4px #c9fd7b;
+  background: #adff2f;
+}
+.submit:hover{
+  color: #adff2f;
+}
+.submit_bg:hover{
+  box-shadow: 0px 0px 4px #c9fd7b;
+  background: #adff2f;
+}
+.hint_bg{
+  background: #58a1b9;
+  width: fit-content;
+  height: fit-content;
+  padding: 4px;
+  transform: translateX(15px);
+  margin-top: 1rem;
+  clip-path: polygon(0 0, 100% 0, 72% 100%, 0 100%);
+}
+.hint {
+  clip-path: polygon(0 0, 96% 0, 72% 100%, 0 100%);
+  font-family: "Orbitron";
+  font-style: normal;
+  border: none;
+  font-size: 1.5rem;
+  color: white;
+  background-color: rgb(15, 93, 120);
+  padding: 5px;
+  padding-right: 43px;
+  padding-left: 27px;
+  margin: 0px;
+  
+}
+.submit_bg{
+  padding: 4px;
+  clip-path: polygon(23% 0, 100% 0, 100% 100%, 0 100%);
+  background: #58a1b9;
+  height: fit-content;
+  margin-top: 1rem;
+}
+.submit {
+  clip-path: polygon(23% 0, 100% 0, 100% 100%, 3% 100%);
+  font-family: "Orbitron";
+  font-style: normal;
+  border: none;
+  font-size: 1.5rem;
+  color: white;
+  background-color: rgb(15, 93, 120);
+  padding: 5px;
+  padding-left: 43px;
+  padding-right: 27px;
+  margin: 0px;
+}
+::placeholder {
+  color: #ffffff;
+  font-family: "Orbitron";
+  font-style: normal;
+}
+.round1 {
+  padding-top: 0%;
+}
 
+button {
+  padding-left: 30px 50px;
+  cursor: pointer;
 }
-.ques-box{
-    position: relative;
-    max-width: fit-content;
-    padding: 50px;
-    background: rgba(3, 61, 80, 0.4);
-    
-        border: 3px solid #58A1B9;
-        backdrop-filter: blur(16px);
-    border-radius: 0px 12px;
+.round_bg{
+  bottom: 30px;
+  right: 70px;
+  position: relative;
+  background: #58a1b9;
+  width: fit-content;
+  height: fit-content;
+  padding: 4px;
+  transform: translateX(15px);
+  margin-top: 1rem;
+  clip-path: polygon(0 0, 100% 0, 72% 100%, 0 100%);
+}
+.round{
+  clip-path: polygon(0 0, 96% 0, 72% 100%, 0 100%);
+  font-family: "Orbitron";
+  font-style: normal;
+  border: none;
+  font-size: 1.5rem;
+  color: white;
+  background-color: rgb(15, 93, 120);
+  padding: 5px;
+  padding-right: 43px;
+  padding-left: 27px;
+  margin: 0px;
+}
 
-}
-.answer{
-       width: 100%;
+@media screen and (max-width: 550px){
+  .question{
+    font-size: small;
+    line-height: 23px;
+  }
+  .answer {
+    width: 90%;
+    height: 1.5rem;
     background: rgba(116, 160, 192, 0.6);
-        /* themeColor */
-    
-        border-bottom: 6px solid #58A1B9;
-        padding: 8px 16px;
-        outline: none;
-        color: white;
-}
-.submit{
-    font-family: 'Orbitron';
-        font-style: normal;
-        
-        font-size: 15px;
-        /* line-height: 40px; */
-        color: white;
-        background-color: rgba(3, 61, 80, 0.4);
-        border: 3px solid #58A1B9;
-        padding: 8px 12px;
-        transform: skewX(25deg);
-        width: 15%;
-    }
-.hint{
-    font-family: 'Orbitron';
-        font-style: normal;
-    border: 3px solid #58A1B9;
-        font-size: 15px;
-        /* line-height: 40px; */
-        color: white;
-        background-color: rgba(3, 61, 80, 0.4);
-       
-        padding: 8px 12px;
-        transform: skewX(25deg);
-        width: 10%;
-
-        
-
-}
-::placeholder{
-    color: #FFFFFF;
-    font-family: 'Orbitron';
-        font-style: normal;
-}
-.round1{
-    padding-top: 0%;
-    
-}
-
-button{
-    padding-left: 30px 50px;
-    cursor:pointer;
-    margin:1rem 0.5rem;
+    border: none;
+    border-bottom: 4px solid #58a1b9;
+    padding: 8px 16px;
+    outline: none;
+    color: white;
+    font-size: 0.8rem;
+    margin: auto;
+  }
+  .ques-box{
+    width: 100%;
+    border-radius: 0px;
+  }
+  section{
+    padding: 0px 60px;
+  }
+  .hint_bg{
+    width: fit-content;
+    height: fit-content;
+    padding: 4px;
+    transform: translateX(15px);
+    margin-top: 1rem;
+    clip-path: polygon(0 0, 100% 0, 72% 100%, 0 100%);
+  }
+  .hint {
+    clip-path: polygon(0 0, 96% 0, 72% 100%, 0 100%);
+    font-family: "Orbitron";
+    font-style: normal;
+    border: none;
+    font-size: 1rem;
+    color: white;
+    background-color: rgb(15, 93, 120);
+    padding: 5px;
+    padding-right: 43px;
+    padding-left: 27px;
+    margin: 0px;
+  }
+  .submit_bg{
+    padding: 4px;
+    clip-path: polygon(23% 0, 100% 0, 100% 100%, 0 100%);
+    height: fit-content;
+    margin-top: 1rem;
+  }
+  .submit {
+    clip-path: polygon(23% 0, 100% 0, 100% 100%, 3% 100%);
+    font-family: "Orbitron";
+    font-style: normal;
+    border: none;
+    font-size: 1rem;
+    color: white;
+    background-color: rgb(15, 93, 120);
+    padding: 5px;
+    padding-left: 43px;
+    padding-right: 27px;
+    margin: 0px;
+  }
+  .round{
+    font-size: 1rem;
+  }
 }

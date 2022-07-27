@@ -1,34 +1,61 @@
 .fic{
     font-family: 'Iceland', cursive;
-    text-align: center;
-   
+    text-align: center;  
     letter-spacing: 0.1rem;
     text-shadow: 0 0 10px #00b3ff,
-                0 0 20px #00b3ff;
-        
-                
-    
-    font-size: 180px;
-    color: #9AC8E4;
-    padding-top: 20px;
-    
-        
-    
+                0 0 20px #00b3ff;    
+    font-size: 15rem;
+    color: #afd5ed;
+    padding-top: 5rem;
+    font-weight: 100;     
+}
+.play_now{ 
+    display: flex;
 }
 .play{
     text-align: center;
     font-family: 'Orbitron', sans-serif;
-    font-size: 30px;
-    margin-top: 5px;
+    font-size: 2.5rem;
+    margin: auto;
     color: #AFECFF;
-    padding-right: 4rem;
     text-shadow:  0 0 5px #AFECFF;
-    padding-top: 130px;
-    
-    
+    margin-top: 130px; 
+    display: flex;  
 }
- a{
+a{
     color: #AFECFF;
     text-decoration: none;
-
+}
+.arrow{
+    height: 50px;
+    margin-left: 10px;
+    text-shadow:  0 0 5px #AFECFF;
+}
+@media screen and (max-width: 550px){
+    .fic{
+        font-family: 'Iceland', cursive;
+        text-align: center;  
+        letter-spacing: 0.1rem;
+        text-shadow: 0 0 10px #00b3ff,
+                    0 0 20px #00b3ff;    
+        font-size: 4rem;
+        color: #afd5ed;
+        padding-top: 12rem;
+        font-weight: 100;     
+    } 
+    .play{
+        text-align: center;
+        font-family: 'Orbitron', sans-serif;
+        font-size: 1.5rem;
+        margin: auto;
+        color: #AFECFF;
+        text-shadow:  0 0 5px #AFECFF;
+        margin-top: 50px; 
+        display: flex;  
+    }
+    .arrow{
+        height: 30px;
+        margin-left: 10px;
+        text-shadow:  0 0 5px #AFECFF;
+    }
 }
