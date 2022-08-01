@@ -7,7 +7,7 @@ const Navbar = () => {
       const [modalOpen, setmodalOpen] = useState(false);
 
   return (
-   <>
+    <>
       <nav className="main-nav">
         <div className="home">
           <ul>
@@ -17,7 +17,15 @@ const Navbar = () => {
 
         <div className="rules">
           <ul>
-            <Link to="# " onClick={()=>{console.log('rule');setmodalOpen(true)}}>Rules</Link>
+            <Link
+              to="# "
+              onClick={() => {
+                console.log("rule");
+                setmodalOpen(true);
+              }}
+            >
+              Rules
+            </Link>
           </ul>
         </div>
         <div className="leader">
@@ -27,14 +35,14 @@ const Navbar = () => {
         </div>
         <div className="sign">
           <ul>
-            <button className="si">sign in</button>
+            <Link to="/signin">
+              <button className="si">sign in</button>
+            </Link>
           </ul>
         </div>
       </nav>
-      <Rules open={modalOpen} handleclose={()=>setmodalOpen(false)} />
-      </>
-
-      
+      <Rules open={modalOpen} handleclose={() => setmodalOpen(false)} />
+    </>
   );
 }
 
