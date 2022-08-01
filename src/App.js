@@ -6,7 +6,7 @@ import Leaderboard from './components/Leaderboard/Leaderboard.js';
 // import Logo from './components/Logos/Logo.js';
 
 import './App.css';
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 
 const App = () => {

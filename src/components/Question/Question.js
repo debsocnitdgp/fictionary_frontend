@@ -1,25 +1,31 @@
 import React from "react";
-import "./Question.css";
+import styles from "./Question.module.css";
+import HintButton from "./Hint";
+import SubmitButton from "./Submit";
+import Round from "./Round";
 
 const Question = () => {
   return (
     <div>
-      <div className="ques">
+      <div className={styles.ques}>
         <section>
-          <div className="ques-box">
-            <div className="round1">
-              R-1
-            </div>
-            <p>This is a sample question. hello there how are you . this is a game </p>
+          <div className={styles.ques_box}>
+            <Round questionNumber={1} />
+            <p>
+              This is a sample question. hello there how are you . this is a
+              game{" "}
+            </p>
 
             <input
-              className="answer"
+              className={styles.answer}
               type="text"
               placeholder="type your answer  here"
             />
 
-            <button className="submit">submit</button>
-            <button className="hint" >hint</button>
+            <div className={styles.action}>
+              <HintButton />
+              <SubmitButton />
+            </div>
           </div>
         </section>
       </div>
