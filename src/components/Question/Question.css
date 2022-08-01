@@ -55,8 +55,9 @@ section{
         background-color: rgba(3, 61, 80, 0.4);
         border: 3px solid #58A1B9;
         padding: 8px 12px;
-        transform: skewX(25deg);
+        transform: skewX(-25deg);
         width: 15%;
+        margin: 1rem 0.5rem;
     }
 .hint{
     font-family: 'Orbitron';
@@ -68,8 +69,9 @@ section{
         background-color: rgba(3, 61, 80, 0.4);
        
         padding: 8px 12px;
-        transform: skewX(25deg);
+        transform: skewX(-25deg);
         width: 10%;
+        margin: 1rem 0.5rem;
 
         
 
@@ -87,5 +89,5 @@ section{
 button{
     padding-left: 30px 50px;
     cursor:pointer;
-    margin:1rem 0.5rem;
+    /* margin:1rem 0.5rem; */
 }
