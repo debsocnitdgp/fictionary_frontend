@@ -35,10 +35,16 @@
     padding-left: 1rem;
     margin-top: 45%;
   }
+  p{
+    margin: 0px;
+  }
+  p:hover{
+    color:#adff2f
+  }
   .link{
     margin-bottom: 2rem;
     font-size: 1.5rem;
-
+    color:#61dafb;
   }
   .close{
     height: 3rem;

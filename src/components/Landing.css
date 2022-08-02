@@ -7,7 +7,7 @@
     font-size: 15rem;
     color: #afd5ed;
     padding-top: 5rem;
-    font-weight: 100;     
+    font-weight: 600;     
 }
 .play_now{ 
     display: flex;
@@ -41,7 +41,7 @@ a{
         font-size: 4rem;
         color: #afd5ed;
         padding-top: 12rem;
-        font-weight: 100;     
+        font-weight: 600;     
     } 
     .play{
         text-align: center;
@@ -52,6 +52,7 @@ a{
         text-shadow:  0 0 5px #AFECFF;
         margin-top: 50px; 
         display: flex;  
+        font-weight: bold;
     }
     .arrow{
         height: 30px;
