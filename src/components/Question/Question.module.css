@@ -25,6 +25,7 @@ section {
 .ques_box {
   position: relative;
   max-width: 60vw;
+  min-width: 40vw;
   padding: 50px;
   background: rgba(3, 61, 80, 0.4);
 

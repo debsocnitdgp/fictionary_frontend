@@ -8,6 +8,8 @@
         position: fixed;
         top: 0%;
         left: 0%;
+
+        
 }
 h1{
     font-family: 'Orbitron';
@@ -20,6 +22,7 @@ h1{
         text-align: center;
         padding-top: 60px;
         letter-spacing: 0.3rem;
+        
 }
 .score{
     font-family: 'Orbitron';

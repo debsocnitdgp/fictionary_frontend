@@ -18,11 +18,11 @@
     @-webkit-keyframes tracking-in-expand {
         0% {
             letter-spacing: -0.5em;
-            opacity: 0;
+            opacity: 0.01;
         }
     
         40% {
-            opacity: 0.6;
+            opacity: 0.4;
         }
     
         60% {

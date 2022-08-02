@@ -1,6 +1,6 @@
-export default function Submit() {
+export default function Submit({ onClick }) {
   return (
-    <svg viewBox="0 0 249 61" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg viewBox="0 0 249 61" fill="none" xmlns="http://www.w3.org/2000/svg" onClick={onClick}>
       <g>
         <path d="M246 58L6.90186 58L68.7376 3L246 3V58Z" fill="#033D50" />
         <path
