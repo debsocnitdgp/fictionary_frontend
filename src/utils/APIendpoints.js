@@ -4,7 +4,8 @@ const ENDPOINTS = {
     GH_LOGIN: BASE_URL + '/accounts/github/login/',
     QUESTION: BASE_URL + '/api/question/',
     ANSWER: BASE_URL + '/api/answer/',
-    CLUE: BASE_URL + '/api/clue/'
+    CLUE: BASE_URL + '/api/clue/',
+    SOCIAL_LOGIN_TOKEN: BASE_URL + '/api/accounts/get-social-token/'
 }
 
 export default ENDPOINTS;
