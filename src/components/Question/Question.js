@@ -3,13 +3,14 @@ import styles from "./Question.module.css";
 import HintButton from "./Hint";
 import SubmitButton from "./Submit";
 import Round from "./Round";
+import endpoints from "../../utils/APIendpoints";
 
 const Question = () => {
   const [state, setState] = React.useState({
     question: { text: "Loading...", round: 0 },
   });
   const getQuestion = () => {
-    fetch("/api/question/", {
+    fetch(endpoints.QUESTION, {
       headers: {
         Authorization:
           "Token 71a92e5637f176c4c3e9d50f10973bdac9c0e02cc8709fb1165145ead894d21c",
@@ -25,7 +26,7 @@ const Question = () => {
 
   const checkAnswer = () => {
     const answer = document.getElementById("answerInput");
-    fetch("/api/answer/", {
+    fetch(endpoints.ANSWER, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -46,7 +47,7 @@ const Question = () => {
       });
   };
 
-  React.useEffect(getQuestion, [false]);
+  React.useEffect(getQuestion, []);
 
   return (
     <div>
