@@ -20,7 +20,7 @@ const Login = () => {
       fetch(endpoints.SOCIAL_LOGIN_TOKEN, { credentials: "include" })
         .then((res) => res.json())
         .then((res) => {
-          console.log(res);
+          console.log(res.token);
           dispatch(login(res.token));
           navigate("/question");
         })

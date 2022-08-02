@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit'
-import reducer from "./tokenSlice";
+import tokenReducer from "./tokenSlice";
 
 export default configureStore({
   reducer: {
-    token: reducer
+    token: tokenReducer
   }
 })

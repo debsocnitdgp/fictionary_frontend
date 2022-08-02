@@ -3,14 +3,16 @@ import { createSlice } from '@reduxjs/toolkit'
 export const tokenSlice = createSlice({
   name: 'token',
   initialState: {
-    token: ''
+    value: ''
   },
   reducers: {
     logout: state => {
-      state.token = ''
+      state.value = ''
     },
     login: (state, action) => {
-      state.token = action.payload
+        console.log("setting token to " + action.payload)
+      state.value = action.payload
+      console.log(state)
     }
   }
 })

@@ -4,16 +4,18 @@ import HintButton from "./Hint";
 import SubmitButton from "./Submit";
 import Round from "./Round";
 import endpoints from "../../utils/APIendpoints";
+import { useSelector } from "react-redux";
 
 const Question = () => {
   const [state, setState] = React.useState({
     question: { text: "Loading...", round: 0 },
   });
+  const token = useSelector((state) => state.token.value);
+  console.log(token)
   const getQuestion = () => {
     fetch(endpoints.QUESTION, {
       headers: {
-        Authorization:
-          "Token 71a92e5637f176c4c3e9d50f10973bdac9c0e02cc8709fb1165145ead894d21c",
+        Authorization: `Token ${token}`,
       },
     })
       .then((res) => res.json())
@@ -30,24 +32,23 @@ const Question = () => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization:
-          "Token 71a92e5637f176c4c3e9d50f10973bdac9c0e02cc8709fb1165145ead894d21c",
+        Authorization: `Token ${token}`,
       },
       body: JSON.stringify({ answer: answer.value }),
     })
       .then((res) => res.json())
       .then((res) => {
-        if(res.success){
-          console.log("Correct answer!!")
-          getQuestion()
+        if (res.success) {
+          console.log("Correct answer!!");
+          getQuestion();
         } else {
-          console.log("Wrong answer")
+          console.log("Wrong answer");
         }
-        answer.value = ""
+        answer.value = "";
       });
   };
 
-  React.useEffect(getQuestion, []);
+  React.useEffect(getQuestion, [token]);
 
   return (
     <div>
