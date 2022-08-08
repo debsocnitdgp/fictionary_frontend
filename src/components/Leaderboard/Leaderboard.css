@@ -1,52 +1,29 @@
-.img{
+.img {
     width: 100%;
-        height: 100vh;
-        background: url('/public/leaderboard.png');
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        position: fixed;
-        top: 0%;
-        left: 0%;
+    height: 100vh;
+    background: url("/public/leaderboard.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+}
 
-        
+h1 {
+    font-family: "Orbitron";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 75px;
+    color: #ffffff;
+    text-align: center;
+    padding-top: 60px;
+    letter-spacing: 0.3rem;
 }
-h1{
-    font-family: 'Orbitron';
-        font-style: normal;
-        font-weight: 700;
-        font-size: 60px;
-        line-height: 75px;
-    
-        color: #FFFFFF;
-        text-align: center;
-        padding-top: 60px;
-        letter-spacing: 0.3rem;
-        
-}
-.score{
-    font-family: 'Orbitron';
-        font-style: normal;
-        
-        font-size: 15px;
-        line-height: 38px;
-         color: #FFFFFF;
-         border: 1px solid #58A1B9;
-         text-align: start;
-         /* padding-left: 0.1rem; */
-         
-        background: rgba(3, 61, 80, 0.4);
-        
-            border: 4px solid #58A1B9;
-            border-radius: 20px;
-            width: 70%;
-            
-            
-}
-.s{
-        align-items: center;
-        padding-left: 23%;
-}
-h3{
-    padding-left: 0.1rem;
+
+@media screen and (max-width: 550px) {
+    h1 {
+        font-size: 32px;
+    }
 }
