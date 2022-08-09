@@ -1,22 +1,98 @@
+import { useEffect, useState } from "react";
+import styles from "./Hint.module.css";
+import { useSelector } from "react-redux";
+import endpoints from "../../utils/APIendpoints";
+
 export default function Hint(props) {
+  const [disabled, setDisabled] = useState(true);
+  const [countdown, setCountdown] = useState(null);
+  const token = useSelector((state) => state.token.value);
+
+  useEffect(() => {
+    if (countdown !== null && disabled) {
+      if (countdown > 0) {
+        setTimeout(() => setCountdown(countdown - 1), 1000);
+      } else {
+        update();
+      }
+    }
+  }, [countdown, disabled]);
+  const update = () => {
+    fetch(endpoints.CHECK_HINT_AVAILABLE, {
+      headers: {
+        Authorization: `Token ${token}`,
+      },
+    }).then((res) => {
+      res.json().then((serverResponse) => {
+        if (res.status === 200) {
+          console.log(serverResponse);
+          if (serverResponse.available) {
+            setDisabled(false);
+          } else {
+            console.log('notAvailable')
+            setDisabled(true);
+            console.log('setting timer to ' + serverResponse.timeleft)
+            setCountdown(serverResponse.timeleft);
+          }
+        }
+      });
+    });
+  };
+  useEffect(update, [token]);
+
   return (
-    <svg viewBox="0 0 249 61" fill="none" xmlns="http://www.w3.org/2000/svg" onClick={props.onClick}>
-      <g>
-        <path
-          d="M3.00012 3L242.098 3L180.262 58L3.00012 58L3.00012 3Z"
-          fill="#033D50"
-        />
-        <path
-          d="M3.00012 3L242.098 3L180.262 58L3.00012 58L3.00012 3Z"
-          stroke="#58A1B9"
-          stroke-width="5"
-        />
-      </g>
-      {/**hint */}
-      <path
-        d="M56.995 43V17.8H61.615V28.055H78.135V17.8H82.755V43H78.135V32.745H61.615V43H56.995ZM86.2405 43V17.8H90.8255V43H86.2405ZM94.2159 43V17.8H99.2909L114.761 36.21V17.8H119.416V43H114.341L98.8359 24.555V43H94.2159ZM132.367 43V22.455H122.077V17.8H147.277V22.455H137.022V43H132.367Z"
-        fill="#EBF7FF"
-      />
-    </svg>
+    <div
+      className={`${styles.container} ${disabled ? styles.disabled : ""}`}
+      onClick={
+        disabled
+          ? () => {}
+          : () => {
+              props.onClick();
+              setTimeout(update, 1000);
+            }
+      }
+    >
+      <svg
+        width="120"
+        viewBox="0 0 249 61"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g>
+          <path
+            d="M3.00005 3L242.098 3L180.262 58L3.00005 58L3.00005 3Z"
+            fill="#033D50"
+          />
+          <path
+            d="M3.00005 3L242.098 3L180.262 58L3.00005 58L3.00005 3Z"
+            stroke="#58A1B9"
+            stroke-width="5"
+          />
+        </g>
+      </svg>
+      <span
+        style={{
+          position: "absolute",
+          top: "40%",
+          left: "40%",
+          transform: "translate(-40%, -40%)",
+          fontSize: "small",
+          fontWeight: 900,
+        }}
+      >
+        HINT{" "}
+        {disabled && (
+          <span style={{fontSize: 'xx-small'}}>
+            (
+            {countdown < 10
+              ? "00" + countdown
+              : countdown < 100
+              ? "0" + countdown
+              : countdown}
+            )
+          </span>
+        )}
+      </span>
+    </div>
   );
 }

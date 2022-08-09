@@ -9,7 +9,6 @@ export default function HintModal(props) {
   const [clues, setClues] = useState([]);
   const token = useSelector((state) => state.token.value);
 
-  console.log(clues);
   useEffect(() => {
     const getClues = () => {
       fetch(endpoints.CLUE, {
