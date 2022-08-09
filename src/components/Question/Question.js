@@ -35,6 +35,8 @@ const Question = () => {
         setState({
           question: res,
         });
+
+        updateHint();
       });
     });
   };
@@ -54,6 +56,7 @@ const Question = () => {
       .then((res) => res.json())
       .then((res) => {
         if (res.success) {
+          answer.value = "";
           setSnackbarOptions({
             show: true,
             text: "Correct Answer!!",
@@ -98,7 +101,6 @@ const Question = () => {
     }).then((res) => {
       res.json().then((serverResponse) => {
         if (res.status === 200) {
-          console.log(serverResponse);
           if (serverResponse.available) {
             setHintCountdown(null);
           } else {
@@ -119,13 +121,17 @@ const Question = () => {
     }
   }, [hintCountdown]);
 
-  useEffect(updateHint, [token]);
-
   React.useEffect(getQuestion, [token]);
 
   return (
     <div>
-      <HintModal open={hintModalOpen} onClose={() => setHintModalOpen(false)} />
+      <HintModal
+        open={hintModalOpen}
+        onClose={() => {
+          setHintModalOpen(false);
+          updateHint();
+        }}
+      />
       <SnackBar
         show={snackbarOptions.show}
         text={snackbarOptions.text}
@@ -137,14 +143,7 @@ const Question = () => {
             <div className="round_bg">
               <div className="round">R-{state.question.round}</div>
             </div>
-            {/* <p className="question">{state.question.text}</p> */}
-            <p className="question">
-              ife is a beautiful journey that is meant to be embraced to the
-              fullest every day. However, that doesn't mean you always wake up
-              ready to seize the day, and sometimes need a reminder that life is
-              a great gift. Whether a funny quote from a famous celebrity or an
-              encouraging message about giving it your best from a s
-            </p>
+            <p className="question">{state.question.text}</p>
 
             <input
               className="answer"

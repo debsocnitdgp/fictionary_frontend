@@ -39,8 +39,14 @@ a {
       font-size: 8rem;
   }
 }
-
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 650px) {
+  .fic{
+    font-size: 6rem;
+    padding-top: 12rem;
+    font-weight: 600;
+  }
+}
+@media screen and (max-width: 480px) {
   .fic{
     font-size: 4rem;
     padding-top: 12rem;
@@ -61,11 +67,12 @@ a {
     text-shadow: 0 0 5px #afecff;
   }
 }
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 330px) {
   .fic{
     font-size: 3rem;
     padding-top: 12rem;
     font-weight: 600;
   }
 }
+
 

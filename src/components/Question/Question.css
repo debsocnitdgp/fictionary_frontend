@@ -25,7 +25,7 @@ section {
 
 .ques-box {
   position: relative;
-  max-width: 900px;
+  width: 900px;
   padding: 0 30px;
   background: rgba(3, 61, 80, 0.4);
   display: flex;
@@ -179,7 +179,16 @@ button {
   padding-left: 27px;
   margin: 0px;
 }
-
+@media screen and (max-width: 900px){
+  .ques-box {
+    width: 90%;
+    border-radius: 0px;
+  }
+  .btns {
+    width: 90%;
+    justify-content: center;
+  }
+}
 @media screen and (max-width: 550px) {
   .question {
     font-size: small;

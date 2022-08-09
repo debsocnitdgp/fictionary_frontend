@@ -4,6 +4,7 @@
 .disabled {
   opacity: 0.7;
   filter: grayscale(0.6);
+  backdrop-filter: blur(8px);
 }
 
 .container:hover {

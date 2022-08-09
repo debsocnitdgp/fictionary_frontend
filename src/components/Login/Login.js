@@ -16,20 +16,6 @@ export const handleGoogleLogin = () => {
 const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const handleGithubLogin = () => {
-    const form = document.createElement("form");
-    form.method = "POST";
-    form.action = endpoints.GH_LOGIN;
-    document.body.appendChild(form);
-    form.submit();
-  };
-  const handleGoogleLogin = () => {
-    const form = document.createElement("form");
-    form.method = "POST";
-    form.action = endpoints.GOOGLE_LOGIN;
-    document.body.appendChild(form);
-    form.submit();
-  };
   useEffect(() => {
     if (new URLSearchParams(window.location.search).get("fetch") === "true") {
       fetch(endpoints.SOCIAL_LOGIN_TOKEN, { credentials: "include" })
@@ -43,15 +29,7 @@ const Login = () => {
   }, [navigate, dispatch]);
   return (
     <div className="ot">
-      <input type="text" placeholder="username" />
-      <input type="text1" placeholder="password" />
-      <button className="login">Sign in</button>
-      <button className="login" onClick={handleGithubLogin}>
-        Sign in with github
-      </button>
-      <button className="login" onClick={handleGoogleLogin}>
-        Sign in with google
-      </button>
+      <h1 style={{color: 'white', fontFamily: 'Orbitron'}}>Signing you in...</h1>
     </div>
   );
 };
