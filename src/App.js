@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar.js";
 import Landing from "./components/Landing.js";
 import Question from "./components/Question/Question.js";
 import Leaderboard from "./components/Leaderboard/Leaderboard.js";
+import Login from "./components/Login/Login.js";
 // import Logo from './components/Logos/Logo.js';
 
 import "./App.css";
@@ -28,6 +29,7 @@ const App = () => {
           <Route path="/" element={<Landing />} />
           <Route path="/question" element={<Question />} />
           <Route path="/leaderboard" element={<Leaderboard />} />
+          <Route path="/signin" element={<Login />} />
         </Routes>
       </div>
     </Router>

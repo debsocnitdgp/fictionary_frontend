@@ -29,9 +29,9 @@ export default function Hint(props) {
           if (serverResponse.available) {
             setDisabled(false);
           } else {
-            console.log('notAvailable')
+            console.log("notAvailable");
             setDisabled(true);
-            console.log('setting timer to ' + serverResponse.timeleft)
+            console.log("setting timer to " + serverResponse.timeleft);
             setCountdown(serverResponse.timeleft);
           }
         }
@@ -42,7 +42,7 @@ export default function Hint(props) {
 
   return (
     <div
-      className={`${styles.container} ${disabled ? styles.disabled : ""}`}
+      className={`hint_bg ${disabled ? styles.disabled : ""}`}
       onClick={
         disabled
           ? () => {}
@@ -52,47 +52,22 @@ export default function Hint(props) {
             }
       }
     >
-      <svg
-        width="120"
-        viewBox="0 0 249 61"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <g>
-          <path
-            d="M3.00005 3L242.098 3L180.262 58L3.00005 58L3.00005 3Z"
-            fill="#033D50"
-          />
-          <path
-            d="M3.00005 3L242.098 3L180.262 58L3.00005 58L3.00005 3Z"
-            stroke="#58A1B9"
-            stroke-width="5"
-          />
-        </g>
-      </svg>
-      <span
-        style={{
-          position: "absolute",
-          top: "40%",
-          left: "40%",
-          transform: "translate(-40%, -40%)",
-          fontSize: "small",
-          fontWeight: 900,
-        }}
-      >
+      <button className="hint">
         HINT{" "}
         {disabled && (
-          <span style={{fontSize: 'xx-small'}}>
+          <span style={{ fontSize: "xx-small" }}>
             (
-            {countdown < 10
-              ? "00" + countdown
-              : countdown < 100
-              ? "0" + countdown
-              : countdown}
+            {((cnt) => {
+              var seconds = cnt % 60;
+              var minutes = (cnt - seconds) / 60;
+              minutes = minutes < 10 ? "0" + minutes : minutes;
+              seconds = seconds < 10 ? "0" + seconds : seconds;
+              return minutes + ":" + seconds;
+            })(countdown)}
             )
           </span>
         )}
-      </span>
+      </button>
     </div>
   );
 }

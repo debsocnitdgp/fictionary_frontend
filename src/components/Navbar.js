@@ -59,7 +59,7 @@ const Navbar = (props) => {
         </div>
 
         <div className="sign">
-          <button className="si">SIGN IN</button>
+          <Link to="/signin"><button className="si">SIGN IN</button></Link>
         </div>
       </nav>
     </>
