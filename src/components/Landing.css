@@ -1,71 +1,71 @@
 .fic {
-    font-family: 'Iceland', cursive;
-    text-align: center;
-    letter-spacing: 0.1rem;
-    text-shadow: 0 0 10px #00b3ff,
-        0 0 20px #00b3ff;
-    font-size: 12rem;
-    color: #afd5ed;
-    padding-top: 5rem;
-    opacity: 0.9;
-
-    /* font-weight: 600; */
+  font-family: "Iceland", cursive;
+  text-align: center;
+  letter-spacing: 0.1rem;
+  text-shadow: 0 0 10px #00b3ff, 0 0 20px #00b3ff;
+  font-size: 12rem;
+  color: #afd5ed;
+  padding-top: 5rem;
+  opacity: 0.9;
 }
 
 .play_now {
-    display: flex;
+  display: flex;
 }
 
 .play {
-    text-align: center;
-    font-family: 'Orbitron', sans-serif;
-    font-size: 2.5rem;
-    margin: auto;
-    color: #AFECFF;
-    text-shadow: 0 0 5px #AFECFF;
-    margin-top: 130px;
-    display: flex;
+  text-align: center;
+  font-family: "Orbitron", sans-serif;
+  font-size: 2.5rem;
+  margin: auto;
+  color: #afecff;
+  text-shadow: 0 0 5px #afecff;
+  margin-top: 130px;
+  display: flex;
 }
 
 a {
-    color: #AFECFF;
-    text-decoration: none;
+  color: #afecff;
+  text-decoration: none;
 }
 
 .arrow {
-    height: 50px;
-    margin-left: 10px;
-    text-shadow: 0 0 5px #AFECFF;
+  height: 50px;
+  margin-left: 10px;
+  text-shadow: 0 0 5px #afecff;
+}
+@media screen and (max-width: 1000px) {
+  .fic{
+      font-size: 8rem;
+  }
 }
 
 @media screen and (max-width: 550px) {
-    .fic {
-        font-family: 'Iceland', cursive;
-        text-align: center;
-        letter-spacing: 0.1rem;
-        text-shadow: 0 0 10px #00b3ff,
-            0 0 20px #00b3ff;
-        font-size: 4rem;
-        color: #afd5ed;
-        padding-top: 12rem;
-        font-weight: 600;
-    }
+  .fic{
+    font-size: 4rem;
+    padding-top: 12rem;
+    font-weight: 600;
+  }
 
-    .play {
-        text-align: center;
-        font-family: 'Orbitron', sans-serif;
-        font-size: 1.5rem;
-        margin: auto;
-        color: #AFECFF;
-        text-shadow: 0 0 5px #AFECFF;
-        margin-top: 50px;
-        display: flex;
-        font-weight: bold;
-    }
+  .play {
+    font-size: 1.5rem;
+    margin: auto;
+    margin-top: 50px;
+    display: flex;
+    font-weight: bold;
+  }
 
-    .arrow {
-        height: 30px;
-        margin-left: 10px;
-        text-shadow: 0 0 5px #AFECFF;
-    }
+  .arrow {
+    height: 30px;
+    margin-left: 10px;
+    text-shadow: 0 0 5px #afecff;
+  }
 }
+@media screen and (max-width: 550px) {
+  .fic{
+    font-size: 3rem;
+    padding-top: 12rem;
+    font-weight: 600;
+  }
+}
+

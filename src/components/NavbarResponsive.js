@@ -39,7 +39,7 @@ const NavbarResponsive = (props) => {
         <Link to="/" className="link">
           HOME
         </Link>
-        <p className="rules" onClick={showModalHandler}>
+        <p className="Rules" onClick={showModalHandler}>
           RULES
         </p>
         <Link to="/leaderboard" className="link">

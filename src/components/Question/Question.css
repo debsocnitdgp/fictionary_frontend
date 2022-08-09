@@ -14,6 +14,7 @@ section {
   padding: 0 100px;
   height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   font-family: "Orbitron";
@@ -51,13 +52,15 @@ section {
   color: white;
   font-size: 1.2rem;
   margin: auto;
+  margin-top: 1.3rem;
+  margin-bottom: 2rem;
 }
 
 .btns {
   display: flex;
   justify-content: flex-end;
-  position: relative;
-  top: 30px
+  width: 100%;
+  max-width: 900px;
 }
 
 .hint:hover {
@@ -79,7 +82,6 @@ section {
   box-shadow: none !important;
   background: rgb(15, 93, 120) !important;
 }
-
 
 .submit:hover {
   color: #adff2f;
@@ -112,7 +114,6 @@ section {
   padding-right: 43px;
   padding-left: 27px;
   margin: 0px;
-
 }
 
 .submit_bg {
@@ -187,15 +188,17 @@ button {
 
   .answer {
     width: 90%;
-    height: 1.5rem;
+    height: 1.8rem;
     background: rgba(116, 160, 192, 0.6);
     border: none;
     border-bottom: 4px solid #58a1b9;
-    padding: 8px 16px;
+    padding: 15px 16px;
     outline: none;
     color: white;
     font-size: 0.8rem;
     margin: auto;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
   }
 
   .ques-box {
@@ -253,5 +256,15 @@ button {
 
   .round {
     font-size: 1rem;
+  }
+}
+@media screen and (max-width: 700px) {
+  .btns {
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 400px) {
+  section {
+    padding: 0 40px;
   }
 }

@@ -51,9 +51,14 @@ p:hover {
     font-size: 1.5rem;
     color: #61dafb;
 }
+.Rules {
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    color: #61dafb;
+}
 
 .close {
-    height: 3rem;
+    height: 2rem;
 }
 
 .close_btn {

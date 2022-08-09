@@ -56,11 +56,11 @@ const Navbar = (props) => {
         <div className="middle">
           <div className="home">
             <ul>
-              <Link to="/">Home</Link>
+              <Link className="button" to="/">Home</Link>
             </ul>
           </div>
 
-          <div className="rules">
+          <div className="test">
             <ul>
               <p className="rules" onClick={showModalHandler}>
                 Rules
@@ -70,7 +70,7 @@ const Navbar = (props) => {
 
           <div className="leader">
             <ul>
-              <Link to="/leaderboard">Leaderboard</Link>
+              <Link className="button" to="/leaderboard">Leaderboard</Link>
             </ul>
           </div>
         </div>

@@ -28,14 +28,15 @@ const Question = () => {
         }`,
       },
     }).then((res) => {
-      if(res.status === 401){ handleGoogleLogin() }
+      if (res.status === 401) {
+        handleGoogleLogin();
+      }
       res.json().then((res) => {
         setState({
           question: res,
         });
-      })
-    }
-    );
+      });
+    });
   };
 
   const checkAnswer = () => {
@@ -90,7 +91,9 @@ const Question = () => {
   const updateHint = () => {
     fetch(endpoints.CHECK_HINT_AVAILABLE, {
       headers: {
-        Authorization: `Token ${token  || localStorage.getItem("fictionary_token")}`,
+        Authorization: `Token ${
+          token || localStorage.getItem("fictionary_token")
+        }`,
       },
     }).then((res) => {
       res.json().then((serverResponse) => {
@@ -134,7 +137,14 @@ const Question = () => {
             <div className="round_bg">
               <div className="round">R-{state.question.round}</div>
             </div>
-            <p className="question">{state.question.text}</p>
+            {/* <p className="question">{state.question.text}</p> */}
+            <p className="question">
+              ife is a beautiful journey that is meant to be embraced to the
+              fullest every day. However, that doesn't mean you always wake up
+              ready to seize the day, and sometimes need a reminder that life is
+              a great gift. Whether a funny quote from a famous celebrity or an
+              encouraging message about giving it your best from a s
+            </p>
 
             <input
               className="answer"
@@ -161,14 +171,20 @@ const Question = () => {
                 );
               }
             })()}
-            <div className="btns">
-              <HintButton onClick={() => setHintModalOpen(true)} />
+           
+          </div>
+          <div className="btns">
+              {/* <HintButton onClick={() => setHintModalOpen(true)} /> */}
+
+              <div className="hint_bg" onClick={checkAnswer}>
+                <button className="hint">HINT</button>
+              </div>
               <div className="submit_bg" onClick={checkAnswer}>
                 <button className="submit">SUBMIT</button>
               </div>
             </div>
-          </div>
         </section>
+        
       </div>
     </div>
   );

@@ -27,7 +27,12 @@
 }
 
 @media screen and (max-width: 550px) {
-    h1 {
-        font-size: 32px;
+    .leaderboardHeader {
+        font-size: 30px;
+    }
+}
+@media screen and (max-width: 550px){
+    .leaderboardHeader {
+        font-size: 25px;
     }
 }
