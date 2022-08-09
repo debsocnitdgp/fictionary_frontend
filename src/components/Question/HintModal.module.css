@@ -1,0 +1,46 @@
+.modal {
+  background: rgba(3, 61, 80, 1);
+
+  border: 3px solid #58a1b9;
+  backdrop-filter: blur(16px);
+
+  border-radius: 24px;
+
+  align-items: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 50vw;
+  padding: 16px 24px;
+  opacity: 4;
+}
+.h2 {
+  font-family: "Orbitron";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 75px;
+
+  color: #ffffff;
+  text-align: center;
+}
+.p {
+  font-family: "Orbitron";
+  font-style: normal;
+  /* font-weight: 700; */
+  font-size: 29px;
+  line-height: 40px;
+
+  color: #ffffff;
+}
+.rules1 {
+  align-items: center;
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 11000;
+}
