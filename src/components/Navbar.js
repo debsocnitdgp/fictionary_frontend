@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import "./Navbar.css";
 import Rules from "./Rules/Rules";
 import React, { useState } from "react";
+import endpoints from "../utils/APIendpoints";
 
 const Navbar = (props) => {
   const [modalOpen, setmodalOpen] = useState(false);
@@ -15,6 +16,13 @@ const Navbar = (props) => {
     console.log("false");
   };
 
+  const handleGoogleLogin = () => {
+    const form = document.createElement("form");
+    form.method = "POST";
+    form.action = endpoints.GOOGLE_LOGIN;
+    document.body.appendChild(form);
+    form.submit();
+  };
   return (
     <>
       <nav className="main-nav">
@@ -58,8 +66,8 @@ const Navbar = (props) => {
           </div>
         </div>
 
-        <div className="sign">
-          <Link to="/signin"><button className="si">SIGN IN</button></Link>
+        <div className="sign" onClick={handleGoogleLogin}>
+          <button className="si">SIGN IN</button>
         </div>
       </nav>
     </>
