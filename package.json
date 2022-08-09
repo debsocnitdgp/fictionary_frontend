@@ -45,5 +45,6 @@
   "devDependencies": {
     "gh-pages": "^4.0.0"
   },
-  "homepage": "/static"
+  "homepage": "/static",
+  "proxy": "http://127.0.0.1:8000/"
 }

@@ -1,10 +1,11 @@
-import React, { useState } from "react";
-import styles from "./Question.module.css";
+import React from "react";
+import "./Question.css";
 import HintButton from "./Hint";
 import SubmitButton from "./Submit";
 import Round from "./Round";
 import endpoints from "../../utils/APIendpoints";
 import { useSelector } from "react-redux";
+import { useState } from "react";
 import HintModal from "./HintModal";
 
 const Question = () => {
@@ -55,22 +56,27 @@ const Question = () => {
   return (
     <div>
       <HintModal open={hintModalOpen} onClose={() => setHintModalOpen(false)} />
-      <div className={styles.ques}>
+      <div className="ques">
         <section>
-          <div className={styles.ques_box}>
-            <Round questionNumber={state.question.round} />
-            <p>{state.question.text}</p>
+          <div className="ques-box">
+          <div className="round_bg">
+              <div className="round">R-{state.question.round}</div>
+            </div>
+            <p className="question">
+              {state.question.text}
+            </p>
 
             <input
-              className={styles.answer}
+              className="answer"
               type="text"
               placeholder="type your answer  here"
-              id="answerInput"
             />
-
-            <div className={styles.action}>
-              <HintButton onClick={() => setHintModalOpen(true)} />
-              <SubmitButton onClick={checkAnswer} />
+            <div className="btns">
+              
+            <HintButton onClick={() => setHintModalOpen(true)} />
+              <div className="submit_bg">
+                <button className="submit">SUBMIT</button>
+              </div>
             </div>
           </div>
         </section>
@@ -78,5 +84,4 @@ const Question = () => {
     </div>
   );
 };
-
 export default Question;
