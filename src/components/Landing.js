@@ -29,10 +29,8 @@ const Landing = () => {
             />
           </svg>
         </Link>
-        
       </div>
     </div>
-    
   );
 };
 
