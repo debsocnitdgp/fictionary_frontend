@@ -1,8 +1,6 @@
 import React from "react";
 import "./Question.css";
 import HintButton from "./Hint";
-import SubmitButton from "./Submit";
-import Round from "./Round";
 import endpoints from "../../utils/APIendpoints";
 import { useSelector } from "react-redux";
 import { useState } from "react";
@@ -74,7 +72,7 @@ const Question = () => {
             <div className="btns">
               
             <HintButton onClick={() => setHintModalOpen(true)} />
-              <div className="submit_bg">
+              <div className="submit_bg" onClick={checkAnswer}>
                 <button className="submit">SUBMIT</button>
               </div>
             </div>
