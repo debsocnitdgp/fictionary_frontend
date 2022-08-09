@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "./Leaderboard.css";
 import Score from "./Score";
-import Stars from "./Stars"
+import Stars from "./Stars";
 import { useSelector } from "react-redux";
 import endpoints from "../../utils/APIendpoints";
 const Leaderboard = () => {
-
   const [leaderboard, setLeaderboard] = useState([]);
   const token = useSelector((state) => state.token.value);
   console.log(token);
@@ -21,18 +20,22 @@ const Leaderboard = () => {
       });
   };
 
-  useEffect(getLeaderboard, [token])
+  useEffect(getLeaderboard, [token]);
   return (
-    
     <div>
       <div className="img">
-        <div>
-          <h1>Leaderboard</h1>
+        <div className="leaderboardItems">
+          <h1 className="leaderboardHeader">Leaderboard</h1>
+          {leaderboard.length !== 0 ? (
+            <>
+              {leaderboard.map((elem, index) => (
+                <Score name={elem.name} score={elem.points} key={index} />
+              ))}
+            </>
+          ) : (
+            <span>Loading...</span>
+          )}
         </div>
-        
-        {
-          leaderboard.length !== 0 ? <>{leaderboard.map((elem, index) => <Score name={elem.name} score={elem.points} key={index} />)}</> : <span>Loading...</span>
-        }
         <Stars />
       </div>
     </div>

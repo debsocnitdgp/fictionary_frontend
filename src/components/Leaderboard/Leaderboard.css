@@ -10,7 +10,7 @@
     left: 0%;
 }
 
-h1 {
+.leaderboardHeader {
     font-family: "Orbitron";
     font-style: normal;
     font-weight: 700;
@@ -20,6 +20,10 @@ h1 {
     text-align: center;
     padding-top: 60px;
     letter-spacing: 0.3rem;
+}
+.leaderboardItems {
+    overflow-y: auto;
+    max-height: 100vh;
 }
 
 @media screen and (max-width: 550px) {

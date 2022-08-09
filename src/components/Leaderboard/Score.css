@@ -8,16 +8,16 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0px 1.5rem;
+    padding: 0px 1rem;
     font-family: "Orbitron";
-    height: 6rem;
-    font-size: 1.4rem;
+    font-size: 1rem;
     color: #ffffff;
     border: 3px solid #58a1b9;
     background: rgba(3, 61, 80, 0.4);
     border-radius: 20px;
     width: 60%;
-    margin-top: 2rem;
+    margin-top: 1rem;
+    backdrop-filter: blur(8px);
 }
 
 img {
