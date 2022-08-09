@@ -1,11 +1,16 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Navbar.css";
 import Rules from "./Rules/Rules";
 import React, { useState } from "react";
 import endpoints from "../utils/APIendpoints";
+import { useSelector, useDispatch } from "react-redux";
+import { logout } from "../utils/tokenSlice";
 
 const Navbar = (props) => {
   const [modalOpen, setmodalOpen] = useState(false);
+  const token = useSelector((state) => state.token.value);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const showModalHandler = () => {
     setmodalOpen(true);
@@ -22,6 +27,10 @@ const Navbar = (props) => {
     form.action = endpoints.GOOGLE_LOGIN;
     document.body.appendChild(form);
     form.submit();
+  };
+  const handleLogOut = () => {
+    dispatch(logout());
+    navigate("/");
   };
   return (
     <>
@@ -66,9 +75,15 @@ const Navbar = (props) => {
           </div>
         </div>
 
-        <div className="sign" onClick={handleGoogleLogin}>
-          <button className="si">SIGN IN</button>
-        </div>
+        {token || localStorage.getItem("fictionary_frontend") ? (
+          <div className="sign" onClick={handleLogOut}>
+            <button className="si">LOG OUT</button>
+          </div>
+        ) : (
+          <div className="sign" onClick={handleGoogleLogin}>
+            <button className="si">SIGN IN</button>
+          </div>
+        )}
       </nav>
     </>
   );

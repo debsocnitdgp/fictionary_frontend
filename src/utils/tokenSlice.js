@@ -7,6 +7,7 @@ export const tokenSlice = createSlice({
   },
   reducers: {
     logout: (state) => {
+      localStorage.removeItem("fictionary_token")
       state.value = "";
     },
     login: (state, action) => {
