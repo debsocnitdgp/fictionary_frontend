@@ -4,6 +4,8 @@ import Score from "./Score";
 import Stars from "./Stars";
 import { useSelector } from "react-redux";
 import endpoints from "../../utils/APIendpoints";
+import { handleGoogleLogin } from "../Login/Login";
+
 const Leaderboard = () => {
   const [leaderboard, setLeaderboard] = useState([]);
   const token = useSelector((state) => state.token.value);
@@ -11,13 +13,15 @@ const Leaderboard = () => {
     console.log(token);
     fetch(endpoints.LEADERBOARD, {
       headers: {
-        Authorization: `Token ${token || localStorage.getItem('fictionary_token')}`,
+        Authorization: `Token ${
+          token || localStorage.getItem("fictionary_token")
+        }`,
       },
-    })
-      .then((res) => res.json())
-      .then((res) => {
-        setLeaderboard(res.leaderboard);
-      });
+    }).then((res) => {
+      if(res.status === 401){ handleGoogleLogin() }
+      res.json().then((res) => setLeaderboard(res.leaderboard))
+    }
+    );
   };
 
   useEffect(getLeaderboard, [token]);

@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import HintModal from "./HintModal";
 import SnackBar from "./SnackBar";
+import { handleGoogleLogin } from "../Login/Login";
 
 const Question = () => {
   const [state, setState] = React.useState({
@@ -22,15 +23,19 @@ const Question = () => {
   const getQuestion = () => {
     fetch(endpoints.QUESTION, {
       headers: {
-        Authorization: `Token ${token || localStorage.getItem('fictionary_token')}`,
+        Authorization: `Token ${
+          token || localStorage.getItem("fictionary_token")
+        }`,
       },
-    })
-      .then((res) => res.json())
-      .then((res) => {
+    }).then((res) => {
+      if(res.status === 401){ handleGoogleLogin() }
+      res.json().then((res) => {
         setState({
           question: res,
         });
-      });
+      })
+    }
+    );
   };
 
   const checkAnswer = () => {
@@ -39,7 +44,9 @@ const Question = () => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Token ${token || localStorage.getItem('fictionary_token')}`,
+        Authorization: `Token ${
+          token || localStorage.getItem("fictionary_token")
+        }`,
       },
       body: JSON.stringify({ answer: answer.value }),
     })
@@ -83,7 +90,7 @@ const Question = () => {
   const updateHint = () => {
     fetch(endpoints.CHECK_HINT_AVAILABLE, {
       headers: {
-        Authorization: `Token ${token}`,
+        Authorization: `Token ${token  || localStorage.getItem("fictionary_token")}`,
       },
     }).then((res) => {
       res.json().then((serverResponse) => {
@@ -142,11 +149,14 @@ const Question = () => {
                 minutes = minutes < 10 ? "0" + minutes : minutes;
                 seconds = seconds < 10 ? "0" + seconds : seconds;
                 return (
-                  <span style={{ textAlign: "center", fontSize: "small", marginTop: '12px' }}>
-                    Hint available in <br /> {minutes +
-                      "m " +
-                      seconds +
-                      "s"}
+                  <span
+                    style={{
+                      textAlign: "center",
+                      fontSize: "small",
+                      marginTop: "12px",
+                    }}
+                  >
+                    Hint available in <br /> {minutes + "m " + seconds + "s"}
                   </span>
                 );
               }

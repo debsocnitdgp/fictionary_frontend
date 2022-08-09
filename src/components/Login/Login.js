@@ -5,6 +5,14 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { login } from "../../utils/tokenSlice";
 
+export const handleGoogleLogin = () => {
+  const form = document.createElement("form");
+  form.method = "POST";
+  form.action = endpoints.GOOGLE_LOGIN;
+  document.body.appendChild(form);
+  form.submit();
+};
+
 const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
