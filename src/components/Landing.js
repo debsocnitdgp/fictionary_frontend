@@ -1,12 +1,15 @@
 import React from "react";
 import "./Landing.css";
 import { Link } from "react-router-dom";
+import './Leaderboard/Stars'
+import Stars from "./Leaderboard/Stars";
 
 const Landing = () => {
   return (
     <div>
       <div>
         <h1 className="fic">FICTIONARY </h1>
+        <Stars />
       </div>
       <div className="play_now">
         <Link to="/question" className="play">
@@ -26,8 +29,10 @@ const Landing = () => {
             />
           </svg>
         </Link>
+        
       </div>
     </div>
+    
   );
 };
 

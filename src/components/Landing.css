@@ -4,10 +4,11 @@
     letter-spacing: 0.1rem;
     text-shadow: 0 0 10px #00b3ff,
         0 0 20px #00b3ff;
-    font-size: 15rem;
+    font-size: 12rem;
     color: #afd5ed;
     padding-top: 5rem;
-    font-weight: 600;
+    opacity: 0.9;
+    /* font-weight: 600; */
 }
 
 .play_now {
