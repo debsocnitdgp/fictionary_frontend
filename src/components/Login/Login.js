@@ -15,6 +15,13 @@ const Login = () => {
     document.body.appendChild(form);
     form.submit();
   };
+  const handleGoogleLogin = () => {
+    const form = document.createElement("form");
+    form.method = "POST";
+    form.action = endpoints.GOOGLE_LOGIN;
+    document.body.appendChild(form);
+    form.submit();
+  };
   useEffect(() => {
     if (new URLSearchParams(window.location.search).get("fetch") === "true") {
       fetch(endpoints.SOCIAL_LOGIN_TOKEN, { credentials: "include" })
@@ -34,6 +41,9 @@ const Login = () => {
       <button className="login">Sign in</button>
       <button className="login" onClick={handleGithubLogin}>
         Sign in with github
+      </button>
+      <button className="login" onClick={handleGoogleLogin}>
+        Sign in with google
       </button>
     </div>
   );
