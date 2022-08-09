@@ -28,14 +28,16 @@ const Question = () => {
         }`,
       },
     }).then((res) => {
-      if(res.status === 401){ handleGoogleLogin() }
+      if (res.status === 401) {
+        handleGoogleLogin();
+      }
       res.json().then((res) => {
         setState({
           question: res,
         });
-      })
-    }
-    );
+        updateHint();
+      });
+    });
   };
 
   const checkAnswer = () => {
@@ -53,6 +55,7 @@ const Question = () => {
       .then((res) => res.json())
       .then((res) => {
         if (res.success) {
+          answer.value = "";
           setSnackbarOptions({
             show: true,
             text: "Correct Answer!!",
@@ -90,12 +93,13 @@ const Question = () => {
   const updateHint = () => {
     fetch(endpoints.CHECK_HINT_AVAILABLE, {
       headers: {
-        Authorization: `Token ${token  || localStorage.getItem("fictionary_token")}`,
+        Authorization: `Token ${
+          token || localStorage.getItem("fictionary_token")
+        }`,
       },
     }).then((res) => {
       res.json().then((serverResponse) => {
         if (res.status === 200) {
-          console.log(serverResponse);
           if (serverResponse.available) {
             setHintCountdown(null);
           } else {
@@ -116,13 +120,17 @@ const Question = () => {
     }
   }, [hintCountdown]);
 
-  useEffect(updateHint, [token]);
-
   React.useEffect(getQuestion, [token]);
 
   return (
     <div>
-      <HintModal open={hintModalOpen} onClose={() => setHintModalOpen(false)} />
+      <HintModal
+        open={hintModalOpen}
+        onClose={() => {
+          setHintModalOpen(false);
+          updateHint();
+        }}
+      />
       <SnackBar
         show={snackbarOptions.show}
         text={snackbarOptions.text}

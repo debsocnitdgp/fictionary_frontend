@@ -12,7 +12,7 @@ export default function Hint(props) {
   useEffect(() => {
     if (countdown !== null && disabled) {
       if (countdown > 0) {
-        setTimeout(() => setCountdown(countdown - 1), 1000);
+        setTimeout(() => setCountdown(0), countdown * 1000);
       } else {
         update();
       }
@@ -35,9 +35,7 @@ export default function Hint(props) {
           if (serverResponse.available) {
             setDisabled(false);
           } else {
-            console.log("notAvailable");
             setDisabled(true);
-            console.log("setting timer to " + serverResponse.timeleft);
             setCountdown(serverResponse.timeleft);
           }
         }
@@ -59,20 +57,7 @@ export default function Hint(props) {
       }
     >
       <button className="hint">
-        HINT{" "}
-        {disabled && (
-          <span style={{ fontSize: "xx-small" }}>
-            (
-            {((cnt) => {
-              var seconds = cnt % 60;
-              var minutes = (cnt - seconds) / 60;
-              minutes = minutes < 10 ? "0" + minutes : minutes;
-              seconds = seconds < 10 ? "0" + seconds : seconds;
-              return minutes + ":" + seconds;
-            })(countdown)}
-            )
-          </span>
-        )}
+        HINT
       </button>
     </div>
   );
