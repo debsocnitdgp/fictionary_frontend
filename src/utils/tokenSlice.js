@@ -1,23 +1,24 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from "@reduxjs/toolkit";
 
 export const tokenSlice = createSlice({
-  name: 'token',
+  name: "token",
   initialState: {
-    value: ''
+    value: "",
   },
   reducers: {
-    logout: state => {
-      state.value = ''
+    logout: (state) => {
+      state.value = "";
     },
     login: (state, action) => {
-        console.log("setting token to " + action.payload)
-      state.value = action.payload
-      console.log(state)
-    }
-  }
-})
+      console.log("setting token to " + action.payload);
+      localStorage.setItem("fictionary_token", action.payload);
+      state.value = action.payload;
+      console.log(state);
+    },
+  },
+});
 
 // Action creators are generated for each case reducer function
-export const { login, logout } = tokenSlice.actions
+export const { login, logout } = tokenSlice.actions;
 
-export default tokenSlice.reducer
+export default tokenSlice.reducer;

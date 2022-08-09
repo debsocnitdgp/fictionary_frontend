@@ -7,11 +7,11 @@ import endpoints from "../../utils/APIendpoints";
 const Leaderboard = () => {
   const [leaderboard, setLeaderboard] = useState([]);
   const token = useSelector((state) => state.token.value);
-  console.log(token);
   const getLeaderboard = () => {
+    console.log(token);
     fetch(endpoints.LEADERBOARD, {
       headers: {
-        Authorization: `Token ${token}`,
+        Authorization: `Token ${token || localStorage.getItem('fictionary_token')}`,
       },
     })
       .then((res) => res.json())

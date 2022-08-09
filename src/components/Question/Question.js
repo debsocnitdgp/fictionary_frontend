@@ -3,7 +3,7 @@ import "./Question.css";
 import HintButton from "./Hint";
 import endpoints from "../../utils/APIendpoints";
 import { useSelector } from "react-redux";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import HintModal from "./HintModal";
 import SnackBar from "./SnackBar";
 
@@ -17,12 +17,12 @@ const Question = () => {
     text: "",
     success: false,
   });
+  const [hintCountdown, setHintCountdown] = useState(null);
   const token = useSelector((state) => state.token.value);
-  console.log(token);
   const getQuestion = () => {
     fetch(endpoints.QUESTION, {
       headers: {
-        Authorization: `Token ${token}`,
+        Authorization: `Token ${token || localStorage.getItem('fictionary_token')}`,
       },
     })
       .then((res) => res.json())
@@ -39,16 +39,25 @@ const Question = () => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Token ${token}`,
+        Authorization: `Token ${token || localStorage.getItem('fictionary_token')}`,
       },
       body: JSON.stringify({ answer: answer.value }),
     })
       .then((res) => res.json())
       .then((res) => {
         if (res.success) {
-          setSnackbarOptions({ show: true, text: "Correct Answer!!", success: true });
+          setSnackbarOptions({
+            show: true,
+            text: "Correct Answer!!",
+            success: true,
+          });
           setTimeout(
-            () => setSnackbarOptions({ show: false, text: "Correct Answer!!", success: true }),
+            () =>
+              setSnackbarOptions({
+                show: false,
+                text: "Correct Answer!!",
+                success: true,
+              }),
             3000
           );
           getQuestion();
@@ -68,9 +77,39 @@ const Question = () => {
             3000
           );
         }
-        answer.value = "";
       });
   };
+
+  const updateHint = () => {
+    fetch(endpoints.CHECK_HINT_AVAILABLE, {
+      headers: {
+        Authorization: `Token ${token}`,
+      },
+    }).then((res) => {
+      res.json().then((serverResponse) => {
+        if (res.status === 200) {
+          console.log(serverResponse);
+          if (serverResponse.available) {
+            setHintCountdown(null);
+          } else {
+            setHintCountdown(serverResponse.timeleft);
+          }
+        }
+      });
+    });
+  };
+
+  useEffect(() => {
+    if (hintCountdown !== null) {
+      if (hintCountdown > 0) {
+        setTimeout(() => setHintCountdown(hintCountdown - 1), 1000);
+      } else {
+        updateHint();
+      }
+    }
+  }, [hintCountdown]);
+
+  useEffect(updateHint, [token]);
 
   React.useEffect(getQuestion, [token]);
 
@@ -96,6 +135,22 @@ const Question = () => {
               type="text"
               placeholder="type your answer  here"
             />
+            {(() => {
+              if (hintCountdown) {
+                var seconds = hintCountdown % 60;
+                var minutes = (hintCountdown - seconds) / 60;
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+                return (
+                  <span style={{ textAlign: "center", fontSize: "small", marginTop: '12px' }}>
+                    Hint available in <br /> {minutes +
+                      "m " +
+                      seconds +
+                      "s"}
+                  </span>
+                );
+              }
+            })()}
             <div className="btns">
               <HintButton onClick={() => setHintModalOpen(true)} />
               <div className="submit_bg" onClick={checkAnswer}>
