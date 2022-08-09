@@ -1,6 +1,6 @@
-export default function Hint() {
+export default function Hint(props) {
   return (
-    <svg viewBox="0 0 249 61" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg viewBox="0 0 249 61" fill="none" xmlns="http://www.w3.org/2000/svg" onClick={props.onClick}>
       <g>
         <path
           d="M3.00012 3L242.098 3L180.262 58L3.00012 58L3.00012 3Z"

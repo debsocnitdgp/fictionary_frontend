@@ -1,17 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Question.module.css";
 import HintButton from "./Hint";
 import SubmitButton from "./Submit";
 import Round from "./Round";
 import endpoints from "../../utils/APIendpoints";
 import { useSelector } from "react-redux";
+import HintModal from "./HintModal";
 
 const Question = () => {
   const [state, setState] = React.useState({
     question: { text: "Loading...", round: 0 },
   });
+  const [hintModalOpen, setHintModalOpen] = useState(false);
   const token = useSelector((state) => state.token.value);
-  console.log(token)
+  console.log(token);
   const getQuestion = () => {
     fetch(endpoints.QUESTION, {
       headers: {
@@ -52,6 +54,7 @@ const Question = () => {
 
   return (
     <div>
+      <HintModal open={hintModalOpen} onClose={() => setHintModalOpen(false)} />
       <div className={styles.ques}>
         <section>
           <div className={styles.ques_box}>
@@ -66,7 +69,7 @@ const Question = () => {
             />
 
             <div className={styles.action}>
-              <HintButton />
+              <HintButton onClick={() => setHintModalOpen(true)} />
               <SubmitButton onClick={checkAnswer} />
             </div>
           </div>
