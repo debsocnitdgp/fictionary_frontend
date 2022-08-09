@@ -69,6 +69,18 @@ section {
   background: #adff2f;
 }
 
+.hint_bg.disabled {
+  cursor: not-allowed !important;
+  box-shadow: none !important;
+  background: #58a1b9 !important;
+}
+.disabled .hint:hover {
+  cursor: not-allowed !important;
+  box-shadow: none !important;
+  background: rgb(15, 93, 120) !important;
+}
+
+
 .submit:hover {
   color: #adff2f;
 }

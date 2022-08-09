@@ -42,7 +42,7 @@ export default function Hint(props) {
 
   return (
     <div
-      className={`hint_bg ${disabled ? styles.disabled : ""}`}
+      className={`hint_bg ${disabled ? `${styles.disabled} disabled` : ""}`}
       onClick={
         disabled
           ? () => {}
