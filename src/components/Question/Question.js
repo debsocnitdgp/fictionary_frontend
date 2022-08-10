@@ -1,12 +1,12 @@
 import React from "react";
 import "./Question.css";
-import HintButton from "./Hint";
 import endpoints from "../../utils/APIendpoints";
 import { useSelector } from "react-redux";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import HintModal from "./HintModal";
 import SnackBar from "./SnackBar";
 import { handleGoogleLogin } from "../Login/Login";
+import HintCountDown from "./HintCountDown";
 
 const Question = () => {
   const [state, setState] = React.useState({
@@ -18,8 +18,33 @@ const Question = () => {
     text: "",
     success: false,
   });
-  const [hintCountdown, setHintCountdown] = useState(null);
+  const [hintCountdown, setHintCountdown] = useState(null)
+  const [timer, setTimer] = useState(0);
   const token = useSelector((state) => state.token.value);
+  const updateHint = () => {
+    console.log("updating hint")
+    fetch(endpoints.CHECK_HINT_AVAILABLE, {
+      headers: {
+        Authorization: `Token ${
+          token || localStorage.getItem("fictionary_token")
+        }`,
+      },
+    }).then((res) => {
+      res.json().then((serverResponse) => {
+        if (res.status === 200) {
+          clearTimeout(timer)
+          console.log(hintCountdown + ' ' + timer)
+          if (serverResponse.available) {
+            setHintCountdown(null);
+          } else {
+            setTimer(setTimeout(updateHint, serverResponse.timeleft * 1000));
+            setHintCountdown(serverResponse.timeleft);
+          }
+        }
+      });
+    });
+  };
+
   const getQuestion = () => {
     fetch(endpoints.QUESTION, {
       headers: {
@@ -32,11 +57,11 @@ const Question = () => {
         handleGoogleLogin();
       }
       res.json().then((res) => {
+        clearInterval(timer)
+        updateHint();
         setState({
           question: res,
         });
-
-        updateHint();
       });
     });
   };
@@ -91,36 +116,6 @@ const Question = () => {
       });
   };
 
-  const updateHint = () => {
-    fetch(endpoints.CHECK_HINT_AVAILABLE, {
-      headers: {
-        Authorization: `Token ${
-          token || localStorage.getItem("fictionary_token")
-        }`,
-      },
-    }).then((res) => {
-      res.json().then((serverResponse) => {
-        if (res.status === 200) {
-          if (serverResponse.available) {
-            setHintCountdown(null);
-          } else {
-            setHintCountdown(serverResponse.timeleft);
-          }
-        }
-      });
-    });
-  };
-
-  useEffect(() => {
-    if (hintCountdown !== null) {
-      if (hintCountdown > 0) {
-        setTimeout(() => setHintCountdown(hintCountdown - 1), 1000);
-      } else {
-        updateHint();
-      }
-    }
-  }, [hintCountdown]);
-
   React.useEffect(getQuestion, [token]);
 
   return (
@@ -129,7 +124,6 @@ const Question = () => {
         open={hintModalOpen}
         onClose={() => {
           setHintModalOpen(false);
-          updateHint();
         }}
       />
       <SnackBar
@@ -151,35 +145,24 @@ const Question = () => {
               type="text"
               placeholder="type your answer  here"
             />
-            {(() => {
-              if (hintCountdown) {
-                var seconds = hintCountdown % 60;
-                var minutes = (hintCountdown - seconds) / 60;
-                minutes = minutes < 10 ? "0" + minutes : minutes;
-                seconds = seconds < 10 ? "0" + seconds : seconds;
-                return (
-                  <span
-                    style={{
-                      textAlign: "center",
-                      fontSize: "small",
-                      margin: "12px 0",
-                    }}
-                  >
-                    Hint available in <br /> {minutes + "m " + seconds + "s"}
-                  </span>
-                );
-              }
-            })()}
-           
+            {hintCountdown && <HintCountDown time={hintCountdown} id={timer} />}
           </div>
           <div className="btns">
-              <HintButton onClick={() => setHintModalOpen(true)} />
-              <div className="submit_bg" onClick={checkAnswer}>
-                <button className="submit">SUBMIT</button>
-              </div>
+            <div
+              className={`hint_bg ${
+                hintCountdown !== null ? "hintDisabled" : ""
+              }`}
+              onClick={
+                hintCountdown !== null ? () => {} : () => setHintModalOpen(true)
+              }
+            >
+              <button className="hint">HINT</button>
             </div>
+            <div className="submit_bg" onClick={checkAnswer}>
+              <button className="submit">SUBMIT</button>
+            </div>
+          </div>
         </section>
-        
       </div>
     </div>
   );
