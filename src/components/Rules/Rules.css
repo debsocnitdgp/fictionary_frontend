@@ -1,8 +1,8 @@
-h2 {
+.rulesH2 {
     font-family: "Orbitron";
     font-style: normal;
     font-weight: 700;
-    font-size: 60px;
+    font-size: 40px;
     margin: 0px;
     margin-bottom: 1.2rem;
     line-height: 75px;
@@ -11,11 +11,11 @@ h2 {
     letter-spacing: 0.4rem;
 }
 
-p {
+.rulesCont p {
     font-family: "Orbitron";
     font-style: normal;
-    font-size: 29px;
-    line-height: 40px;
+    font-size: 20px;
+    line-height: 20px;
     color: #ffffff;
     letter-spacing: 0.1rem;
 }

@@ -173,11 +173,7 @@ const Question = () => {
            
           </div>
           <div className="btns">
-              {/* <HintButton onClick={() => setHintModalOpen(true)} /> */}
-
-              <div className="hint_bg" onClick={checkAnswer}>
-                <button className="hint">HINT</button>
-              </div>
+              <HintButton onClick={() => setHintModalOpen(true)} />
               <div className="submit_bg" onClick={checkAnswer}>
                 <button className="submit">SUBMIT</button>
               </div>

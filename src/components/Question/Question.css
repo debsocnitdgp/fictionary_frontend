@@ -39,6 +39,7 @@ section {
 .question {
   font-size: large;
   text-align: justify;
+  word-wrap: break-word;
 }
 
 .answer {

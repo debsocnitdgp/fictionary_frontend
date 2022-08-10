@@ -38,11 +38,11 @@
     margin-top: 45%;
 }
 
-p {
+.nav p {
     margin: 0px;
 }
 
-p:hover {
+.nav p:hover {
     color: #adff2f
 }
 
