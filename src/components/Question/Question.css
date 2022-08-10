@@ -53,8 +53,8 @@ section {
   color: white;
   font-size: 1.2rem;
   margin: auto;
-  margin-top: 1.3rem;
-  margin-bottom: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .btns {
@@ -208,7 +208,7 @@ button {
     font-size: 0.8rem;
     margin: auto;
     margin-top: 1rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
   }
 
   .ques-box {

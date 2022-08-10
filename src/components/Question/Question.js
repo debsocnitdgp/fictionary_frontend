@@ -162,7 +162,7 @@ const Question = () => {
                     style={{
                       textAlign: "center",
                       fontSize: "small",
-                      marginTop: "12px",
+                      margin: "12px 0",
                     }}
                   >
                     Hint available in <br /> {minutes + "m " + seconds + "s"}
