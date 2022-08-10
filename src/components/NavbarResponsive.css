@@ -38,25 +38,16 @@
     margin-top: 45%;
 }
 
-p {
-    margin: 0px;
+.nav p:hover {
+    color: #adff2f;
+    cursor: pointer;
 }
 
-p:hover {
-    color: #adff2f
-}
-
-.link {
+.link, .Rules {
     margin-bottom: 2rem;
     font-size: 1.5rem;
     color: #61dafb;
 }
-.Rules {
-    margin-bottom: 2rem;
-    font-size: 1.5rem;
-    color: #61dafb;
-}
-
 .close {
     height: 2rem;
 }

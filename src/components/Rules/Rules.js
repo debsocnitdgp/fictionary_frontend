@@ -6,8 +6,8 @@ const Rules = (props) => {
     <RulesModal onClose={props.onHideRules}>
       <div className="rules1">
         <div id="modalBox">
-          <h2>Rules</h2>
-          <div>
+          <h2 className="rulesH2">Rules</h2>
+          <div className="rulesCont">
             <p>1-Rule 1</p>
             <p>2-Rule is rule</p>
           </div>

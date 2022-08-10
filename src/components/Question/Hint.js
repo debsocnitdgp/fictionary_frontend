@@ -52,13 +52,13 @@ export default function Hint(props) {
           ? () => {}
           : () => {
               props.onClick();
-              setTimeout(update, 1000);
+              setTimeout(() => {
+                update();
+              }, 1000);
             }
       }
     >
-      <button className="hint">
-        HINT
-      </button>
+      <button className="hint">HINT</button>
     </div>
   );
 }
