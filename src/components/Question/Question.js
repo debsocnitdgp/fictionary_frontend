@@ -1,12 +1,12 @@
 import React from "react";
 import "./Question.css";
 import endpoints from "../../utils/APIendpoints";
-import { useSelector } from "react-redux";
 import { useState } from "react";
 import HintModal from "./HintModal";
 import SnackBar from "./SnackBar";
 import { handleGoogleLogin } from "../Login/Login";
 import HintCountDown from "./HintCountDown";
+import useContext from "../../utils/Context";
 
 const Question = () => {
   const [state, setState] = React.useState({
@@ -20,7 +20,7 @@ const Question = () => {
   });
   const [hintCountdown, setHintCountdown] = useState(null)
   const [timer, setTimer] = useState(0);
-  const token = useSelector((state) => state.token.value);
+  const token = useContext().token;
   const updateHint = () => {
     console.log("updating hint")
     fetch(endpoints.CHECK_HINT_AVAILABLE, {

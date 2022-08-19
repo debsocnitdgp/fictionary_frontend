@@ -2,8 +2,7 @@ import React, { useEffect } from "react";
 import "./Login.css";
 import endpoints from "../../utils/APIendpoints";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { login } from "../../utils/tokenSlice";
+import { useContext } from "../../utils/Context";
 
 export const handleGoogleLogin = () => {
   const form = document.createElement("form");
@@ -15,18 +14,18 @@ export const handleGoogleLogin = () => {
 
 const Login = () => {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
+  const context = useContext();
   useEffect(() => {
     if (new URLSearchParams(window.location.search).get("fetch") === "true") {
       fetch(endpoints.SOCIAL_LOGIN_TOKEN, { credentials: "include" })
         .then((res) => res.json())
         .then((res) => {
-          dispatch(login(res.token));
+          context.login(res.token);
           navigate("/question");
         })
         .catch((err) => console.error(err));
     }
-  }, [navigate, dispatch]);
+  }, [navigate, context]);
   return (
     <div className="ot">
       <h1 style={{color: 'white', fontFamily: 'Orbitron'}}>Signing you in...</h1>

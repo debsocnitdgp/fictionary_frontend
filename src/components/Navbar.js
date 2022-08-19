@@ -3,13 +3,11 @@ import "./Navbar.css";
 import Rules from "./Rules/Rules";
 import React, { useState } from "react";
 import endpoints from "../utils/APIendpoints";
-import { useSelector, useDispatch } from "react-redux";
-import { logout } from "../utils/tokenSlice";
+import useContext from "../utils/Context";
 
 const Navbar = (props) => {
   const [modalOpen, setmodalOpen] = useState(false);
-  const token = useSelector((state) => state.token.value);
-  const dispatch = useDispatch();
+  const context = useContext()
   const navigate = useNavigate();
 
   const showModalHandler = () => {
@@ -29,7 +27,7 @@ const Navbar = (props) => {
     form.submit();
   };
   const handleLogOut = () => {
-    dispatch(logout());
+    context.logout();
     navigate("/");
   };
   return (
@@ -75,7 +73,7 @@ const Navbar = (props) => {
           </div>
         </div>
 
-        {token || localStorage.getItem("fictionary_frontend") ? (
+        {context.token || localStorage.getItem("fictionary_frontend") ? (
           <div className="sign" onClick={handleLogOut}>
             <button className="si">LOG OUT</button>
           </div>

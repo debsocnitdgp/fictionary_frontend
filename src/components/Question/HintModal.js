@@ -1,13 +1,13 @@
 import styles from "./HintModal.module.css";
 import { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
 import endpoints from "../../utils/APIendpoints";
+import useContext from "../../utils/Context";
 
 export default function HintModal(props) {
   const [modalOpen, setmodalOpen] = useState(props.open);
   const [loaded, setLoaded] = useState(false);
   const [clue, setClue] = useState(null);
-  const token = useSelector((state) => state.token.value);
+  const token = useContext().token;
 
   useEffect(() => {
     const getClue = () => {
