@@ -20,11 +20,11 @@ const Question = () => {
     text: "",
     success: false,
   });
-  const [hintCountdown, setHintCountdown] = useState(null)
+  const [hintCountdown, setHintCountdown] = useState(null);
   const [timer, setTimer] = useState(0);
   const token = useContext().token;
   const updateHint = () => {
-    console.log("updating hint")
+    console.log("updating hint");
     fetch(endpoints.CHECK_HINT_AVAILABLE, {
       headers: {
         Authorization: `Token ${
@@ -34,8 +34,8 @@ const Question = () => {
     }).then((res) => {
       res.json().then((serverResponse) => {
         if (res.status === 200) {
-          clearTimeout(timer)
-          console.log(hintCountdown + ' ' + timer)
+          clearTimeout(timer);
+          console.log(hintCountdown + " " + timer);
           if (serverResponse.available) {
             setHintCountdown(null);
           } else {
@@ -60,11 +60,11 @@ const Question = () => {
         handleGoogleLogin();
       }
       res.json().then((res) => {
-        clearInterval(timer)
+        clearInterval(timer);
         updateHint();
         setState({
           question: res,
-          loaded: false,
+          loaded: true,
         });
       });
     });
@@ -144,37 +144,29 @@ const Question = () => {
                   <div className="round">R-{state.question.round}</div>
                 </div>
                 <p className="question">{state.question.text}</p>
-
                 <input
                   className="answer"
                   id="answerInput"
                   type="text"
                   placeholder="type your answer  here"
                 />
-                {(() => {
-                  if (hintCountdown) {
-                    var seconds = hintCountdown % 60;
-                    var minutes = (hintCountdown - seconds) / 60;
-                    minutes = minutes < 10 ? "0" + minutes : minutes;
-                    seconds = seconds < 10 ? "0" + seconds : seconds;
-                    return (
-                      <span
-                        style={{
-                          textAlign: "center",
-                          fontSize: "small",
-                          margin: "12px 0",
-                        }}
-                      >
-                        Hint available in <br />{" "}
-                        {minutes + "m " + seconds + "s"}
-                      </span>
-                    );
-                  }
-                })()}
+                {hintCountdown && (
+                  <HintCountDown time={hintCountdown} id={timer} />
+                )}
               </div>
-
               <div className="btns">
-                <HintButton onClick={() => setHintModalOpen(true)} />
+                <div
+                  className={`hint_bg ${
+                    hintCountdown !== null ? "hintDisabled" : ""
+                  }`}
+                  onClick={
+                    hintCountdown !== null
+                      ? () => {}
+                      : () => setHintModalOpen(true)
+                  }
+                >
+                  <button className="hint">HINT</button>
+                </div>
                 <div className="submit_bg" onClick={checkAnswer}>
                   <button className="submit">SUBMIT</button>
                 </div>
