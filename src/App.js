@@ -6,6 +6,7 @@ import Leaderboard from "./components/Leaderboard/Leaderboard.js";
 import Login from "./components/Login/Login.js";
 import { login } from "./utils/tokenSlice";
 // import Logo from './components/Logos/Logo.js';
+import Footer from "./components/Footer/Footer.js"
 
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -33,6 +34,7 @@ const App = () => {
       <div className="bg">
         <NavbarResponsive hideNav={hideNav} nav={nav} />
         <Navbar showNav={showNav} />
+        <Footer />
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/question" element={<Question />} />

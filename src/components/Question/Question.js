@@ -11,6 +11,8 @@ import { handleGoogleLogin } from "../Login/Login";
 const Question = () => {
   const [state, setState] = React.useState({
     question: { text: "Loading...", round: 0 },
+
+    loaded: true,
   });
   const [hintModalOpen, setHintModalOpen] = useState(false);
   const [snackbarOptions, setSnackbarOptions] = useState({
@@ -21,6 +23,7 @@ const Question = () => {
   const [hintCountdown, setHintCountdown] = useState(null);
   const token = useSelector((state) => state.token.value);
   const getQuestion = () => {
+    setState({ ...state, loaded: false });
     fetch(endpoints.QUESTION, {
       headers: {
         Authorization: `Token ${
@@ -34,6 +37,7 @@ const Question = () => {
       res.json().then((res) => {
         setState({
           question: res,
+          loaded: false,
         });
 
         updateHint();
@@ -139,47 +143,61 @@ const Question = () => {
       />
       <div className="ques">
         <section>
-          <div className="ques-box">
-            <div className="round_bg">
-              <div className="round">R-{state.question.round}</div>
-            </div>
-            <p className="question">{state.question.text}</p>
+          {state.loaded ? (
+            <>
+              <div className="ques-box">
+                <div className="round_bg">
+                  <div className="round">R-{state.question.round}</div>
+                </div>
+                <p className="question">{state.question.text}</p>
 
-            <input
-              className="answer"
-              id="answerInput"
-              type="text"
-              placeholder="type your answer  here"
-            />
-            {(() => {
-              if (hintCountdown) {
-                var seconds = hintCountdown % 60;
-                var minutes = (hintCountdown - seconds) / 60;
-                minutes = minutes < 10 ? "0" + minutes : minutes;
-                seconds = seconds < 10 ? "0" + seconds : seconds;
-                return (
-                  <span
-                    style={{
-                      textAlign: "center",
-                      fontSize: "small",
-                      margin: "12px 0",
-                    }}
-                  >
-                    Hint available in <br /> {minutes + "m " + seconds + "s"}
-                  </span>
-                );
-              }
-            })()}
-           
-          </div>
-          <div className="btns">
-              <HintButton onClick={() => setHintModalOpen(true)} />
-              <div className="submit_bg" onClick={checkAnswer}>
-                <button className="submit">SUBMIT</button>
+                <input
+                  className="answer"
+                  id="answerInput"
+                  type="text"
+                  placeholder="type your answer  here"
+                />
+                {(() => {
+                  if (hintCountdown) {
+                    var seconds = hintCountdown % 60;
+                    var minutes = (hintCountdown - seconds) / 60;
+                    minutes = minutes < 10 ? "0" + minutes : minutes;
+                    seconds = seconds < 10 ? "0" + seconds : seconds;
+                    return (
+                      <span
+                        style={{
+                          textAlign: "center",
+                          fontSize: "small",
+                          margin: "12px 0",
+                        }}
+                      >
+                        Hint available in <br />{" "}
+                        {minutes + "m " + seconds + "s"}
+                      </span>
+                    );
+                  }
+                })()}
               </div>
+
+              <div className="btns">
+                <HintButton onClick={() => setHintModalOpen(true)} />
+                <div className="submit_bg" onClick={checkAnswer}>
+                  <button className="submit">SUBMIT</button>
+                </div>
+              </div>
+            </>
+          ) : (
+            <div className="box">
+              <span>L</span>
+              <span>O</span>
+              <span>A</span>
+              <span>D</span>
+              <span>I</span>
+              <span>N</span>
+              <span>G</span>
             </div>
+          )}
         </section>
-        
       </div>
     </div>
   );
