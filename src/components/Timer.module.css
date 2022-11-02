@@ -1,0 +1,11 @@
+  .clock{
+    position: relative;
+    margin:  a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: linear-gradient(#051817 , #0e3839);
+    height: 180px;
+    width: 350px;
+  }
+  

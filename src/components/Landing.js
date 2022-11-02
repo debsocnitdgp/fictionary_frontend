@@ -1,12 +1,21 @@
-import React from "react";
+import React, { useState , useEffect } from "react";
 import "./Landing.css";
 import { Link } from "react-router-dom";
-import './Leaderboard/Stars'
+import "./Leaderboard/Stars";
 import Stars from "./Leaderboard/Stars";
+import Timer from "./Timer";
 
 const Landing = () => {
+
+     
   return (
     <div>
+      <div className="time">
+        <Timer
+          timer={21000}
+        />
+      </div>
+
       <div>
         <h1 className="fic">FICTIONARY </h1>
         <Stars />

@@ -136,7 +136,7 @@ const Question = () => {
         success={snackbarOptions.success}
       />
       <div className="ques">
-        <section>
+        <section className="ques-container">
           {state.loaded ? (
             <>
               <div className="ques-box">

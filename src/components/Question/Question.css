@@ -10,7 +10,7 @@
   left: 0%;
 }
 
-section {
+.ques-container {
   padding: 0 100px;
   height: 100vh;
   display: flex;
@@ -217,7 +217,7 @@ button {
     border-radius: 0px;
   }
 
-  section {
+  .ques-container {
     padding: 0px 60px;
   }
 
@@ -275,7 +275,7 @@ button {
   }
 }
 @media screen and (max-width: 400px) {
-  section {
+  .ques-container {
     padding: 0 40px;
   }
 }
