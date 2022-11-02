@@ -2,13 +2,13 @@ import React, { useEffect, useState } from "react";
 import "./Leaderboard.css";
 import Score from "./Score";
 import Stars from "./Stars";
-import { useSelector } from "react-redux";
+import useContext from "../../utils/Context";
 import endpoints from "../../utils/APIendpoints";
 import { handleGoogleLogin } from "../Login/Login";
 
 const Leaderboard = () => {
   const [leaderboard, setLeaderboard] = useState([]);
-  const token = useSelector((state) => state.token.value);
+  const token = useContext().token;
   const getLeaderboard = () => {
     console.log(token);
     fetch(endpoints.LEADERBOARD, {

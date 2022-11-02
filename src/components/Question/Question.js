@@ -1,12 +1,12 @@
 import React from "react";
 import "./Question.css";
-import HintButton from "./Hint";
 import endpoints from "../../utils/APIendpoints";
-import { useSelector } from "react-redux";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import HintModal from "./HintModal";
 import SnackBar from "./SnackBar";
 import { handleGoogleLogin } from "../Login/Login";
+import HintCountDown from "./HintCountDown";
+import useContext from "../../utils/Context";
 
 const Question = () => {
   const [state, setState] = React.useState({
@@ -20,8 +20,33 @@ const Question = () => {
     text: "",
     success: false,
   });
-  const [hintCountdown, setHintCountdown] = useState(null);
-  const token = useSelector((state) => state.token.value);
+  const [hintCountdown, setHintCountdown] = useState(null)
+  const [timer, setTimer] = useState(0);
+  const token = useContext().token;
+  const updateHint = () => {
+    console.log("updating hint")
+    fetch(endpoints.CHECK_HINT_AVAILABLE, {
+      headers: {
+        Authorization: `Token ${
+          token || localStorage.getItem("fictionary_token")
+        }`,
+      },
+    }).then((res) => {
+      res.json().then((serverResponse) => {
+        if (res.status === 200) {
+          clearTimeout(timer)
+          console.log(hintCountdown + ' ' + timer)
+          if (serverResponse.available) {
+            setHintCountdown(null);
+          } else {
+            setTimer(setTimeout(updateHint, serverResponse.timeleft * 1000));
+            setHintCountdown(serverResponse.timeleft);
+          }
+        }
+      });
+    });
+  };
+
   const getQuestion = () => {
     setState({ ...state, loaded: false });
     fetch(endpoints.QUESTION, {
@@ -35,12 +60,12 @@ const Question = () => {
         handleGoogleLogin();
       }
       res.json().then((res) => {
+        clearInterval(timer)
+        updateHint();
         setState({
           question: res,
           loaded: false,
         });
-
-        updateHint();
       });
     });
   };
@@ -95,36 +120,6 @@ const Question = () => {
       });
   };
 
-  const updateHint = () => {
-    fetch(endpoints.CHECK_HINT_AVAILABLE, {
-      headers: {
-        Authorization: `Token ${
-          token || localStorage.getItem("fictionary_token")
-        }`,
-      },
-    }).then((res) => {
-      res.json().then((serverResponse) => {
-        if (res.status === 200) {
-          if (serverResponse.available) {
-            setHintCountdown(null);
-          } else {
-            setHintCountdown(serverResponse.timeleft);
-          }
-        }
-      });
-    });
-  };
-
-  useEffect(() => {
-    if (hintCountdown !== null) {
-      if (hintCountdown > 0) {
-        setTimeout(() => setHintCountdown(hintCountdown - 1), 1000);
-      } else {
-        updateHint();
-      }
-    }
-  }, [hintCountdown]);
-
   React.useEffect(getQuestion, [token]);
 
   return (
@@ -133,7 +128,6 @@ const Question = () => {
         open={hintModalOpen}
         onClose={() => {
           setHintModalOpen(false);
-          updateHint();
         }}
       />
       <SnackBar

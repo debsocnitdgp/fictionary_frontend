@@ -1,16 +1,16 @@
 import styles from "./HintModal.module.css";
 import { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
 import endpoints from "../../utils/APIendpoints";
+import useContext from "../../utils/Context";
 
 export default function HintModal(props) {
   const [modalOpen, setmodalOpen] = useState(props.open);
   const [loaded, setLoaded] = useState(false);
-  const [clues, setClues] = useState([]);
-  const token = useSelector((state) => state.token.value);
+  const [clue, setClue] = useState(null);
+  const token = useContext().token;
 
   useEffect(() => {
-    const getClues = () => {
+    const getClue = () => {
       fetch(endpoints.CLUE, {
         headers: {
           Authorization: `Token ${token}`,
@@ -18,12 +18,11 @@ export default function HintModal(props) {
       }).then((res) => {
         res.json().then((serverResponse) => {
           if (res.status === 200) {
+            setLoaded(true);
             if (serverResponse.success) {
-              setClues(serverResponse.clues);
-              setLoaded(true);
+              setClue(serverResponse.clue);
             } else {
-              setLoaded(true);
-              setClues([serverResponse.message]);
+              setClue([serverResponse.message]);
             }
           }
         });
@@ -32,7 +31,7 @@ export default function HintModal(props) {
     setmodalOpen(props.open);
     setLoaded(false);
     if (props.open) {
-      getClues();
+      getClue();
     }
   }, [props, token]);
   const handleClick = (evt) => {
@@ -52,12 +51,8 @@ export default function HintModal(props) {
           if (loaded) {
             return (
               <>
-                <h2 className={styles.h2}>Clues</h2>
-                {clues.map((elem, index) => (
-                  <p key={index} className={styles.p}>
-                    {index + 1}. {elem}
-                  </p>
-                ))}
+                <h2 className={styles.h2}>Clue</h2>
+                <p className={styles.p}>{clue}</p>
               </>
             );
           } else {
