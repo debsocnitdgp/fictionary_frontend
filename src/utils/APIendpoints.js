@@ -1,4 +1,6 @@
-const BASE_URL = process.env.API_HOST || 'http://127.0.0.1:8000'
+const BASE_URL = process.env.REACT_APP_API_HOST || 'http://127.0.0.1:8000'
+
+console.log(BASE_URL)
 
 const ENDPOINTS = {
     GH_LOGIN: BASE_URL + '/accounts/github/login/',

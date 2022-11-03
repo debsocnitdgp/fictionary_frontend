@@ -36,12 +36,12 @@ const NavbarResponsive = (props) => {
         </svg>
       </button>
       <div className="nav">
-        <Link to="/" className="link" onClick={props.hideNav}>
-          HOME
+        <Link to="/question" className="link" onClick={props.hideNav}>
+          PLAY
         </Link>
-        <p className="Rules" onClick={() =>  { showModalHandler();props.hideNav() }}>
+        <a href="#" className="Rules" onClick={() =>  { showModalHandler();props.hideNav() }}>
           RULES
-        </p>
+        </a>
         <Link to="/leaderboard" className="link" onClick={props.hideNav}>
           LEADERBOARD
         </Link>

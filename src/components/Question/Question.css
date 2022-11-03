@@ -21,7 +21,6 @@
   font-style: normal;
   font-size: 50px;
   color: #ffffff;
-  
 }
 
 .ques-box {
@@ -101,7 +100,7 @@
   padding: 4px;
   transform: translateX(15px);
   margin-top: 1rem;
-  clip-path: polygon(0 0, 100% 0, 72% 100%, 0 100%);
+  clip-path: polygon(0 30%, 100% 30%, 72% 100%, 0 100%);
 }
 
 .hint {
@@ -120,14 +119,14 @@
 
 .submit_bg {
   padding: 4px;
-  clip-path: polygon(23% 0, 100% 0, 100% 100%, 0 100%);
+  clip-path: polygon(25% 28%, 100% 28%, 100% 100%, 0 100%);
   background: #58a1b9;
   height: fit-content;
   margin-top: 1rem;
 }
 
 .submit {
-  clip-path: polygon(23% 0, 100% 0, 100% 100%, 3% 100%);
+  clip-path: polygon(25% 0, 100% 0, 100% 100%, 5% 100%);
   font-family: "Orbitron";
   font-style: normal;
   border: none;
@@ -181,7 +180,7 @@ button {
   padding-left: 27px;
   margin: 0px;
 }
-@media screen and (max-width: 900px){
+@media screen and (max-width: 900px) {
   .ques-box {
     width: 90%;
     border-radius: 0px;
@@ -227,17 +226,9 @@ button {
     padding: 4px;
     transform: translateX(15px);
     margin-top: 1rem;
-    clip-path: polygon(0 0, 100% 0, 72% 100%, 0 100%);
   }
 
   .hint {
-    clip-path: polygon(0 0, 96% 0, 72% 100%, 0 100%);
-    font-family: "Orbitron";
-    font-style: normal;
-    border: none;
-    font-size: 1rem;
-    color: white;
-    background-color: rgb(15, 93, 120);
     padding: 5px;
     padding-right: 43px;
     padding-left: 27px;
@@ -246,19 +237,10 @@ button {
 
   .submit_bg {
     padding: 4px;
-    clip-path: polygon(23% 0, 100% 0, 100% 100%, 0 100%);
-    height: fit-content;
     margin-top: 1rem;
   }
 
   .submit {
-    clip-path: polygon(23% 0, 100% 0, 100% 100%, 3% 100%);
-    font-family: "Orbitron";
-    font-style: normal;
-    border: none;
-    font-size: 1rem;
-    color: white;
-    background-color: rgb(15, 93, 120);
     padding: 5px;
     padding-left: 43px;
     padding-right: 27px;
@@ -280,32 +262,31 @@ button {
   }
 }
 
-  .box {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      height: 100vh;
-      width: 100vw;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      letter-spacing: 0.9;
-      
-  }
-  
-    .box span {
-      position: relative;
-      top: 20px;
-      display: inline-block;
-      animation: bounce 0.5s ease infinite alternate;
-    }
-  
-    @keyframes bounce {
-      100% {
-        top: -20px;
-        /* text-shadow: 0 1px #ccc,
+.box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 0.9;
+}
+
+.box span {
+  position: relative;
+  top: 20px;
+  display: inline-block;
+  animation: bounce 0.5s ease infinite alternate;
+}
+
+@keyframes bounce {
+  100% {
+    top: -20px;
+    /* text-shadow: 0 1px #ccc,
           0 2px #ccc,
           0 3px #ccc,
           0 4px #ccc,
@@ -315,28 +296,27 @@ button {
           0 8px #ccc,
           0 9px #ccc,
           0 50px 25px rgba(0, 0, 0, 0.2); */
-      }
-    }
-  
-    .box span:nth-child(2) {
-      animation-delay: 0.1s;
-    }
-  
-    .box span:nth-child(3) {
-      animation-delay: 0.2s;
-    }
-  
-    .box span:nth-child(4) {
-      animation-delay: 0.3s;
-    }
-  
-    .box span:nth-child(5) {
-      animation-delay: 0.4s;
-    }
-    .box span:nth-child(6){
-      animation-delay: 0.5s;
-    }
+  }
+}
 
+.box span:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.box span:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.box span:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+.box span:nth-child(5) {
+  animation-delay: 0.4s;
+}
+.box span:nth-child(6) {
+  animation-delay: 0.5s;
+}
 
 .hintDisabled:hover {
   cursor: not-allowed;
@@ -346,7 +326,6 @@ button {
   cursor: not-allowed;
   filter: none !important;
 }
-
 
 .hintDisabled {
   opacity: 0.7;
