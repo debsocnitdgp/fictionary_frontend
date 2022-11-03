@@ -1,34 +1,29 @@
-  .clock{
-    position: relative;
-    margin:  auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: linear-gradient(#051817 , #0e3839);
-    height: 180px;
-    width: 350px;
-    color: #06f1f6;
-    text-shadow: 1px 1px 7px;
-    border-radius: 15px;
-    border: 2px solid silver ;
-    box-shadow: 0 0 5px 25px;
-    background-color: grey ;
-    
-
-  }
-  .clock section{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-    
-  }
-  /* .clock section p{
-    font-size: 4rem;
-  } */
-  /* .clock section small{
-    color: silver;
-    text-shadow: none;
-  } */
+.clock {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Iceland", cursive;
+  text-align: center;
+  letter-spacing: 0.1rem;
+  text-shadow: 0 0 10px #00b3ff, 0 0 20px #00b3ff;
+  font-size: 4rem;
+  color: #afd5ed;
+  opacity: 0.9;
+}
+.element {
   
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.element p {
+  margin: 0;
+}
+
+.element span {
+  font-size: 1rem;
+  text-transform: uppercase;
+}

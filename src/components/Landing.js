@@ -1,27 +1,18 @@
-import React, { useState , useEffect } from "react";
+import React from "react";
 import "./Landing.css";
-import { Link } from "react-router-dom";
 import "./Leaderboard/Stars";
 import Stars from "./Leaderboard/Stars";
 import Timer from "./Timer";
 
 const Landing = () => {
-
-     
   return (
     <div>
-      <div className="time">
-        <Timer
-          timer={21000}
-        />
-      </div>
-
       <div>
         <h1 className="fic">FICTIONARY </h1>
         <Stars />
       </div>
       <div className="play_now">
-        <Link to="/question" className="play">
+        {/* <Link to="/question" className="play">
           PLAY NOW
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -37,8 +28,12 @@ const Landing = () => {
               d="M13 5l7 7-7 7M5 5l7 7-7 7"
             />
           </svg>
-        </Link>
+        </Link> */}
+
       </div>
+        <div className="time">
+          <Timer timer="November 31, 2022" />
+        </div>
     </div>
   );
 };

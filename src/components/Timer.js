@@ -8,7 +8,7 @@ const Timer = ({ timer }) => {
   const [timerSeconds, setTimerSeconds] = useState();
 
   useEffect(() => {
-    const countDownDate = new Date("November 4,2022").getTime();
+    const countDownDate = new Date(timer).getTime();
     const interval = setInterval(() => {
       const now = new Date().getTime();
 
@@ -41,33 +41,29 @@ const Timer = ({ timer }) => {
   }, []);
 
   return (
-    <Fragment>
-      <section className={styles.timercontainer}>
-        <section className={styles.timer}>
-          <div className={styles.clock}>
-            <section>
-              <p>{timerDays}</p>
-              <small>Days</small>
-            </section>
-            <span>:</span>
-            <section>
-              <p>{timerHours}</p>
-              <small>Hours</small>
-            </section>{" "}
-            <span>:</span>
-            <section>
-              <p>{timerMinutes}</p>
-              <small>Minutes</small>
-            </section>{" "}
-            <span>:</span>
-            <section>
-              <p>{timerSeconds}</p>
-              <small>Seconds</small>
-            </section>
+    <>
+        <div className={styles.clock}>
+          <div className={styles.element}>
+            <p>{timerDays}</p>
+            <span>Days</span>
           </div>
-        </section>
-      </section>
-    </Fragment>
+          <span>:</span>
+          <div className={styles.element}>
+            <p>{timerHours}</p>
+            <span>Hours</span>
+          </div>
+          <span>:</span>
+          <div className={styles.element}>
+            <p>{timerMinutes}</p>
+            <span>Minutes</span>
+          </div>
+          <span>:</span>
+          <div className={styles.element}>
+            <p>{timerSeconds}</p>
+            <span>Seconds</span>
+          </div>
+        </div>
+    </>
   );
 };
 
