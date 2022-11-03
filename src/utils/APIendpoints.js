@@ -1,4 +1,4 @@
-const BASE_URL = process.env.NODE_ENV === 'production' ? '' : 'http://127.0.0.1:8000'
+const BASE_URL = process.env.API_HOST || 'http://127.0.0.1:8000'
 
 const ENDPOINTS = {
     GH_LOGIN: BASE_URL + '/accounts/github/login/',
