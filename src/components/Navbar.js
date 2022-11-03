@@ -60,9 +60,9 @@ const Navbar = (props) => {
 
           <div className="test">
             <ul>
-              <p className="rules" onClick={showModalHandler}>
+              <a className="rules" onClick={showModalHandler}>
                 Rules
-              </p>
+              </a>
             </ul>
           </div>
 
