@@ -8,7 +8,7 @@ const Timer = ({ timer }) => {
   const [timerSeconds, setTimerSeconds] = useState();
 
   useEffect(() => {
-    const countDownDate = new Date("November 30,2022").getTime();
+    const countDownDate = new Date("November 4,2022").getTime();
     const interval = setInterval(() => {
       const now = new Date().getTime();
 
