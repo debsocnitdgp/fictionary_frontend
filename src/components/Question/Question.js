@@ -4,7 +4,6 @@ import endpoints from "../../utils/APIendpoints";
 import { useState } from "react";
 import HintModal from "./HintModal";
 import SnackBar from "./SnackBar";
-import { handleGoogleLogin } from "../Login/Login";
 import HintCountDown from "./HintCountDown";
 import useContext from "../../utils/Context";
 import { useNavigate } from "react-router-dom";
@@ -58,7 +57,7 @@ const Question = () => {
       },
     }).then((res) => {
       if (res.status === 401) {
-        handleGoogleLogin();
+        navigate("/signin?redirected=true");
       }
       res.json().then((res) => {
         if(res.game_not_live) {

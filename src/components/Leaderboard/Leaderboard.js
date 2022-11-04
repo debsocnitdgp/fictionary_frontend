@@ -4,11 +4,12 @@ import Score from "./Score";
 import Stars from "./Stars";
 import useContext from "../../utils/Context";
 import endpoints from "../../utils/APIendpoints";
-import { handleGoogleLogin } from "../Login/Login";
+import { useNavigate } from "react-router-dom";
 
 const Leaderboard = () => {
   const [leaderboard, setLeaderboard] = useState([]);
   const token = useContext().token;
+  const navigate = useNavigate();
   const getLeaderboard = () => {
     console.log(token);
     fetch(endpoints.LEADERBOARD, {
@@ -18,7 +19,7 @@ const Leaderboard = () => {
         }`,
       },
     }).then((res) => {
-      if(res.status === 401){ handleGoogleLogin() }
+      if(res.status === 401){ navigate("/signin?redirected=true"); }
       res.json().then((res) => setLeaderboard(res.leaderboard))
     }
     );
