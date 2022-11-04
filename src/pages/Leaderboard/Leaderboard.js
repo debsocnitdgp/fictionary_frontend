@@ -11,7 +11,6 @@ const Leaderboard = () => {
   const token = useContext().token;
   const navigate = useNavigate();
   const getLeaderboard = () => {
-    console.log(token);
     fetch(endpoints.LEADERBOARD, {
       headers: {
         Authorization: `Token ${
@@ -19,24 +18,36 @@ const Leaderboard = () => {
         }`,
       },
     }).then((res) => {
-      if(res.status === 401){ navigate("/signin?redirected=true"); }
-      res.json().then((res) => setLeaderboard(res.leaderboard))
-    }
-    );
+      if (res.status === 401) {
+        navigate("/signin?redirected=true");
+      } else {
+        res.json().then((res) => {
+          if (res.game_not_live) {
+            navigate("/?redirected=true");
+          } else {
+            setLeaderboard(res.leaderboard);
+          }
+        });
+      }
+    });
   };
 
   useEffect(getLeaderboard, [token]);
   return (
     <div>
       <div className="img">
-
         <div className="leaderboardItems">
-          
           <h1 className="leaderboardHeader">Leaderboard</h1>
           {leaderboard.length !== 0 ? (
             <>
               {leaderboard.map((elem, index) => (
-                <Score  className="score" name={elem.name} score={elem.points} avatar={elem.avatar} key={index} />
+                <Score
+                  className="score"
+                  name={elem.name}
+                  score={elem.points}
+                  avatar={elem.avatar}
+                  key={index}
+                />
               ))}
             </>
           ) : (
