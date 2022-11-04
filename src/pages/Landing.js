@@ -2,7 +2,7 @@ import React from "react";
 import "./Landing.css";
 import "./Leaderboard/Stars";
 import Stars from "./Leaderboard/Stars";
-import Timer from "./Timer";
+import Timer from "../components/Timer";
 
 const Landing = () => {
   return (

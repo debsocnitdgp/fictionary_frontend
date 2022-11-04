@@ -1,9 +1,0 @@
-.inc{
-    background: rgba(253, 56, 56, 0.4);
-        border: 3px solid #DF7979;
-        backdrop-filter: blur(16px);
-        /* Note: backdrop-filter has minimal browser support */
-    
-        border-radius: 16px;
-        
-}

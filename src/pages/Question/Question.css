@@ -62,6 +62,7 @@
 
 .answer::placeholder {
   opacity: 0.6;
+  color: white;
   font-family: "Orbitron";
 }
 
