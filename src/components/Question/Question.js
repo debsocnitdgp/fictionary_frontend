@@ -24,7 +24,6 @@ const Question = () => {
   const [timer, setTimer] = useState(0);
   const token = useContext().token;
   const updateHint = () => {
-    console.log("updating hint");
     fetch(endpoints.CHECK_HINT_AVAILABLE, {
       headers: {
         Authorization: `Token ${
@@ -35,7 +34,6 @@ const Question = () => {
       res.json().then((serverResponse) => {
         if (res.status === 200) {
           clearTimeout(timer);
-          console.log(hintCountdown + " " + timer);
           if (serverResponse.available) {
             setHintCountdown(null);
           } else {
@@ -144,6 +142,16 @@ const Question = () => {
                   <div className="round">R-{state.question.round}</div>
                 </div>
                 <p className="question">{state.question.text}</p>
+                {state.question.media && (
+                  <div className="ques-img-wrap">
+                    <img
+                      src={endpoints.BASE_URL + state.question.media}
+                      alt="hint"
+                      className="ques-img"
+                      onClick={() => window.open(endpoints.BASE_URL + state.question.media, "_blank")}
+                    />
+                  </div>
+                )}
                 <input
                   className="answer"
                   id="answerInput"

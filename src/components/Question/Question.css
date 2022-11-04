@@ -8,15 +8,15 @@
   position: fixed;
   top: 0%;
   left: 0%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .ques-container {
   padding: 0 100px;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  height: fit-content;
+  width: fit-content;
   font-family: "Orbitron";
   font-style: normal;
   font-size: 50px;
@@ -25,7 +25,8 @@
 
 .ques-box {
   position: relative;
-  width: 900px;
+  width: fit-content;
+  min-width: 60vw;
   padding: 0 30px;
   background: rgba(3, 61, 80, 0.4);
   display: flex;
@@ -48,6 +49,7 @@
   background: rgba(116, 160, 192, 0.6);
   border: none;
   border-bottom: 4px solid #58a1b9;
+  border-top: 4px solid transparent;
   padding: 8px 16px;
   outline: none;
   color: white;
@@ -55,6 +57,12 @@
   margin: auto;
   margin-top: 1rem;
   margin-bottom: 1rem;
+  border-radius: 12px 12px 0 0;
+}
+
+.answer::placeholder {
+  opacity: 0.6;
+  font-family: "Orbitron";
 }
 
 .btns {
@@ -119,7 +127,7 @@
 
 .submit_bg {
   padding: 4px;
-  clip-path: polygon(25% 28%, 100% 28%, 100% 100%, 0 100%);
+  clip-path: polygon(25% 30%, 100% 30%, 100% 100%, 1% 100%);
   background: #58a1b9;
   height: fit-content;
   margin-top: 1rem;
@@ -137,12 +145,6 @@
   padding-left: 43px;
   padding-right: 27px;
   margin: 0px;
-}
-
-::placeholder {
-  color: #ffffff;
-  font-family: "Orbitron";
-  font-style: normal;
 }
 
 .round1 {
@@ -180,6 +182,22 @@ button {
   padding-left: 27px;
   margin: 0px;
 }
+
+.ques-img {
+  max-width: 300px;
+  width: inherit;
+  height: auto;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.ques-img-wrap {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 @media screen and (max-width: 900px) {
   .ques-box {
     width: 90%;

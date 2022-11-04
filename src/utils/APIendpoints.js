@@ -3,6 +3,7 @@ const BASE_URL = process.env.REACT_APP_API_HOST || 'http://127.0.0.1:8000'
 console.log(BASE_URL)
 
 const ENDPOINTS = {
+    BASE_URL,
     GH_LOGIN: BASE_URL + '/accounts/github/login/',
     GOOGLE_LOGIN: BASE_URL + '/accounts/google/login/',
     CHECK_HINT_AVAILABLE: BASE_URL + '/api/check-clue-available/',

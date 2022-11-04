@@ -20,7 +20,7 @@
     backdrop-filter: blur(8px);
 }
 
-img {
+.score-avatar {
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -51,7 +51,7 @@ img {
         margin-top: 2rem;
     }
 
-    img {
+    .score-avatar {
         width: 35px;
         height: 35px;
         border-radius: 50%;
