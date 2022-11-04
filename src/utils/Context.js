@@ -1,4 +1,9 @@
-import { createContext, useState, useContext as _useContext, useEffect } from "react";
+import {
+  createContext,
+  useState,
+  useContext as _useContext,
+  useEffect,
+} from "react";
 
 const Context = createContext();
 
@@ -14,11 +19,11 @@ const Provider = ({ children }) => {
   };
 
   useEffect(() => {
-    window.addEventListener('load', () => {
-      var _token = localStorage.getItem('fictionary_token');
-      if(_token){ setToken(_token); }
-    })
-  }, [])
+    var _token = localStorage.getItem("fictionary_token");
+    if (_token) {
+      setToken(_token);
+    }
+  }, []);
 
   return (
     <Context.Provider value={{ token, login, logout }}>
