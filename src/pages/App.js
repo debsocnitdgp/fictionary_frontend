@@ -4,6 +4,7 @@ import Landing from "./Landing.js";
 import Question from "./Question/Question.js";
 import Leaderboard from "./Leaderboard/Leaderboard.js";
 import Login from "./Login/Login.js";
+import GameOver from "./GameOver/GameOver.js";
 import Footer from "../components/Footer/Footer.js"
 
 import "./App.css";
@@ -32,6 +33,7 @@ const App = () => {
           <Route path="/question" element={<Question />} />
           <Route path="/leaderboard" element={<Leaderboard />} />
           <Route path="/signin" element={<Login />} />
+          <Route path="/game-finished" element={<GameOver />} />
         </Routes>
       </div>
     </Router>

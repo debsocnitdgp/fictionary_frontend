@@ -1,0 +1,58 @@
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .box {
+    position: relative;
+    width: fit-content;
+    min-width: 60vw;
+    padding: 30px;
+    background: rgba(3, 61, 80, 0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #58a1b9;
+    backdrop-filter: blur(16px);
+    border-radius: 0px 12px;
+    font-family: "Orbitron";
+    color: white;
+  }
+  
+  .btn {
+    font-family: "Orbitron", sans-serif;
+    padding: 9px 29px;
+    background: rgba(3, 61, 80, 0.4);
+    border: 2px solid #58a1b9;
+    box-shadow: 0px 0px 4px #65beda;
+    backdrop-filter: blur(12px);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 19px;
+    color: #7bdaf9;
+    margin-right: 10px;
+    width: fit-content;
+    margin: 12px;
+  }
+  
+  .message {
+    font-family: "Iceland", cursive;
+    text-align: center;
+    letter-spacing: 0.1rem;
+    text-shadow: 0 0 4px #00ff00, 0 0 12px #00ff00;
+    font-size: 1.5rem;
+    color: #afedb1;
+    opacity: 0.9;
+    text-transform: uppercase;
+  }
+  
+  @media (max-width: 500px) {
+    .box {
+      width: 80vw;
+    }
+  }
+  

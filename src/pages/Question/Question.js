@@ -63,7 +63,7 @@ const Question = () => {
         if(res.game_not_live) {
           navigate("/?redirected=true");
         } else if (res.gameOver) {
-          alert("Game is over!");
+          navigate("/game-finished")
         } else {
           clearInterval(timer);
           updateHint();
