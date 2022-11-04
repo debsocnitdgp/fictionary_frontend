@@ -11,7 +11,8 @@ const ENDPOINTS = {
     ANSWER: BASE_URL + '/api/answer/',
     CLUE: BASE_URL + '/api/clue/',
     SOCIAL_LOGIN_TOKEN: BASE_URL + '/api/accounts/get-social-token/',
-    LEADERBOARD: BASE_URL + '/api/leaderboard/'
+    LEADERBOARD: BASE_URL + '/api/leaderboard/',
+    CHECK_GAME_LIVE: BASE_URL + '/api/check-game-live/'
 }
 
 export default ENDPOINTS;
