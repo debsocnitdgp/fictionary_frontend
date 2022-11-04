@@ -35,7 +35,8 @@ const NavbarResponsive = (props) => {
           />
         </svg>
       </button>
-      <div className="nav">
+      <div className="nav-wrapper">
+        <div className="nav">
         <Link to="/question" className="link" onClick={props.hideNav}>
           PLAY
         </Link>
@@ -45,6 +46,7 @@ const NavbarResponsive = (props) => {
         <Link to="/leaderboard" className="link" onClick={props.hideNav}>
           LEADERBOARD
         </Link>
+        </div>
       </div>
     </div>
   );
