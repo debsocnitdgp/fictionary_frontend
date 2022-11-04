@@ -13,6 +13,7 @@ a.facebook {
 a.instagram {
   color: white;
 }
+
 .container{
    
    z-index: 100000000;
@@ -24,4 +25,20 @@ a.instagram {
 .icons a{
     margin: 12px;
 }
+a.github{
+  color: white;
+}
+.logods{
+  z-index: 11111111111;
+height: 31px;
+    width: 28px;
 
+}
+@media screen and (max-width: 450px){
+  // .container {
+
+  //   width: 12px;
+   
+
+  // }
+}
