@@ -29,12 +29,14 @@ const Leaderboard = () => {
   return (
     <div>
       <div className="img">
+
         <div className="leaderboardItems">
+          
           <h1 className="leaderboardHeader">Leaderboard</h1>
           {leaderboard.length !== 0 ? (
             <>
               {leaderboard.map((elem, index) => (
-                <Score name={elem.name} score={elem.points} avatar={elem.avatar} key={index} />
+                <Score  className="score" name={elem.name} score={elem.points} avatar={elem.avatar} key={index} />
               ))}
             </>
           ) : (

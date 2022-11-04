@@ -34,27 +34,34 @@ const Navbar = (props) => {
     <>
       <nav className="main-nav">
         {modalOpen && <Rules onHideRules={hideModalHandler} />}
-        <button onClick={props.showNav} className="open_btn">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="open"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            strokeWidth="1.5"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M4 6h16M4 12h8m-8 6h16"
-            />
-          </svg>
-        </button>
+        <div className="mobile-nav">
+          <button onClick={props.showNav} className="open_btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="open"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth="1.5"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M4 6h16M4 12h8m-8 6h16"
+              />
+            </svg>
+          </button>
+          <div className="button" to="/question">
+            FICTIONARY
+          </div>
+        </div>
 
         <div className="middle">
           <div className="home">
             <ul>
-              <Link className="button" to="/question">Play</Link>
+              <Link className="button" to="/question">
+                Play
+              </Link>
             </ul>
           </div>
 
@@ -68,7 +75,9 @@ const Navbar = (props) => {
 
           <div className="leader">
             <ul>
-              <Link className="button" to="/leaderboard">Leaderboard</Link>
+              <Link className="button" to="/leaderboard">
+                Leaderboard
+              </Link>
             </ul>
           </div>
         </div>
