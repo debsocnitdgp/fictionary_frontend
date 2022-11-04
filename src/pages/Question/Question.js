@@ -7,6 +7,7 @@ import SnackBar from "./SnackBar";
 import HintCountDown from "./HintCountDown";
 import useContext from "../../utils/Context";
 import { useNavigate } from "react-router-dom";
+import Stars from "../Leaderboard/Stars";
 
 const Question = () => {
   const [state, setState] = React.useState({
@@ -140,6 +141,7 @@ const Question = () => {
         success={snackbarOptions.success}
       />
       <div className="ques">
+        <Stars />
         <section className="ques-container">
           {state.loaded ? (
             <>
