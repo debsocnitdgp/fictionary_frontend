@@ -14,31 +14,30 @@ a.instagram {
   color: white;
 }
 
-.container{
-   
-   z-index: 100000000;
+.container {
+  z-index: 100000000;
    position: fixed;
-   bottom: 12px;
-   left: 50%;
-   transform: translateX(-50%);
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
 }
-.icons a{
-    margin: 12px;
+.icons a {
+  margin: 12px;
 }
-a.github{
+a.github {
   color: white;
 }
-.logods{
+.logods {
   z-index: 11111111111;
-height: 31px;
-    width: 28px;
-
+  height: 31px;
+  width: 28px;
 }
-@media screen and (max-width: 450px){
-  // .container {
 
-  //   width: 12px;
-   
-
-  // }
+.icons {
+  width: max-content;
+}
+@media screen and (max-width: 450px) {
+  .icons a {
+    margin: 8px;
+  }
 }
