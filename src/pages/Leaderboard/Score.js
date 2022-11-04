@@ -5,7 +5,7 @@ const Score = (props) => {
       <div className="score">
         <div className="start">
           <img
-            src="https://icon-library.com/images/default-profile-icon/default-profile-icon-24.jpg"
+            src={props.avatar}
             alt=""
             className="score-avatar"
           />

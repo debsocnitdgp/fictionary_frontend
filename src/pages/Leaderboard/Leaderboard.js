@@ -34,7 +34,7 @@ const Leaderboard = () => {
           {leaderboard.length !== 0 ? (
             <>
               {leaderboard.map((elem, index) => (
-                <Score name={elem.name} score={elem.points} key={index} />
+                <Score name={elem.name} score={elem.points} avatar={elem.avatar} key={index} />
               ))}
             </>
           ) : (
