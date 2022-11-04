@@ -35,6 +35,24 @@ a {
   margin-left: 10px;
   text-shadow: 0 0 5px #afecff;
 }
+
+.time {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.game-not-live {
+  font-family: "Iceland", cursive;
+  text-align: center;
+  letter-spacing: 0.1rem;
+  text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000;
+  font-size: 2rem;
+  color: #edafaf;
+  opacity: 0.9;
+}
+
 @media screen and (max-width: 1000px) {
   .fic{
       font-size: 8rem;

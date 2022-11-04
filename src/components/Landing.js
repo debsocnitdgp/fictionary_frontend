@@ -29,11 +29,12 @@ const Landing = () => {
             />
           </svg>
         </Link> */}
-
       </div>
-        <div className="time">
-          <Timer timer="November 31, 2022" />
-        </div>
+      <div className="time">
+        <Timer timer="November 31, 2022" />
+        {new URLSearchParams(window.location.search).get("redirected") ===
+          "true" && <div className="game-not-live">The game is not live yet!</div>}
+      </div>
     </div>
   );
 };

@@ -2,10 +2,12 @@ import React, { useState, Fragment, useEffect } from "react";
 import styles from "./Timer.module.css";
 
 const Timer = ({ timer }) => {
-  const [timerDays, setTimerDays] = useState();
-  const [timerHours, setTimerHours] = useState();
-  const [timerMinutes, setTimerMinutes] = useState();
-  const [timerSeconds, setTimerSeconds] = useState();
+  const [time, setTime] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0
+  });
 
   useEffect(() => {
     const countDownDate = new Date(timer).getTime();
@@ -31,10 +33,12 @@ const Timer = ({ timer }) => {
 
         const seconds = Math.round(distance);
         //update timer
-        setTimerDays(days);
-        setTimerHours(hours);
-        setTimerMinutes(minutes);
-        setTimerSeconds(seconds);
+        setTime({
+          days: days < 10 ? '0' + days : days,
+          hours: hours < 10 ? '0' + hours : hours,
+          minutes: minutes < 10 ? '0' + minutes : minutes,
+          seconds: seconds < 10 ? '0' + seconds : seconds
+        });
       }
     }, 1000);
     return () => clearInterval(interval);
@@ -42,35 +46,29 @@ const Timer = ({ timer }) => {
 
   return (
     <>
-        <div className={styles.clock}>
-          <div className={styles.element}>
-            <p>{timerDays}</p>
-            <span>Days</span>
-          </div>
-          <span>:</span>
-          <div className={styles.element}>
-            <p>{timerHours}</p>
-            <span>Hours</span>
-          </div>
-          <span>:</span>
-          <div className={styles.element}>
-            <p>{timerMinutes}</p>
-            <span>Minutes</span>
-          </div>
-          <span>:</span>
-          <div className={styles.element}>
-            <p>{timerSeconds}</p>
-            <span>Seconds</span>
-          </div>
+      <div className={styles.clock}>
+        <div className={styles.element}>
+          <p>{time.days}</p>
+          <span>Days</span>
         </div>
+        <span>:</span>
+        <div className={styles.element}>
+          <p>{time.hours}</p>
+          <span>Hours</span>
+        </div>
+        <span>:</span>
+        <div className={styles.element}>
+          <p>{time.minutes}</p>
+          <span>Minutes</span>
+        </div>
+        <span>:</span>
+        <div className={styles.element}>
+          <p>{time.seconds}</p>
+          <span>Seconds</span>
+        </div>
+      </div>
     </>
   );
 };
 
-Timer.defaultProps = {
-  timerDays: 10,
-  timerHours: 10,
-  timerMinutes: 10,
-  timerSeconds: 10,
-};
 export default Timer;

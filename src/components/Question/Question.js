@@ -7,11 +7,11 @@ import SnackBar from "./SnackBar";
 import { handleGoogleLogin } from "../Login/Login";
 import HintCountDown from "./HintCountDown";
 import useContext from "../../utils/Context";
+import { useNavigate } from "react-router-dom";
 
 const Question = () => {
   const [state, setState] = React.useState({
     question: { text: "Loading...", round: 0 },
-
     loaded: true,
   });
   const [hintModalOpen, setHintModalOpen] = useState(false);
@@ -22,7 +22,10 @@ const Question = () => {
   });
   const [hintCountdown, setHintCountdown] = useState(null);
   const [timer, setTimer] = useState(0);
+
+  const navigate = useNavigate();
   const token = useContext().token;
+
   const updateHint = () => {
     fetch(endpoints.CHECK_HINT_AVAILABLE, {
       headers: {
@@ -58,12 +61,18 @@ const Question = () => {
         handleGoogleLogin();
       }
       res.json().then((res) => {
-        clearInterval(timer);
-        updateHint();
-        setState({
-          question: res,
-          loaded: true,
-        });
+        if(res.game_not_live) {
+          navigate("/?redirected=true");
+        } else if (res.gameOver) {
+          alert("Game is over!");
+        } else {
+          clearInterval(timer);
+          updateHint();
+          setState({
+            question: res,
+            loaded: true,
+          });
+        }
       });
     });
   };
@@ -91,11 +100,10 @@ const Question = () => {
           });
           setTimeout(
             () =>
-              setSnackbarOptions({
+              setSnackbarOptions((prev) => ({
+                ...prev,
                 show: false,
-                text: "Correct Answer!!",
-                success: true,
-              }),
+              })),
             3000
           );
           getQuestion();
@@ -107,11 +115,10 @@ const Question = () => {
           });
           setTimeout(
             () =>
-              setSnackbarOptions({
+              setSnackbarOptions((prev) => ({
+                ...prev,
                 show: false,
-                text: "Wrong Answer. Please try again.",
-                success: false,
-              }),
+              })),
             3000
           );
         }
@@ -148,7 +155,12 @@ const Question = () => {
                       src={endpoints.BASE_URL + state.question.media}
                       alt="hint"
                       className="ques-img"
-                      onClick={() => window.open(endpoints.BASE_URL + state.question.media, "_blank")}
+                      onClick={() =>
+                        window.open(
+                          endpoints.BASE_URL + state.question.media,
+                          "_blank"
+                        )
+                      }
                     />
                   </div>
                 )}
