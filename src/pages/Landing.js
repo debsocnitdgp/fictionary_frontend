@@ -25,7 +25,7 @@ const Landing = () => {
 
   useEffect(() => refresh, []);
   return (
-    <div>
+    <div className="landing-container">
       <div>
         <h1 className="fic">FICTIONARY </h1>
         <Stars />
