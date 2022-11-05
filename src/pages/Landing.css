@@ -21,7 +21,7 @@
   margin: auto;
   color: #afecff;
   text-shadow: 0 0 5px #afecff;
-  margin-top: 30px;
+  margin-top: 104px;
   display: flex;
 }
 
@@ -81,9 +81,9 @@ a {
   .play {
     font-size: 1.5rem;
     margin: auto;
-    margin-top: 50px;
+    margin-top: 228px;;
     display: flex;
-    font-weight: bold;
+    font-weight: bolder;
   }
 
   .arrow {
