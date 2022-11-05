@@ -23,7 +23,7 @@ const Landing = () => {
     });
   };
 
-  useEffect(() => refresh, []);
+  useEffect(() => { refresh();console.log("refreshing") }, []);
   return (
     <div className="landing-container">
       <div>
