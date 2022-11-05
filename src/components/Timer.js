@@ -1,7 +1,7 @@
 import React, { useState, Fragment, useEffect } from "react";
 import styles from "./Timer.module.css";
 
-const Timer = ({ timer }) => {
+const Timer = ({ timer, refresh }) => {
   const [time, setTime] = useState({
     days: 0,
     hours: 0,
@@ -20,6 +20,7 @@ const Timer = ({ timer }) => {
         //Stop Timer
 
         clearInterval(interval);
+        refresh();
       } else {
         distance /= 1000;
 

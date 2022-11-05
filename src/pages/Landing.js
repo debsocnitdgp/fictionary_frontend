@@ -12,8 +12,7 @@ const Landing = () => {
     game_live: true,
     date: new Date(),
   });
-
-  useEffect(() => {
+  const refresh = () => {
     fetch(ENDPOINTS.CHECK_GAME_LIVE).then((res) => {
       if (res.status === 200) {
         res.json().then((serverResponse) => {
@@ -22,7 +21,9 @@ const Landing = () => {
         });
       }
     });
-  }, []);
+  };
+
+  useEffect(() => refresh, []);
   return (
     <div>
       <div>
@@ -51,7 +52,7 @@ const Landing = () => {
         </div>
       ) : (
         <div className="time">
-          <Timer timer={new Date(gameLive.date)} />
+          <Timer timer={new Date(gameLive.date)} refresh={refresh}/>
           {new URLSearchParams(window.location.search).get("redirected") ===
             "true" && (
             <div className="game-not-live">The game is not live yet!</div>
