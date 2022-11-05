@@ -61,10 +61,10 @@ const Question = () => {
         navigate("/signin?redirected=true");
       }
       res.json().then((res) => {
-        if(res.game_not_live) {
+        if (res.game_not_live) {
           navigate("/?redirected=true");
         } else if (res.gameOver) {
-          navigate("/game-finished")
+          navigate("/game-finished");
         } else {
           clearInterval(timer);
           updateHint();
@@ -169,7 +169,12 @@ const Question = () => {
                   className="answer"
                   id="answerInput"
                   type="text"
-                  placeholder="type your answer  here"
+                  placeholder="type your answer here"
+                  onKeyDown={(evt) => {
+                    if (evt.key === "Enter") {
+                      checkAnswer();
+                    }
+                  }}
                 />
                 {hintCountdown && (
                   <HintCountDown time={hintCountdown} id={timer} />
