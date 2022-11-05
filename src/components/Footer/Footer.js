@@ -31,44 +31,44 @@ const Footer = () => {
   }, [location.pathname]);
 
   return (
-      <div className={styles.icons}>
-        <a href="https://www.debsocnitdgp.in/" target="_blank" rel="noreferrer">
-          <img className={styles.logods} src={image} alt="ds-logo" />
-        </a>
-        <a
-          href="https://www.youtube.com/channel/UCx7ixKEIib3ikQd_QBEY9Qw"
-          className={styles.youtube}
-          target="_blank"
-          rel="noreferrer"
-        >
-          <FontAwesomeIcon icon={faYoutube} size="2x" />
-        </a>
-        <a
-          href="https://m.facebook.com/debatingsociety3103.nitd/"
-          className={styles.facebook}
-          target="_blank"
-          rel="noreferrer"
-        >
-          <FontAwesomeIcon icon={faFacebook} size="2x" />
-        </a>
+    <div className={styles.icons}>
+      <a
+        href="https://www.youtube.com/channel/UCx7ixKEIib3ikQd_QBEY9Qw"
+        className={styles.youtube}
+        target="_blank"
+        rel="noreferrer"
+      >
+        <FontAwesomeIcon icon={faYoutube} size="2x" />
+      </a>
+      <a
+        href="https://m.facebook.com/debatingsociety3103.nitd/"
+        className={styles.facebook}
+        target="_blank"
+        rel="noreferrer"
+      >
+        <FontAwesomeIcon icon={faFacebook} size="2x" />
+      </a>
+      <a href="https://www.debsocnitdgp.in/" target="_blank" rel="noreferrer">
+        <img className={styles.logods} src={image} alt="ds-logo" />
+      </a>
 
-        <a
-          href="https://www.instagram.com/debsocnitd/"
-          className={styles.instagram}
-          target="_blank"
-          rel="noreferrer"
-        >
-          <FontAwesomeIcon icon={faInstagram} size="2x" />
-        </a>
-        <a
-          href="https://github.com/debsocnitdgp"
-          className={styles.github}
-          target="_blank"
-          rel="noreferrer"
-        >
-          <FontAwesomeIcon icon={faGithub} size="2x" />
-        </a>
-      </div>
+      <a
+        href="https://www.instagram.com/debsocnitd/"
+        className={styles.instagram}
+        target="_blank"
+        rel="noreferrer"
+      >
+        <FontAwesomeIcon icon={faInstagram} size="2x" />
+      </a>
+      <a
+        href="https://github.com/debsocnitdgp"
+        className={styles.github}
+        target="_blank"
+        rel="noreferrer"
+      >
+        <FontAwesomeIcon icon={faGithub} size="2x" />
+      </a>
+    </div>
   );
 };
 

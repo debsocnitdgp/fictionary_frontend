@@ -51,12 +51,10 @@ const Navbar = (props) => {
               />
             </svg>
           </button>
-          <div className="button" to="/question">
-            FICTIONARY
-          </div>
         </div>
-
-        <div className="middle">
+        <div className="button" to="/question">
+          FICTIONARY
+        </div>
           <div className="home">
             <ul>
               <Link className="button" to="/question">
@@ -80,7 +78,6 @@ const Navbar = (props) => {
               </Link>
             </ul>
           </div>
-        </div>
 
         {context.token || localStorage.getItem("fictionary_frontend") ? (
           <div className="sign" onClick={handleLogOut}>

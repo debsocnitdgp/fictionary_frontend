@@ -74,6 +74,13 @@ a:hover {
 .open:hover {
   color: #adff2f;
 }
+
+@media screen and (min-width: 750px){
+  .mobile-nav{
+    display: none;
+  }
+
+}
 @media screen and (max-width: 750px) {
   .middle {
     display: none;
@@ -111,4 +118,11 @@ a:hover {
   /* margin-right: 30px; */
 
   }
+}
+.button{
+  color: #afecff;
+  padding: 16px;
+  /* align-self: flex-start;
+  justify-self: start; */
+  /* float: left; */
 }
