@@ -1,14 +1,3 @@
-.img {
-    width: 100%;
-    height: 100vh;
-    background: url("/public/leaderboard.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: fixed;
-    top: 0%;
-    left: 0%;
-}
 
 .leaderboardHeader {
     font-family: "Orbitron";
@@ -20,10 +9,6 @@
     text-align: center;
     padding-top: 60px;
     letter-spacing: 0.3rem;
-}
-.leaderboardItems {
-    overflow-y: auto;
-    max-height: 100vh;
 }
 
 @media screen and (max-width: 550px) {

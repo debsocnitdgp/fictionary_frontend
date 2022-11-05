@@ -14,13 +14,6 @@ a.instagram {
   color: white;
 }
 
-.container {
-  z-index: 100000000;
-   position: fixed;
-  bottom: 12px;
-  left: 50%;
-  transform: translateX(-50%);
-}
 .icons a {
   margin: 12px;
 }
@@ -37,10 +30,11 @@ a.github {
 }
 
 .icons {
-  width: max-content;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  max-height: 72px;
 }
 @media screen and (max-width: 450px) {
   .icons a {

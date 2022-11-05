@@ -1,13 +1,6 @@
 .ques {
   width: 100%;
-  min-height: 100vh;
-  background: url("/public/question.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: fixed;
-  top: 0%;
-  left: 0%;
+  min-height: calc(100vh - 144px);
   display: flex;
   align-items: center;
   justify-content: center;

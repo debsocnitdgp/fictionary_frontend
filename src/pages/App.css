@@ -1,15 +1,22 @@
-.bg{
+.bg {
   width: 100%;
   height: 100vh;
-  background: url('/public/Final_Landing.jpg');
-  background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: fixed;
-      top: 0%;
-      left: 0%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-top: 72px;
+  min-height: 100vh;
+  max-height: calc(100vh + 144px);
 }
 
-*, *::after, *::before {
+.app-container {
+  width: 100%;
+  height: calc(100vh - 72px);
+  overflow-y: auto;
+}
+
+*,
+*::after,
+*::before {
   box-sizing: border-box;
 }

@@ -34,29 +34,162 @@ const Leaderboard = () => {
 
   useEffect(getLeaderboard, [token]);
   return (
-    <div>
-      <div className="img">
-        <div className="leaderboardItems">
-          <h1 className="leaderboardHeader">Leaderboard</h1>
-          {leaderboard.length !== 0 ? (
-            <>
-              {leaderboard.map((elem, index) => (
-                <Score
-                  className="score"
-                  name={elem.name}
-                  score={elem.points}
-                  avatar={elem.avatar}
-                  key={index}
-                />
-              ))}
-            </>
-          ) : (
-            <span>Loading...</span>
-          )}
-        </div>
-        <Stars />
+    <>
+      <div className="leaderboardItems">
+        <h1 className="leaderboardHeader">Leaderboard</h1>
+        {leaderboard.length !== 0 ? (
+          <>
+            {leaderboard.map((elem, index) => (
+              <Score
+                className="score"
+                name={elem.name}
+                score={elem.points}
+                avatar={elem.avatar}
+                key={index}
+              />
+            ))}
+            {leaderboard.map((elem, index) => (
+              <Score
+                className="score"
+                name={elem.name}
+                score={elem.points}
+                avatar={elem.avatar}
+                key={index}
+              />
+            ))}
+            {leaderboard.map((elem, index) => (
+              <Score
+                className="score"
+                name={elem.name}
+                score={elem.points}
+                avatar={elem.avatar}
+                key={index}
+              />
+            ))}
+            {leaderboard.map((elem, index) => (
+              <Score
+                className="score"
+                name={elem.name}
+                score={elem.points}
+                avatar={elem.avatar}
+                key={index}
+              />
+            ))}
+            {leaderboard.map((elem, index) => (
+              <Score
+                className="score"
+                name={elem.name}
+                score={elem.points}
+                avatar={elem.avatar}
+                key={index}
+              />
+            ))}
+            {leaderboard.map((elem, index) => (
+              <Score
+                className="score"
+                name={elem.name}
+                score={elem.points}
+                avatar={elem.avatar}
+                key={index}
+              />
+            ))}
+            {leaderboard.map((elem, index) => (
+              <Score
+                className="score"
+                name={elem.name}
+                score={elem.points}
+                avatar={elem.avatar}
+                key={index}
+              />
+            ))}
+            {leaderboard.map((elem, index) => (
+              <Score
+                className="score"
+                name={elem.name}
+                score={elem.points}
+                avatar={elem.avatar}
+                key={index}
+              />
+            ))}
+            {leaderboard.map((elem, index) => (
+              <Score
+                className="score"
+                name={elem.name}
+                score={elem.points}
+                avatar={elem.avatar}
+                key={index}
+              />
+            ))}
+            {leaderboard.map((elem, index) => (
+              <Score
+                className="score"
+                name={elem.name}
+                score={elem.points}
+                avatar={elem.avatar}
+                key={index}
+              />
+            ))}
+            {leaderboard.map((elem, index) => (
+              <Score
+                className="score"
+                name={elem.name}
+                score={elem.points}
+                avatar={elem.avatar}
+                key={index}
+              />
+            ))}
+            {leaderboard.map((elem, index) => (
+              <Score
+                className="score"
+                name={elem.name}
+                score={elem.points}
+                avatar={elem.avatar}
+                key={index}
+              />
+            ))}
+            {leaderboard.map((elem, index) => (
+              <Score
+                className="score"
+                name={elem.name}
+                score={elem.points}
+                avatar={elem.avatar}
+                key={index}
+              />
+            ))}
+            {leaderboard.map((elem, index) => (
+              <Score
+                className="score"
+                name={elem.name}
+                score={elem.points}
+                avatar={elem.avatar}
+                key={index}
+              />
+            ))}
+            {leaderboard.map((elem, index) => (
+              <Score
+                className="score"
+                name={elem.name}
+                score={elem.points}
+                avatar={elem.avatar}
+                key={index}
+              />
+            ))}
+            {leaderboard.map((elem, index) => (
+              <Score
+                className="score"
+                name={elem.name}
+                score={elem.points}
+                avatar={elem.avatar}
+                key={index}
+              />
+            ))}
+          </>
+        ) : (
+          <span>Loading...</span>
+        )}
       </div>
-    </div>
+      <Stars />
+    </>
   );
 };
 

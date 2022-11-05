@@ -8,10 +8,29 @@ import {
   faGithub,
 } from "@fortawesome/free-brands-svg-icons";
 import image from "../../../src/DEBSOClogowhitePNG.png";
+import { useLocation } from "react-router";
 
 const Footer = () => {
+  const location = useLocation();
+
+  React.useEffect(() => {
+    const images = {
+      "/question": "/question.jpg",
+      "/": "/Final_Landing.jpg",
+      "/leaderboard": "/leaderboard.jpg",
+    };
+
+    const bg = images[location.pathname] || images["/"];
+    const bg_elem = document.getElementById("bg");
+    if (bg_elem) {
+      bg_elem.style.background = `url(${bg})`;
+      bg_elem.style.backgroundPosition = "center";
+      bg_elem.style.backgroundSize = "cover";
+      bg_elem.style.backgroundRepeat = "no-repeat";
+    }
+  }, [location.pathname]);
+
   return (
-    <div className={styles.container}>
       <div className={styles.icons}>
         <a href="https://www.debsocnitdgp.in/" target="_blank" rel="noreferrer">
           <img className={styles.logods} src={image} alt="ds-logo" />
@@ -50,7 +69,6 @@ const Footer = () => {
           <FontAwesomeIcon icon={faGithub} size="2x" />
         </a>
       </div>
-    </div>
   );
 };
 
