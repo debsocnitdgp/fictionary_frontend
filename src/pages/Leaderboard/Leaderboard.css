@@ -9,6 +9,11 @@
     text-align: center;
     padding-top: 60px;
     letter-spacing: 0.3rem;
+    margin: 0;
+}
+
+.leaderboardItems {
+    min-height: calc(100vh - 144px);
 }
 
 @media screen and (max-width: 550px) {
