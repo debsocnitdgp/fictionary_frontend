@@ -35,7 +35,7 @@ const Navbar = (props) => {
       <nav className="main-nav">
         {modalOpen && <Rules onHideRules={hideModalHandler} />}
         <div className="mobile-nav">
-          <button onClick={props.showNav} className="open_btn">
+          <button onClick={props.showNav} className="open_btn" id="mobile-nav-openbtn">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="open"
