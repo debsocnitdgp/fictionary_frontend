@@ -30,7 +30,7 @@ const Landing = () => {
         <h1 className="fic">FICTIONARY </h1>
         <Stars />
       </div>
-      { false ? (
+      { gameLive.game_live ? (
         <div className="play_now">
           <Link to="/question" className="play">
             PLAY NOW
