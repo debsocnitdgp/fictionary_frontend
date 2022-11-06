@@ -55,7 +55,8 @@ const Navbar = (props) => {
         <div className="button" to="/question">
           FICTIONARY
         </div>
-          <div className="home vanish" >
+        <div className="middle">
+          <div className="home vanish">
             <ul>
               <Link className="button" to="/question">
                 Play
@@ -78,6 +79,7 @@ const Navbar = (props) => {
               </Link>
             </ul>
           </div>
+        </div>
 
         {context.token || localStorage.getItem("fictionary_frontend") ? (
           <div className="sign" onClick={handleLogOut}>
