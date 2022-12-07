@@ -2,13 +2,13 @@ import { Link, useNavigate } from "react-router-dom";
 import "./Navbar.css";
 import Rules from "./Rules/Rules";
 import React, { useState } from "react";
-import endpoints from "../utils/APIendpoints";
 import useContext from "../utils/Context";
 
 const Navbar = (props) => {
   const [modalOpen, setmodalOpen] = useState(false);
   const context = useContext()
   const navigate = useNavigate();
+  
 
   const showModalHandler = () => {
     setmodalOpen(true);
@@ -20,11 +20,12 @@ const Navbar = (props) => {
   };
 
   const handleGoogleLogin = () => {
-    const form = document.createElement("form");
-    form.method = "POST";
-    form.action = endpoints.GOOGLE_LOGIN;
-    document.body.appendChild(form);
-    form.submit();
+    // const form = document.createElement("form");
+    // form.method = "POST";
+    // form.action = endpoints.GOOGLE_LOGIN;
+    // document.body.appendChild(form);
+    // form.submit();
+    navigate("/signin")
   };
   const handleLogOut = () => {
     context.logout();
