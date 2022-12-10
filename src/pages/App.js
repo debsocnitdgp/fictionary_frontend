@@ -8,7 +8,7 @@ import GameOver from "./GameOver/GameOver.js";
 import Footer from "../components/Footer/Footer.js";
 
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+  import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NavbarResponsive from "../components/NavbarResponsive.js";
 
 const App = () => {
