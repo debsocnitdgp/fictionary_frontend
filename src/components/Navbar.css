@@ -106,7 +106,6 @@ font-size: 24px;
 @media screen and (max-width: 1000px) {
   .middle {
     width: 65%;
-    font-size: 1.5rem;
   }
   .si {
     padding: 6px 21px;
