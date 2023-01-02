@@ -9,6 +9,8 @@ import useContext from "../../utils/Context";
 import { useNavigate } from "react-router-dom";
 import Stars from "../Leaderboard/Stars";
 
+import { ColorRing } from "react-loader-spinner";
+
 const Question = () => {
   const [state, setState] = React.useState({
     question: { text: "Loading...", round: 0 },
@@ -200,13 +202,15 @@ const Question = () => {
             </>
           ) : (
             <div className="box">
-              <span>L</span>
-              <span>O</span>
-              <span>A</span>
-              <span>D</span>
-              <span>I</span>
-              <span>N</span>
-              <span>G</span>
+              <ColorRing
+                visible={true}
+                height="135"
+                width="135"
+                ariaLabel="blocks-loading"
+                wrapperStyle={{}}
+                wrapperClass="blocks-wrapper"
+                colors={["#65beda", "#65beda", "#65beda", "#65beda", "#65beda"]}
+              />
             </div>
           )}
         </section>
