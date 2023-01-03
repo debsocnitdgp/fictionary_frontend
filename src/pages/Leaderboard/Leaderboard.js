@@ -5,6 +5,7 @@ import Stars from "./Stars";
 import useContext from "../../utils/Context";
 import endpoints from "../../utils/APIendpoints";
 import { useNavigate } from "react-router-dom";
+import { ColorRing } from "react-loader-spinner";
 
 const Leaderboard = () => {
   const [leaderboard, setLeaderboard] = useState([]);
@@ -50,7 +51,17 @@ const Leaderboard = () => {
             ))}
           </>
         ) : (
-          <span>Loading...</span>
+          <div className="loader">
+            <ColorRing
+              visible={true}
+              height="135"
+              width="135"
+              ariaLabel="blocks-loading"
+              wrapperStyle={{}}
+              wrapperClass="blocks-wrapper"
+              colors={["#65beda", "#65beda", "#65beda", "#65beda", "#65beda"]}
+            />
+          </div>
         )}
       </div>
       <Stars />
