@@ -8,8 +8,9 @@
   letter-spacing: 0.1rem;
   text-shadow: 0 0 10px #00b3ff, 0 0 20px #00b3ff;
   font-size: 4rem;
-  color: #afd5ed;
+  color: #090123;
   opacity: 0.9;
+  font-weight: bold;
 }
 .element {
   
@@ -24,6 +25,42 @@
 }
 
 .element span {
-  font-size: 1rem;
+  font-size: 2rem;
   text-transform: uppercase;
+}
+
+@media screen and (max-width: 480px){
+  .clock{
+    color: #090123;
+    font-size: 16px;
+    font-weight: bold;
+    
+  }
+  .element span{
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 650px){
+  .clock{
+    color: #090123;
+     font-size: 16px;
+     font-weight: bold;
+  }
+}
+@media screen and (max-width: 1000px){
+
+  .clock{
+    color: #090123;
+     font-size: 16px;
+     font-weight: bold;
+  }
+}
+@media screen and (max-width: 330px) {
+
+  .clock{
+    color: #090123;
+     font-size: 16px;
+     font-weight: bold
+
+  }
 }

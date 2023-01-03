@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 
 const Landing = () => {
   const [gameLive, setGameLive] = useState({
-    game_live: true,
+    game_live: false,
     date: new Date(),
   });
   const refresh = () => {
