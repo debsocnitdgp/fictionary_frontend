@@ -17,9 +17,9 @@ const Rules = (props) => {
           </div>
           <h2 className="rulesH2">Rules</h2>
           <div className="rulesCont">
-            <p>1-Answering each quedtion will award you 10 points</p>
+            <p>1-Answering each question will award you 10 points</p>
             <p>
-              2-Each question's hint will be provided After a specific time displayed in Timer
+              2-Each question's hint will be provided After a specific time displayed in the Timer
               {" "}
             </p>
             <p>3-No negative scoring for wrong answers</p>
