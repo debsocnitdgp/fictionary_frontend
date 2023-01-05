@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import useContext from "../utils/Context";
 import { useGoogleLogin } from "@react-oauth/google";
 import endpoints from "../utils/APIendpoints";
+import Google from "./GoogleIcon";
 
 const Navbar = (props) => {
   const [modalOpen, setmodalOpen] = useState(false);
@@ -81,7 +82,7 @@ const Navbar = (props) => {
             </svg>
           </button>
         </div>
-        <div className="button" to="/question">
+        <div className="button" to="/">
           FICTIONARY
         </div>
         <div className="middle">
@@ -116,7 +117,7 @@ const Navbar = (props) => {
           </div>
         ) : (
           <div className="sign" onClick={handleGoogleLogin}>
-            <button className="si">SIGN IN</button>
+            <button className="si"> <Google width={12} /> SIGN IN</button>
           </div>
         )}
       </nav>

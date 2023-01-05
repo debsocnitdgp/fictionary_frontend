@@ -37,7 +37,7 @@ const Leaderboard = () => {
   return (
     <>
       <div className="leaderboardItems">
-        <h1 className="leaderboardHeader">Leaderboard</h1>
+        <h1 className="leaderboardHeader" data-text="Leaderboard"><span>Leaderboard</span></h1>
         {leaderboard.length !== 0 ? (
           <>
             {leaderboard.map((elem, index) => (
@@ -46,6 +46,7 @@ const Leaderboard = () => {
                 name={elem.name}
                 score={elem.points}
                 avatar={elem.avatar}
+                rank={index+1}
                 key={index}
               />
             ))}
