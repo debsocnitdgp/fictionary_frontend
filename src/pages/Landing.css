@@ -87,6 +87,9 @@ a {
   background: rgba(3, 61, 80, 0.4);
   box-shadow: 0 0 10px #00b3ff, 0 0 20px #00b3ff;
   border: 2px solid #58a1b9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @media screen and (max-width: 1000px) {

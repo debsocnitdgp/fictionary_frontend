@@ -9,6 +9,7 @@ import { Link, useNavigate } from "react-router-dom";
 import useContext from "../utils/Context";
 import { useGoogleLogin } from "@react-oauth/google";
 import endpoints from "../utils/APIendpoints";
+import Google from "../components/GoogleIcon";
 
 const Landing = () => {
   const [gameLive, setGameLive] = useState({
@@ -106,6 +107,7 @@ const Landing = () => {
         ) : (
           <div className="landing-sign-wrapper">
             <button className="landing-sign-in" onClick={handleGoogleLogin}>
+              <Google width="24" />
               Sign In
             </button>
           </div>
