@@ -7,6 +7,7 @@
   color: #afd5ed;
   opacity: 0.9;
   margin: 0;
+  animation: letter-flicker 2s linear infinite;
 }
 
 .play_now {
@@ -51,6 +52,16 @@ a {
   font-size: 2rem;
   color: #edafaf;
   opacity: 0.9;
+  animation: fadeOut 0.2s linear forwards 5s;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 0.9;
+  }
+  to {
+    opacity: 0;
+  }
 }
 
 .landing-container {
