@@ -93,6 +93,9 @@ a {
   .fic {
     font-size: 8rem;
   }
+  .landing-sign-in {
+    margin-top: 60px  ;
+  }
 }
 @media screen and (max-width: 650px) {
   .fic {
@@ -118,6 +121,11 @@ a {
     height: 30px;
     margin-left: 10px;
     text-shadow: 0 0 5px #afecff;
+  }
+
+  .landing-sign-in {
+    margin-top: 120px;
+    font-size: 1rem;
   }
 }
 @media screen and (max-width: 330px) {
