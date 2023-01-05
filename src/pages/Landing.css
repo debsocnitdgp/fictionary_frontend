@@ -7,12 +7,10 @@
   color: #afd5ed;
   opacity: 0.9;
   margin: 0;
-  animation: letter-flicker 2s linear infinite;
 }
 
 .play_now {
   display: flex;
-  
 }
 
 .play {
@@ -70,21 +68,40 @@ a {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  z-index: 10;
+  position: relative;
+}
+
+.landing-sign-in {
+  font-family: "Orbitron", cursive;
+  text-align: center;
+  letter-spacing: 0.1rem;
+  font-size: 1.5rem;
+  color: #00b3ff;
+  opacity: 0.9;
+  margin: 0;
+  padding: 12px 24px;
+  border: none;
+  text-transform: uppercase;
+  backdrop-filter: blur(8px);
+  background: rgba(3, 61, 80, 0.4);
+  box-shadow: 0 0 10px #00b3ff, 0 0 20px #00b3ff;
+  border: 2px solid #58a1b9;
 }
 
 @media screen and (max-width: 1000px) {
-  .fic{
-      font-size: 8rem;
+  .fic {
+    font-size: 8rem;
   }
 }
 @media screen and (max-width: 650px) {
-  .fic{
+  .fic {
     font-size: 6rem;
     font-weight: 600;
   }
 }
 @media screen and (max-width: 480px) {
-  .fic{
+  .fic {
     font-size: 4rem;
     font-weight: 600;
   }
@@ -92,7 +109,7 @@ a {
   .play {
     font-size: 1.5rem;
     margin: auto;
-    margin-top: 228px;;
+    margin-top: 228px;
     display: flex;
     font-weight: bolder;
   }
@@ -104,9 +121,8 @@ a {
   }
 }
 @media screen and (max-width: 330px) {
-  .fic{
+  .fic {
     font-size: 3rem;
     font-weight: 600;
   }
 }
-
