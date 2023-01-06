@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 
 export default function HintCountDown({ time, id }) {
-  console.log(time + ' ' + id);
   const [hintCountdown, setHintCountdown] = useState(time);
   const [intervalId, setIntervalId] = useState([0]);
   var ids = intervalId;
@@ -18,7 +17,6 @@ export default function HintCountDown({ time, id }) {
   useEffect(() => reduceCountdown(time), [time, id]);
   useEffect(
     () => () => {
-      console.log("deleting")
       for (var i = 0; i < intervalId.length - 1; i++) {
         clearTimeout(intervalId[i]);
       }

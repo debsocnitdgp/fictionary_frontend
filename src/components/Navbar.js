@@ -14,11 +14,9 @@ const Navbar = (props) => {
 
   const showModalHandler = () => {
     setmodalOpen(true);
-    console.log("true");
   };
   const hideModalHandler = () => {
     setmodalOpen(false);
-    console.log("false");
   };
 
   const handleGoogleLogin = useGoogleLogin({

@@ -17,13 +17,12 @@ const Landing = () => {
       if (res.status === 200) {
         res.json().then((serverResponse) => {
           setGameLive(serverResponse);
-          console.log(serverResponse);
         });
       }
     });
   };
 
-  useEffect(() => { refresh();console.log("refreshing") }, []);
+  useEffect(() => { refresh(); }, []);
   return (
     <div className="landing-container">
       <div>

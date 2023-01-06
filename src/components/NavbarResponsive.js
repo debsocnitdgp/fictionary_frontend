@@ -7,11 +7,9 @@ const NavbarResponsive = (props) => {
   const [modalOpen, setmodalOpen] = useState(false);
   const showModalHandler = () => {
     setmodalOpen(true);
-    console.log("true");
   };
   const hideModalHandler = () => {
     setmodalOpen(false);
-    console.log("false");
   };
 
   useEffect(() => {
