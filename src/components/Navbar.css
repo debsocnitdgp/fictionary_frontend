@@ -49,6 +49,10 @@ a:hover {
   font-size: 10px;
   color: #7bdaf9;
   margin-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: max-content;
 }
 .middle {
   display: flex;
@@ -119,6 +123,9 @@ font-size: 24px;
     font-size: 12px;
   /* margin-right: 30px; */
 
+  }
+  .button {
+    font-size: 20px !important;
   }
 }
 .button{

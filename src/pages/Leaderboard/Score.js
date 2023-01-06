@@ -4,6 +4,7 @@ const Score = (props) => {
     <div className="scores">
       <div className="score">
         <div className="start">
+          <h3 className="score-rank">{props.rank < 10 ? "0" + props.rank : props.rank}.</h3>
           <img
             src={props.avatar}
             alt=""
