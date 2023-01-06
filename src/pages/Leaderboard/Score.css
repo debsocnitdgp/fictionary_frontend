@@ -33,6 +33,10 @@
     align-items: center;
 }
 
+.score-rank {
+    margin-right: 8px;
+}
+
 @media screen and (max-width: 550px) {
     .score {
         display: flex;

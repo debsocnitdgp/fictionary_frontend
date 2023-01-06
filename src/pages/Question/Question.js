@@ -26,13 +26,13 @@ const Question = () => {
   const [timer, setTimer] = useState(0);
 
   const navigate = useNavigate();
-  const token = useContext().token;
+  const context = useContext();
 
   const updateHint = () => {
     fetch(endpoints.CHECK_HINT_AVAILABLE, {
       headers: {
         Authorization: `Token ${
-          token || localStorage.getItem("fictionary_token")
+          context.token || localStorage.getItem("fictionary_token")
         }`,
       },
     }).then((res) => {
@@ -55,11 +55,12 @@ const Question = () => {
     fetch(endpoints.QUESTION, {
       headers: {
         Authorization: `Token ${
-          token || localStorage.getItem("fictionary_token")
+          context.token || localStorage.getItem("fictionary_token")
         }`,
       },
     }).then((res) => {
       if (res.status === 401) {
+        context.logout();
         navigate("/signin?redirected=true");
       }
       res.json().then((res) => {
@@ -86,7 +87,7 @@ const Question = () => {
       headers: {
         "Content-Type": "application/json",
         Authorization: `Token ${
-          token || localStorage.getItem("fictionary_token")
+          context.token || localStorage.getItem("fictionary_token")
         }`,
       },
       body: JSON.stringify({ answer: answer.value }),
@@ -127,7 +128,7 @@ const Question = () => {
       });
   };
 
-  React.useEffect(getQuestion, [token]);
+  React.useEffect(getQuestion, [context.token]);
 
   return (
     <div>
