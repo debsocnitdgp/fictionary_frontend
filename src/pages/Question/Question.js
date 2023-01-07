@@ -11,6 +11,27 @@ import Stars from "../Leaderboard/Stars";
 
 import { ColorRing } from "react-loader-spinner";
 
+const QuestionTextRenderer = ({ text }) => {
+  while (text.indexOf("\n") > -1) {
+    text = text.replace("\n", "<br />");
+  }
+  const start = text.indexOf("__linkstart__");
+  const end = text.indexOf("__linkend__");
+  if (start > -1 && end > -1) {
+    text =
+      text.slice(0, start) +
+      '<a href="' +
+      text.slice(start + 13, end) +
+      '" target="blank">' +
+      text.slice(start + 13, end) +
+      "</a>" +
+      text.slice(end + 11);
+  }
+  return (
+    <p className="question" dangerouslySetInnerHTML={{ __html: text }}></p>
+  );
+};
+
 const Question = () => {
   const [state, setState] = React.useState({
     question: { text: "Loading...", round: 0 },
@@ -152,7 +173,7 @@ const Question = () => {
                 <div className="round_bg">
                   <div className="round">R-{state.question.round}</div>
                 </div>
-                <p className="question">{state.question.text}</p>
+                <QuestionTextRenderer text={state.question.text} />
                 {state.question.media && (
                   <div className="ques-img-wrap">
                     <img
