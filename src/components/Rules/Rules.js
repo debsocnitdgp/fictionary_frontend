@@ -19,10 +19,10 @@ const Rules = (props) => {
           <div className="rulesCont">
             <p>1-Answering each question will award you 10 points</p>
             <p>
-              2-Each question's hint will be provided After a specific time displayed in the Timer
+              2-Each question's hint will be provided after a specific time displayed in the timer
               {" "}
             </p>
-            <p>3-No negative scoring for wrong answers</p>
+            <p>3-No negative scoring for wrong answers. This means you can try any question for an unlimited number of times</p>
           </div>
         </div>
       </div>
