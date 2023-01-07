@@ -43,6 +43,7 @@ const Question = () => {
     text: "",
     success: false,
   });
+  const [hintAvailable, setHintAvailable] = useState(null);
   const [hintCountdown, setHintCountdown] = useState(null);
   const [timer, setTimer] = useState(0);
 
@@ -60,7 +61,11 @@ const Question = () => {
       res.json().then((serverResponse) => {
         if (res.status === 200) {
           clearTimeout(timer);
-          if (serverResponse.available) {
+          if (serverResponse["not-available"]) {
+            setHintAvailable(false);
+          }
+          else if (serverResponse.available) {
+            setHintAvailable(true);
             setHintCountdown(null);
           } else {
             setTimer(setTimeout(updateHint, serverResponse.timeleft * 1000));
@@ -207,10 +212,10 @@ const Question = () => {
               <div className="btns">
                 <div
                   className={`hint_bg ${
-                    hintCountdown !== null ? "hintDisabled" : ""
+                    hintCountdown !== null || !hintAvailable ? "hintDisabled" : ""
                   }`}
                   onClick={
-                    hintCountdown !== null
+                    hintCountdown !== null || !hintAvailable
                       ? () => {}
                       : () => setHintModalOpen(true)
                   }
