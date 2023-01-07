@@ -20,7 +20,23 @@ export default function HintModal(props) {
           if (res.status === 200) {
             setLoaded(true);
             if (serverResponse.success) {
-              setClue(serverResponse.clue);
+              var clue = serverResponse.clue;
+              while (clue.indexOf("\n") > -1) {
+                clue = clue.replace("\n", "<br />");
+              }
+              const start = clue.indexOf("__linkstart__");
+              const end = clue.indexOf("__linkend__");
+              if (start > -1 && end > -1) {
+                clue =
+                  clue.slice(0, start) +
+                  '<a href="' +
+                  clue.slice(start + 13, end) +
+                  '" target="blank">' +
+                  clue.slice(start + 13, end) +
+                  "</a>" +
+                  clue.slice(end + 11);
+              }
+              setClue(clue);
             } else {
               setClue([serverResponse.message]);
             }
@@ -52,7 +68,7 @@ export default function HintModal(props) {
             return (
               <>
                 <h2 className={styles.h2}>Clue</h2>
-                <p className={styles.p}>{clue}</p>
+                <p className={styles.p} dangerouslySetInnerHTML={{__html: clue}}></p>
               </>
             );
           } else {
