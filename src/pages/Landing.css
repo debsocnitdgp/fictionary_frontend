@@ -53,6 +53,37 @@ a {
   animation: fadeOut 0.2s linear forwards 5s;
 }
 
+.time-up {
+  font-family: "Iceland", cursive;
+  text-align: center;
+  letter-spacing: 0.1rem;
+  font-size: 2rem;
+  color: #edafaf;
+  opacity: 0.9;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.time-up p {
+  max-width: 40%;
+  padding: 30px;
+  background: rgba(3, 61, 80, 0.7);
+  border: 3px solid #58a1b9;
+  backdrop-filter: blur(16px);
+  border-radius: 0px 12px;
+  text-shadow: 0 0 4px #00ff00, 0 0 12px #00ff00;
+  font-size: 1.5rem;
+  color: #afedb1;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
 @keyframes fadeOut {
   from {
     opacity: 0.9;
@@ -92,12 +123,35 @@ a {
   justify-content: center;
 }
 
+.landing-sign-in-2 {
+  font-family: "Orbitron", cursive;
+  text-align: center;
+  letter-spacing: 0.1rem;
+  font-size: 1.5rem;
+  color: #00b3ff;
+  opacity: 0.9;
+  margin: 0;
+  padding: 12px 24px;
+  border: none;
+  text-transform: uppercase;
+  backdrop-filter: blur(8px);
+  background: rgba(3, 61, 80, 0.4);
+  box-shadow: 0 0 10px #00b3ff, 0 0 20px #00b3ff;
+  border: 2px solid #58a1b9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 @media screen and (max-width: 1000px) {
   .fic {
     font-size: 8rem;
   }
   .landing-sign-in {
-    margin-top: 60px  ;
+    margin-top: 60px;
+  }
+  .time-up p {
+    max-width: 90%;
   }
 }
 @media screen and (max-width: 650px) {

@@ -120,6 +120,9 @@ const Question = () => {
     })
       .then((res) => res.json())
       .then((res) => {
+        if(res.game_not_live) {
+          navigate("/?redirected=true");
+        }
         if (res.success) {
           answer.value = "";
           setSnackbarOptions({

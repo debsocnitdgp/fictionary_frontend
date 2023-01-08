@@ -14,6 +14,7 @@ import Google from "../components/GoogleIcon";
 const Landing = () => {
   const [gameLive, setGameLive] = useState({
     game_live: true,
+    time_up: false,
     date: new Date(),
   });
 
@@ -22,7 +23,7 @@ const Landing = () => {
     fetch(ENDPOINTS.CHECK_GAME_LIVE).then((res) => {
       if (res.status === 200) {
         res.json().then((serverResponse) => {
-          setGameLive(serverResponse);
+          setGameLive({ ...gameLive, ...serverResponse });
         });
       }
     });
@@ -95,10 +96,47 @@ const Landing = () => {
             </div>
           ) : (
             <div className="time">
-              <Timer timer={new Date(gameLive.date)} refresh={refresh} />
-              {new URLSearchParams(window.location.search).get("redirected") ===
-                "true" && (
-                <div className="game-not-live">The game is not live yet!</div>
+              {gameLive.time_up ? (
+                <div className="time-up">
+                  <p>
+                    <div>
+                      Fictionary has ended now!
+                      <br />
+                      But wait, that's not the end!
+                      <br />
+                      <br/>
+                      <br />
+                      The decision is your own voice, an opinion is the echo of
+                      someone else's voice: Choose the right one.
+                    </div>
+                    <div className="landing-sign-wrapper" style={{marginTop: "32px"}}>
+                      <button
+                        className="landing-sign-in-2"
+                        onClick={() => {
+                          const a = document.createElement('a');
+                          a.setAttribute("href", "https://www.instagram.com/p/CnKig3ESL81/?igshid=NDk5N2NlZjQ=");
+                          a.setAttribute("_target", "blank");
+                          document.body.appendChild(a);
+                          console.log("done")
+                          a.click()
+                        }}
+                      >
+                        What's Next?
+                      </button>
+                    </div>
+                  </p>
+                </div>
+              ) : (
+                <>
+                  <Timer timer={new Date(gameLive.date)} refresh={refresh} />
+                  {new URLSearchParams(window.location.search).get(
+                    "redirected"
+                  ) === "true" && (
+                    <div className="game-not-live">
+                      The game is not live yet!
+                    </div>
+                  )}
+                </>
               )}
             </div>
           )
