@@ -97,5 +97,17 @@
     display: flex ;
     flex-direction: column;
   }
+  .image-1{
+    width: 42vw;
+    height: 60vw;
+    margin-top: 6px;
+  }
+  .theme-head{
+    font-size: 7rem;
+    margin-top: 10px;
+  }
+  .p-theme{
+    font-size: 4rem;
+  }
   
 }
