@@ -3,6 +3,8 @@ import "./Theme.css";
 import image from "../w1.jpg";
 import image1 from "../w2.jpg";
 import image2 from "../w3.jpg";
+import image3 from "../w4.jpg";
+import image5 from "../w5.jpg";
 
 import { useGlitch } from "react-powerglitch";
 
@@ -33,14 +35,14 @@ const Test = () => {
       </div>
       <div className="main-card">
         <div className="card-1">
-          <img className="image-1" src={image}></img>
+          <img className="image-1" src={image3}></img>
           <p className="p-theme" ref={glitch.ref}>
             Horror
           </p>
         </div>
 
         <div className="card-1">
-          <img className="image-1" src={image}></img>
+          <img className="image-1" src={image5}></img>
           <p className="p-theme" ref={glitch.ref}>
             Comedy
           </p>
