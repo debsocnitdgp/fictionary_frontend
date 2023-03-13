@@ -1,35 +1,49 @@
 import React from "react";
 import "./Theme.css";
 import image from "../w1.jpg";
+import image1 from "../w2.jpg";
+import image2 from "../w3.jpg";
+
 import { useGlitch } from "react-powerglitch";
+
 
 const Test = () => {
   const glitch = useGlitch();
   return (
     <div className="Container">
-      <div className="head">
-        <h2 ref={glitch.ref}>Themes</h2>
+      <h2 className="theme-head" ref={glitch.ref}>
+        Themes
+      </h2>
+
+      <div className="main-card">
+        <div className="card-1">
+          <img className="image-1" src={image1}></img>
+          <p className="p-theme" ref={glitch.ref}>
+            {" "}
+            Romance
+          </p>
+        </div>
+
+        <div className="card-1">
+          <img className="image-1" src={image2}></img>
+          <p className="p-theme" ref={glitch.ref}>
+            Sci-Fi
+          </p>
+        </div>
       </div>
       <div className="main-card">
         <div className="card-1">
           <img className="image-1" src={image}></img>
-          <p ref={glitch.ref}> Romance</p>
+          <p className="p-theme" ref={glitch.ref}>
+            Horror
+          </p>
         </div>
 
         <div className="card-1">
           <img className="image-1" src={image}></img>
-          <p ref={glitch.ref}>Romance</p>
-        </div>
-      </div>
-      <div className="main-card">
-        <div className="card-1">
-          <img className="image-1" src={image}></img>
-          <p ref={glitch.ref}> Romance</p>
-        </div>
-
-        <div className="card-1">
-          <img className="image-1" src={image}></img>
-          <p ref={glitch.ref}>Romance</p>
+          <p className="p-theme" ref={glitch.ref}>
+            Comedy
+          </p>
         </div>
       </div>
     </div>

@@ -10,13 +10,14 @@ import useContext from "../utils/Context";
 import { useGoogleLogin } from "@react-oauth/google";
 import endpoints from "../utils/APIendpoints";
 import Google from "../components/GoogleIcon";
-
+import { useGlitch } from "react-powerglitch";
 const Landing = () => {
   const [gameLive, setGameLive] = useState({
     game_live: true,
     time_up: false,
     date: new Date(),
   });
+  const glitch = useGlitch();
 
   const context = useContext();
   const refresh = () => {
@@ -71,7 +72,7 @@ const Landing = () => {
     <>
       <div className="landing-container">
         <div>
-          <h1 className="fic">FICTIONARY </h1>
+          <h1 className="fic" ref={glitch.ref}>TRIVIOSITY </h1>
         </div>
         {context.token || localStorage.getItem("fictionary_frontend") ? (
           gameLive.game_live ? (

@@ -6,6 +6,7 @@ import useContext from "../utils/Context";
 import { useGoogleLogin } from "@react-oauth/google";
 import endpoints from "../utils/APIendpoints";
 import Google from "./GoogleIcon";
+import { useGlitch } from "react-powerglitch";
 
 const Navbar = (props) => {
   const [modalOpen, setmodalOpen] = useState(false);
@@ -19,6 +20,7 @@ const Navbar = (props) => {
   const hideModalHandler = () => {
     setmodalOpen(false);
   };
+  const glitch = useGlitch();
 
   const handleGoogleLogin = useGoogleLogin({
     onSuccess: (tokenResponse) => {
@@ -80,8 +82,8 @@ const Navbar = (props) => {
             </svg>
           </button>
         </div>
-        <div className="button" to="/">
-          FICTIONARY
+        <div  ref={glitch.ref} className="button" to="/">
+          TRIVIOSITY
         </div>
         <div className="middle">
           <div className="home vanish">
