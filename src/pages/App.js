@@ -26,15 +26,15 @@ const App = () => {
     <Router>
       <div className="bg" id="bg">
         <NavbarResponsive hideNav={hideNav} nav={nav} />
-        {/* <Navbar showNav={showNav} /> */}
+        <Navbar showNav={showNav} />
         <div className="app-container">
           <Routes>
           <Route path="/theme" element={<Theme />} />
-            {/* <Route path="/" element={<Landing />} />
+            <Route path="/" element={<Landing />} />
             <Route path="/question" element={<Question />} />
             <Route path="/leaderboard" element={<Leaderboard />} />
             <Route path="/signin" element={<Login />} />
-            <Route path="/game-finished" element={<GameOver />} /> */}
+            <Route path="/game-finished" element={<GameOver />} />
           </Routes>
           <Footer />
         </div>
