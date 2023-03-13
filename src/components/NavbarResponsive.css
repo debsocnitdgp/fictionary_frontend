@@ -16,16 +16,16 @@
     top: 0;
     transition: all 0.5s;
     backdrop-filter: blur(12px);
-    background-color: #054b62c8;
+    background-color: #d9a71055;
     /* background-color: #adff2f; */
     font-family: "Orbitron", sans-serif;
-    box-shadow: 0px 0px 4px #65beda;
+    box-shadow: 0px 0px 4px #daa565;
     width: 70%;
 }
 
 .navbar_collapse_hide {
     background-color: #054b62c8;
-    box-shadow: 0px 0px 4px #65beda;
+    box-shadow: 0px 0px 4px #d9a71055;
     font-family: "Orbitron", sans-serif;
     color: #ffffff;
     height: 100vh;
@@ -60,7 +60,8 @@
 .link, .Rules {
     margin-bottom: 2rem;
     font-size: 1.5rem;
-    color: #61dafb;
+    color: #f9e587;
+    /* font-weight: bold; */
 }
 .close {
     height: 2rem;
@@ -69,7 +70,7 @@
 .close_btn {
     background: none;
     border: none;
-    color: #a8e7fa;
+    color: #7e3704;
     float: right;
     margin: 24px;
 }

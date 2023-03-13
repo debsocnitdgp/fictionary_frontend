@@ -11,18 +11,21 @@
   justify-content: center;
   align-items: center;
   font-size: clamp(150px, 30%, 400px);
-  color: rgba(12, 208, 149, 0.76);
+  color: #e7bd32;
   font-weight: bold;
   font-family: "Iceland";
   margin-top: -16px;
   display: flex;
   margin-bottom: 0;
-  text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500,
+  /* text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500,
     0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
   color: #fff6a9;
 
   animation: blink 12s infinite;
-  -webkit-animation: blink 12s infinite;
+  -webkit-animation: blink 12s infinite; */
+  text-transform: uppercase;
+  text-shadow: 0 0 10px #e7bd32;
+
 }
 @-webkit-keyframes blink {
   20%,
@@ -72,7 +75,7 @@
   font-size: 4rem;
   font-family: "Iceland";
   min-width: fit-content;
-  color: rgba(229, 152, 28, 0.829);
+  color: #e7bd32;
   font-weight: bold;
   margin: 0;
 }

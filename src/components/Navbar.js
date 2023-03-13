@@ -71,7 +71,7 @@ const Navbar = (props) => {
               className="open"
               fill="none"
               viewBox="0 0 24 24"
-              stroke="currentColor"
+              stroke="#ffeeaf"
               strokeWidth="1.5"
             >
               <path

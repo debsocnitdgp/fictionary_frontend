@@ -18,7 +18,7 @@ const Test = () => {
       </h2>
 
       <div className="main-card">
-        <div className="card-1">
+        <div className="card-1" >
           <img className="image-1" src={image1}></img>
           <p className="p-theme" ref={glitch.ref}>
             {" "}

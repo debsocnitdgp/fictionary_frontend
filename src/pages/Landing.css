@@ -2,9 +2,9 @@
   font-family: "Iceland", cursive;
   text-align: center;
   letter-spacing: 0.1rem;
-  text-shadow: 0 0 10px #00b3ff, 0 0 20px #00b3ff;
+  text-shadow: 0 0 10px rgb(255 171 0), 0 0 20px #ff7300;
   font-size: 12rem;
-  color: #afd5ed;
+  color: #e8ce32;
   opacity: 0.9;
   margin: 0;
 }
@@ -108,16 +108,16 @@ a {
   text-align: center;
   letter-spacing: 0.1rem;
   font-size: 1.5rem;
-  color: #00b3ff;
+  color: #ffa200;
   opacity: 0.9;
   margin: 0;
   padding: 12px 24px;
   border: none;
   text-transform: uppercase;
   backdrop-filter: blur(8px);
-  background: rgba(3, 61, 80, 0.4);
-  box-shadow: 0 0 10px #00b3ff, 0 0 20px #00b3ff;
-  border: 2px solid #58a1b9;
+  background: rgba(123, 97, 5, 0.204);
+  box-shadow: 0 0 10px rgb(255 171 0), 0 0 20px #ff7300;
+  border: 2px solid rgb(255 171 0);
   display: flex;
   align-items: center;
   justify-content: center;

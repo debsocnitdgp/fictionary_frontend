@@ -22,7 +22,7 @@
 
 .star {
   $star-count: 30;
-  --star-color: var(#9ac8e4);
+  --star-color: var(#b39c50);
   --star-tail-length: 6em;
   --star-tail-height: 2px;
   --star-width: calc(var(--star-tail-length) / 6);
@@ -36,9 +36,9 @@
   width: var(--star-tail-length);
   height: var(--star-tail-height);
   color: var(--star-color);
-  background: linear-gradient(45deg, #9ac8e4, transparent);
+  background: linear-gradient(45deg, #b39c50, transparent);
   border-radius: 50%;
-  filter: drop-shadow(0 0 6px #9ac8e4);
+  filter: drop-shadow(0 0 6px #b39c50);
   transform: translate3d(104em, 0, 0);
   animation: fall var(--fall-duration) var(--fall-delay) linear infinite,
     tail-fade var(--tail-fade-duration) var(--fall-delay) ease-out infinite;
@@ -65,7 +65,7 @@
     left: calc(var(--star-width) / -2);
     width: var(--star-width);
     height: 100%;
-    background: linear-gradient(45deg, transparent, #9ac8e4, transparent);
+    background: linear-gradient(45deg, transparent, #b39c50, transparent);
     border-radius: inherit;
     animation: blink 2s linear infinite;
   }
