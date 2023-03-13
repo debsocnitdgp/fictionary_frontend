@@ -18,6 +18,7 @@ const Footer = () => {
       "/question": "/question.jpg",
       "/": "/Final_Landing1.png",
       "/leaderboard": "/leaderboard.jpg",
+      "/theme": "../../bgimage.jpg",
     };
 
     const bg = images[location.pathname] || images["/"];

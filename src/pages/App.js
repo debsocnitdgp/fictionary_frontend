@@ -6,6 +6,7 @@ import Leaderboard from "./Leaderboard/Leaderboard.js";
 import Login from "./Login/Login.js";
 import GameOver from "./GameOver/GameOver.js";
 import Footer from "../components/Footer/Footer.js";
+import Theme from "../pages/Theme.js"
 
 import "./App.css";
   import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -25,14 +26,15 @@ const App = () => {
     <Router>
       <div className="bg" id="bg">
         <NavbarResponsive hideNav={hideNav} nav={nav} />
-        <Navbar showNav={showNav} />
+        {/* <Navbar showNav={showNav} /> */}
         <div className="app-container">
           <Routes>
-            <Route path="/" element={<Landing />} />
+          <Route path="/theme" element={<Theme />} />
+            {/* <Route path="/" element={<Landing />} />
             <Route path="/question" element={<Question />} />
             <Route path="/leaderboard" element={<Leaderboard />} />
             <Route path="/signin" element={<Login />} />
-            <Route path="/game-finished" element={<GameOver />} />
+            <Route path="/game-finished" element={<GameOver />} /> */}
           </Routes>
           <Footer />
         </div>

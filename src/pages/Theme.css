@@ -1,0 +1,36 @@
+body{
+    background-image: url("../bgimage.jpg");
+    object-fit: cover;
+}
+.head {
+  min-width: fit-content;
+}
+h2{
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+h2,
+p {
+  font-size: 4rem;
+  font-family: 'Iceland';
+  min-width: fit-content;
+  color: rgba(235, 9, 62, 0.76);
+  font-weight: bold;
+}
+.main-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+}
+.image-1 {
+  width: 26vw;
+  height: 20vw;
+  border-radius: 20px;
+}
+p {
+  margin: 0;
+}
