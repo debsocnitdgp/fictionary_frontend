@@ -16,6 +16,7 @@
     "powerglitch": "^2.3.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-flippy": "^1.1.0",
     "react-glitchify": "^2.4.19",
     "react-loader-spinner": "^5.3.4",
     "react-modal": "^3.15.1",
