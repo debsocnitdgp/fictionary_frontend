@@ -2,11 +2,11 @@
   font-family: "Iceland", cursive;
   text-align: center;
   letter-spacing: 0.1rem;
-  text-shadow: 0 0 10px #00b3ff, 0 0 20px #00b3ff;
-  font-size: 60px;
+  text-shadow: 0 0 10px rgb(255 171 0), 0 0 20px #ff7300;
+  font-size: 80px;
   padding-top: 60px;
   font-weight: 700;
-  color: #afd5ed;
+  color: #e8ce32;
   opacity: 0.9;
   margin: 0;
   text-transform: uppercase;

@@ -60,7 +60,7 @@ const Leaderboard = () => {
               ariaLabel="blocks-loading"
               wrapperStyle={{}}
               wrapperClass="blocks-wrapper"
-              colors={["#65beda", "#65beda", "#65beda", "#65beda", "#65beda"]}
+              colors={["#e8ce32", "#e8ce32", "#e8ce32", "#e8ce32", "#e8ce32"]}
             />
           </div>
         )}

@@ -17,7 +17,7 @@ const Footer = () => {
     const images = {
       "/question": "/question.jpg",
       "/": "/Final2.jpg",
-      "/leaderboard": "/leaderboard.jpg",
+      "/leaderboard": "/leader.jpg",
       "/theme": "../../bgimage.jpg",
     };
 
