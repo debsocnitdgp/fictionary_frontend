@@ -114,10 +114,10 @@ const Navbar = (props) => {
             <button className="si">LOG OUT</button>
           </div>
         ) : (
-          <div className="sign" onClick={handleGoogleLogin}>
-            <button className="si"> <Google width={12} /> SIGN IN</button>
+          <div className="sign" >
+            {/* <button className="si"> <Google width={12} /> SIGN IN</button> */}
           </div>
-        )}
+        ) }
       </nav>
     </>
   );

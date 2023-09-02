@@ -16,7 +16,7 @@ const Footer = () => {
   React.useEffect(() => {
     const images = {
       "/question": "/question.jpg",
-      "/": "/Final_Landing1.png",
+      "/": "/Landingnew.png",
       "/leaderboard": "/leaderboard.jpg",
     };
 

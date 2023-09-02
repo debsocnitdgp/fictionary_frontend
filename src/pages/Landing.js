@@ -10,6 +10,7 @@ import useContext from "../utils/Context";
 import { useGoogleLogin } from "@react-oauth/google";
 import endpoints from "../utils/APIendpoints";
 import Google from "../components/GoogleIcon";
+import Typewriter from 'typewriter-effect';
 
 const Landing = () => {
   const [gameLive, setGameLive] = useState({
@@ -29,6 +30,34 @@ const Landing = () => {
     });
   };
   const navigate = useNavigate();
+
+  const createFirefly = () => {
+  const firefly = document.createElement('div');
+  firefly.className = 'firefly';
+  document.body.appendChild(firefly);
+
+ 
+  const fireflySize = Math.random() * 10 + 5; 
+  firefly.style.width = `${fireflySize}px`;
+  firefly.style.height = `${fireflySize}px`;
+  firefly.style.backgroundColor = '#FFA500'; 
+  firefly.style.borderRadius = '50%';
+  firefly.style.opacity = '0.8'; 
+  firefly.style.boxShadow = '0 0 10px 5px #FFA500'; 
+
+  
+  const animationDuration = Math.random() * 5 + 5;
+  const randomX = Math.random() * window.innerWidth;
+  const randomY = Math.random() * window.innerHeight;
+  firefly.style.left = `${randomX}px`;
+  firefly.style.top = `${randomY}px`;
+
+  setTimeout(() => {
+    firefly.remove();
+  }, animationDuration * 1000);
+};
+
+  setInterval(createFirefly, 1000);
 
   const handleGoogleLogin = useGoogleLogin({
     onSuccess: (tokenResponse) => {
@@ -72,6 +101,16 @@ const Landing = () => {
       <div className="landing-container">
         <div>
           <h1 className="fic">FICTIONARY </h1>
+        </div>
+        <div className="ComSoon">
+          {/* <h2 className="ComSoon">Coming Soon </h2> */}
+                    <Typewriter className="ComSoon"
+                     options={{
+                      strings: ['Coming Soon'],
+                      autoStart: true,
+              loop: true,
+            }}
+/>
         </div>
         {context.token || localStorage.getItem("fictionary_frontend") ? (
           gameLive.game_live ? (
@@ -142,14 +181,14 @@ const Landing = () => {
           )
         ) : (
           <div className="landing-sign-wrapper">
-            <button className="landing-sign-in" onClick={handleGoogleLogin}>
+            {/* <button className="landing-sign-in" onClick={handleGoogleLogin}>
               <Google width="24" />
               Sign In
-            </button>
+            </button> */}
           </div>
         )}
       </div>
-      <Stars />
+      {/* <Stars /> */}
     </>
   );
 };

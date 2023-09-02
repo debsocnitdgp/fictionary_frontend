@@ -1,13 +1,32 @@
 .fic {
-  font-family: "Iceland", cursive;
+  font-family: "Bord", cursive;
+text-align: center;
+letter-spacing: 0.6rem;
+text-shadow: 0 0 20px #9b2805, 0 0 30px #9b2805;
+font-size: 10rem;
+color: #f2e0d6;
+opacity: 0.9;
+margin: 0;
+margin-bottom: 0px;
+position: relative;
+margin-bottom: 50px;
+padding-bottom: 200px;
+}
+
+.ComSoon {
+  font-family: "Bord", cursive;
   text-align: center;
-  letter-spacing: 0.1rem;
-  text-shadow: 0 0 10px #00b3ff, 0 0 20px #00b3ff;
-  font-size: 12rem;
-  color: #afd5ed;
+  letter-spacing: 0.2rem;
+  text-shadow: 0 0 10px #3a150a, 0 0 20px #3a150a;
+  font-size: 6rem;
+  color: #faf4e3;
   opacity: 0.9;
   margin: 0;
 }
+
+
+
+
 
 .play_now {
   display: flex;
@@ -43,7 +62,7 @@ a {
 }
 
 .game-not-live {
-  font-family: "Iceland", cursive;
+  font-family: "Bord", cursive;
   text-align: center;
   letter-spacing: 0.1rem;
   text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000;
@@ -54,7 +73,7 @@ a {
 }
 
 .time-up {
-  font-family: "Iceland", cursive;
+  font-family: "Bord", cursive;
   text-align: center;
   letter-spacing: 0.1rem;
   font-size: 2rem;
@@ -143,9 +162,40 @@ a {
   justify-content: center;
 }
 
+
+.firefly {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background-color: #ffeeaa;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+  animation: flicker 2s infinite;
+}
+
+@keyframes flicker {
+  0%, 100% {
+      opacity: 1;
+  }
+  50% {
+      opacity: 0.5;
+  }
+}
+
+@keyframes move {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(20px, -20px);
+  }
+}
+
+
 @media screen and (max-width: 1000px) {
   .fic {
-    font-size: 8rem;
+    font-size: 10rem;
   }
   .landing-sign-in {
     margin-top: 60px;
@@ -156,13 +206,13 @@ a {
 }
 @media screen and (max-width: 650px) {
   .fic {
-    font-size: 6rem;
+    font-size: 8rem;
     font-weight: 600;
   }
 }
 @media screen and (max-width: 480px) {
   .fic {
-    font-size: 4rem;
+    font-size: 6rem;
     font-weight: 600;
   }
 
