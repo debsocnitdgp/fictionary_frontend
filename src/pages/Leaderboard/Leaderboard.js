@@ -65,7 +65,7 @@ const Leaderboard = () => {
           </div>
         )}
       </div>
-      <Stars />
+      {/* <Stars /> */}
     </>
   );
 };

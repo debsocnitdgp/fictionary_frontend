@@ -87,7 +87,7 @@ const Navbar = (props) => {
           <div className="home vanish">
             <ul>
               <Link className="button" to="/question">
-                Play
+                PLAY
               </Link>
             </ul>
           </div>
@@ -95,7 +95,7 @@ const Navbar = (props) => {
           <div className="test vanish">
             <ul>
               <a className="rules" onClick={showModalHandler}>
-                Rules
+                RULES
               </a>
             </ul>
           </div>
@@ -103,7 +103,7 @@ const Navbar = (props) => {
           <div className="leader vanish">
             <ul>
               <Link className="button" to="/leaderboard">
-                Leaderboard
+                LEADERBOARD
               </Link>
             </ul>
           </div>

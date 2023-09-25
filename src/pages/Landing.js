@@ -31,33 +31,67 @@ const Landing = () => {
   };
   const navigate = useNavigate();
 
-  const createFirefly = () => {
-  const firefly = document.createElement('div');
-  firefly.className = 'firefly';
-  document.body.appendChild(firefly);
+//   const createFirefly = () => {
+//   const firefly = document.createElement('div');
+//   firefly.className = 'firefly';
+//   document.body.appendChild(firefly);
 
  
-  const fireflySize = Math.random() * 10 + 5; 
-  firefly.style.width = `${fireflySize}px`;
-  firefly.style.height = `${fireflySize}px`;
-  firefly.style.backgroundColor = '#FFA500'; 
-  firefly.style.borderRadius = '50%';
-  firefly.style.opacity = '0.8'; 
-  firefly.style.boxShadow = '0 0 10px 5px #FFA500'; 
+//   const fireflySize = Math.random() * 10 + 5; 
+//   firefly.style.width = `${fireflySize}px`;
+//   firefly.style.height = `${fireflySize}px`;
+//   firefly.style.backgroundColor = '#FFA500'; 
+//   firefly.style.borderRadius = '50%';
+//   firefly.style.opacity = '0.8'; 
+//   firefly.style.boxShadow = '0 0 10px 5px #FFA500'; 
 
   
-  const animationDuration = Math.random() * 5 + 5;
-  const randomX = Math.random() * window.innerWidth;
-  const randomY = Math.random() * window.innerHeight;
-  firefly.style.left = `${randomX}px`;
-  firefly.style.top = `${randomY}px`;
+//   const animationDuration = Math.random() * 5 + 5;
+//   const randomX = Math.random() * window.innerWidth;
+//   const randomY = Math.random() * window.innerHeight;
+//   firefly.style.left = `${randomX}px`;
+//   firefly.style.top = `${randomY}px`;
 
-  setTimeout(() => {
-    firefly.remove();
-  }, animationDuration * 1000);
-};
+//   setTimeout(() => {
+//     firefly.remove();
+//   }, animationDuration * 1000);
+// };
 
-  setInterval(createFirefly, 1000);
+//   setInterval(createFirefly, 1000);
+
+
+window.addEventListener('DOMContentLoaded', (event) => {
+  const container = document.createElement('div');
+  container.classList.add('firefly-container');
+  document.body.appendChild(container);
+
+  function createFirefly() {
+    const firefly = document.createElement('div');
+    firefly.classList.add('firefly');
+    const size = Math.random() * 6 + 4;
+    firefly.style.width = size + 'px';
+    firefly.style.height = size + 'px';
+    const x = Math.random() * (window.innerWidth - 80) + 40;
+    const y = Math.random() * (window.innerHeight - 80) + 40;
+    firefly.style.left = x + 'px';
+    firefly.style.top = y + 'px';
+    container.appendChild(firefly);
+
+    const duration = Math.random() * 3 + 1;
+    const delay = Math.random() * 2;
+    const angle = Math.random() * 360;
+    firefly.style.animation = `blink ${duration}s ${delay}s infinite, flying 10s linear infinite`;
+    firefly.style.transform = `rotate(${angle}deg)`; 
+    firefly.addEventListener('animationiteration', () => {
+        container.removeChild(firefly);
+    });
+}
+
+  setInterval(createFirefly, 150);
+});
+
+
+
 
   const handleGoogleLogin = useGoogleLogin({
     onSuccess: (tokenResponse) => {

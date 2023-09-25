@@ -4,8 +4,8 @@
   display: flex;
   background-color: #bf7a3439;
   justify-content: space-between;
-  font-family: "batmfa__";
-  font-size: -0.3rem;
+  font-family: 'Electrolize', sans-serif;
+  font-size: 1.2rem; 
   align-items: center;
   position: fixed;
   top: 0%;
@@ -13,6 +13,7 @@
   z-index: 100;
   backdrop-filter: blur(4px);
 }
+
 
 
 .rules {
@@ -69,9 +70,9 @@ margin: 0 32px ;
 font-size: 24px;
 }
 .si:hover {
-  box-shadow: 0px 0px 4px #c9fd7b;
-  border: 2px solid #c9fd7b;
-  color: #adff2f;
+  box-shadow: 0px 0px 4px #f83e0a;
+  border: 2px solid #f83e0a;
+  color: #f83e0a;
 }
 .open {
   height: 2rem;
@@ -79,11 +80,11 @@ font-size: 24px;
 .open_btn {
   background: none;
   border: none;
-  color: #61dafb;
+  color: #f2e0d6;
   visibility: hidden;
 }
 .open:hover {
-  color: #adff2f;
+  color: #f83e0a;
 }
 
 @media screen and (min-width: 750px){
