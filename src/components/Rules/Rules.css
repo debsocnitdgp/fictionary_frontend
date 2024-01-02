@@ -6,7 +6,7 @@
     margin: 0px;
     margin-bottom: 1.2rem;
     line-height: 75px;
-    color: #ffffff;
+    color: #f2e0d6;
     text-align: center;
     letter-spacing: 0.4rem;
 }
@@ -16,7 +16,7 @@
     font-style: normal;
     font-size: 20px;
     line-height: 20px;
-    color: #ffffff;
+    color: #f2e0d6;
     letter-spacing: 0.1rem;
 }
 
@@ -36,7 +36,7 @@
   vertical-align: middle;
   overflow: hidden;
   text-decoration: none;
-  color: #afecff;
+  color: #bf7a3439;
   background-color: inherit;
   text-align: center;
   cursor: pointer;

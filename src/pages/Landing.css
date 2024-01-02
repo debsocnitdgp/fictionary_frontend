@@ -1,16 +1,16 @@
 .fic {
-  font-family: 'Quantico', sans-serif;
-text-align: center;
-letter-spacing: 0.6rem;
-text-shadow: 0 0 20px #9b2805, 0 0 30px #9b2805;
-font-size: 10rem;
-color: #f2e0d6;
-opacity: 0.9;
-margin: 0;
-margin-bottom: 0px;
-position: relative;
-margin-bottom: 50px;
-padding-bottom: 200px;
+  font-family: 'Oxanium', sans-serif;
+  text-align: center;
+  letter-spacing: 0.6rem;
+  text-shadow: 0 0 20px #9b2805, 0 0 30px #9b2805;
+  font-size: 10rem;
+  color: #f2e0d6;
+  opacity: 0.9;
+  margin: 0;
+  margin-bottom: 0px;
+  position: relative;
+  margin-bottom: 50px;
+  padding-bottom: 200px;
 }
 
 .ComSoon {
@@ -164,20 +164,20 @@ a {
 }
 
 .landing-sign-in {
-  font-family: "Orbitron", cursive;
+  font-family: "Audiowide", sans-serif;
   text-align: center;
   letter-spacing: 0.1rem;
   font-size: 1.5rem;
-  color: #00b3ff;
+  color: #f2e0d6;
   opacity: 0.9;
   margin: 0;
   padding: 12px 24px;
   border: none;
   text-transform: uppercase;
   backdrop-filter: blur(8px);
-  background: rgba(3, 61, 80, 0.4);
-  box-shadow: 0 0 10px #00b3ff, 0 0 20px #00b3ff;
-  border: 2px solid #58a1b9;
+  background: transparent;
+  box-shadow:   0 0 20px #9b2805, 0 0 30px #9b2805;
+  border: 2px solid #f2e0d6;
   display: flex;
   align-items: center;
   justify-content: center;
