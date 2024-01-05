@@ -1,24 +1,48 @@
+.rulesCont {
+    background-color: #ffb84d; /* Yellow-orange background color */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
 .rulesH2 {
-    font-family: "Orbitron";
+    font-family: "Oxanium", sans-serif;
     font-style: normal;
     font-weight: 700;
-    font-size: 40px;
-    margin: 0px;
+    font-size: 36px; /* Adjust as needed */
+    margin: 0;
     margin-bottom: 1.2rem;
-    line-height: 75px;
-    color: #f2e0d6;
+    line-height: 45px; /* Adjust as needed */
+    color: #f2e0d6; /* Dark color for better contrast */
     text-align: center;
     letter-spacing: 0.4rem;
 }
 
 .rulesCont p {
-    font-family: "Orbitron";
+    font-family: "Oxanium", sans-serif;
     font-style: normal;
-    font-size: 20px;
-    line-height: 20px;
-    color: #f2e0d6;
+    font-size: 18px; /* Adjust as needed */
+    line-height: 24px; /* Adjust as needed */
+    color: #2c2c2c; /* Dark color for better contrast */
     letter-spacing: 0.1rem;
 }
+
+.close-button {
+    border: none;
+    display: inline-block;
+    padding: 8px 12px; /* Adjust as needed */
+    vertical-align: middle;
+    overflow: hidden;
+    text-decoration: none;
+    color: #ffffff; /* White color for better visibility */
+    background-color: transparent;
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap;
+    font-size: 24px; /* Adjust as needed */
+}
+
+
 
 @media screen and (max-width: 550px) {
     h2 {
@@ -28,25 +52,4 @@
     p {
         font-size: 20px;
     }
-}
-.close-button {
-  border: none;
-  display: inline-block;
-      padding: 1px 12px;
-  vertical-align: middle;
-  overflow: hidden;
-  text-decoration: none;
-  color: #bf7a3439;
-  background-color: inherit;
-  text-align: center;
-  cursor: pointer;
-  white-space: nowrap;
- font-size: 31px;
-  
-}
-
-.topright {
-  position: absolute;
-  right: 0;
-  top: 0
 }

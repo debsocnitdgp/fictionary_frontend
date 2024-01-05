@@ -115,7 +115,7 @@ const Navbar = (props) => {
           </div>
         ) : (
           <div className="sign" >
-            {/* <button className="si"> <Google width={12} /> SIGN IN</button> */}
+            <button className="si" onClick={handleGoogleLogin}><Google width={12} /> SIGN IN</button>
           </div>
         ) }
       </nav>

@@ -16,18 +16,18 @@ export default function Google(props) {
       <clipPath id="b">
         <use href="#a" overflow="visible" />
       </clipPath>
-      <path clipPath="url(#b)" fill="#00b3ff" d="M0 37V11l17 13z" />
+      <path clipPath="url(#b)" fill="#f2e0d6" d="M0 37V11l17 13z" />
       <path
         clipPath="url(#b)"
-        fill="#00b3ff"
+        fill="#f2e0d6"
         d="M0 11l17 13 7-6.1L48 14V0H0z"
       />
       <path
         clipPath="url(#b)"
-        fill="#00b3ff"
+        fill="#f2e0d6"
         d="M0 37l30-23 7.9 1L48 0v48H0z"
       />
-      <path clipPath="url(#b)" fill="#00b3ff" d="M48 48L17 24l-4-3 35-10z" />
+      <path clipPath="url(#b)" fill="#f2e0d6" d="M48 48L17 24l-4-3 35-10z" />
     </svg>
   );
 }

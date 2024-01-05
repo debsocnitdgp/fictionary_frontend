@@ -173,7 +173,7 @@ const Question = () => {
         success={snackbarOptions.success}
       />
       <div className="ques">
-        <Stars />
+        {/* <Stars /> */}
         <section className="ques-container">
           {state.loaded ? (
             <>
@@ -239,7 +239,7 @@ const Question = () => {
                 ariaLabel="blocks-loading"
                 wrapperStyle={{}}
                 wrapperClass="blocks-wrapper"
-                colors={["#65beda", "#65beda", "#65beda", "#65beda", "#65beda"]}
+                colors={["#f2e0d6", "#f2e0d6", "#f2e0d6", "#f2e0d6", "#f2e0d6"]}
               />
             </div>
           )}
