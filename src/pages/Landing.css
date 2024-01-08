@@ -236,7 +236,10 @@ a {
 
 @media screen and (max-width: 1000px) {
   .fic {
-    font-size: 10rem;
+    font-size: 120px !important;
+  }
+  .ComSoon{
+    font-size: 90px !important;
   }
   .landing-sign-in {
     margin-top: 60px;
@@ -245,16 +248,32 @@ a {
     max-width: 90%;
   }
 }
+@media screen and (max-width: 800px) {
+  .fic {
+    font-size: 80px !important;
+    font-weight: 600;
+  }
+  .ComSoon{
+    font-size: 70px !important;
+  }
+}
 @media screen and (max-width: 650px) {
   .fic {
-    font-size: 8rem;
+    font-size: 60px !important;
     font-weight: 600;
+  }
+  .ComSoon{
+    font-size: 50px !important;
   }
 }
 @media screen and (max-width: 480px) {
   .fic {
-    font-size: 6rem;
+    font-size: 40px !important;
     font-weight: 600;
+  }
+
+  .ComSoon{
+    font-size: 30px !important;
   }
 
   .play {
@@ -278,7 +297,11 @@ a {
 }
 @media screen and (max-width: 330px) {
   .fic {
-    font-size: 3rem;
+    font-size: 24px !important;
     font-weight: 600;
+  }
+
+  .ComSoon{
+    font-size: 15px !important;
   }
 }
