@@ -76,24 +76,34 @@
 
 .play {
   text-align: center;
-  font-family: "Orbitron", sans-serif;
+  font-family: "Audiowide", sans-serif;
   font-size: 2.5rem;
   margin: auto;
-  color: #afecff;
-  text-shadow: 0 0 5px #afecff;
+  color: #f2e0d6;
+  text-shadow: 0 0 10px #9b2805, 0 0 20px #9b2805, 0 0 30px #9b2805; 
   margin-top: 104px;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 }
 
+
+
 a {
-  color: #afecff;
+  color: #9b2805;
   text-decoration: none;
 }
 
 .arrow {
   height: 50px;
   margin-left: 10px;
-  text-shadow: 0 0 5px #afecff;
+  text-shadow: 0 0 5px #9b2805;
 }
 
 .time {
@@ -104,22 +114,22 @@ a {
 }
 
 .game-not-live {
-  font-family: "Bord", cursive;
+  font-family: "Audiowide", sans-serif;
   text-align: center;
   letter-spacing: 0.1rem;
-  text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000;
+  text-shadow: 0 0 20px #9b2805, 0 0 30px #9b2805;
   font-size: 2rem;
-  color: #edafaf;
+  color: #f2e0d6;
   opacity: 0.9;
   animation: fadeOut 0.2s linear forwards 5s;
 }
 
 .time-up {
-  font-family: "Bord", cursive;
+  font-family: "Audiowide", sans-serif;
   text-align: center;
   letter-spacing: 0.1rem;
   font-size: 2rem;
-  color: #edafaf;
+  color: #f2e0d6;
   opacity: 0.9;
   width: 100%;
   display: flex;
@@ -131,13 +141,13 @@ a {
 .time-up p {
   max-width: 40%;
   padding: 30px;
-  background: rgba(3, 61, 80, 0.7);
-  border: 3px solid #58a1b9;
+  background: rgba(175, 139, 103, 0.7);
+  border: 3px solid #f2e0d6;
   backdrop-filter: blur(16px);
   border-radius: 0px 12px;
-  text-shadow: 0 0 4px #00ff00, 0 0 12px #00ff00;
+  text-shadow: 0 0 20px #9b2805, 0 0 30px #9b2805;
   font-size: 1.5rem;
-  color: #afedb1;
+  color: #f2e0d6;
   text-transform: uppercase;
   display: flex;
   align-items: center;

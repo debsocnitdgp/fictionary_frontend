@@ -127,9 +127,10 @@ const Landing = () => {
   return (
     <>
       <div className="landing-container">
-        <div>
-          <h1 className="fic">FICTIONARY </h1>
-        </div>
+          <div>
+            <h1 className="fic">FICTIONARY </h1>
+          </div>
+
         {context.token || localStorage.getItem("fictionary_frontend") ? (
           gameLive.game_live ? (
             <div className="play_now">
@@ -207,14 +208,14 @@ const Landing = () => {
           <>
             <div className="ComSoon">
               {/* <h2 className="ComSoon">Coming Soon </h2> */}
-              <Typewriter
+              {/* <Typewriter
                 className="ComSoon"
                 options={{
                   strings: ["Coming Soon"],
                   autoStart: true,
                   loop: true,
                 }}
-              />
+              /> */}
             </div>
             <div className="landing-sign-wrapper">
               <button className="landing-sign-in" onClick={handleGoogleLogin}>

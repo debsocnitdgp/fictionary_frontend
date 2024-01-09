@@ -80,9 +80,11 @@ const Navbar = (props) => {
             </svg>
           </button>
         </div>
-        <div className="button" to="/">
-          FICTIONARY
-        </div>
+        <Link to="/">
+          <div className="button" to="/">
+            FICTIONARY
+          </div>
+        </Link>
         <div className="middle">
           <div className="home vanish">
             <ul>

@@ -1,6 +1,6 @@
 .modal {
-  background: rgba(3, 61, 80, 1);
-  border: 3px solid #58a1b9;
+  background: rgba(175, 139, 103, 1);
+  border: 3px solid #f2e0d6;
   backdrop-filter: blur(16px);
   border-radius: 24px;
   align-items: center;
@@ -13,7 +13,7 @@
   opacity: 4;
 }
 .h2 {
-  font-family: "Orbitron";
+  font-family: "Oxanium";
   font-style: normal;
   font-weight: 700;
   font-size: 40px;
@@ -22,7 +22,7 @@
   text-align: center;
 }
 .p {
-  font-family: "Orbitron";
+  font-family: "Oxanium";
   font-style: normal;
   /* font-weight: 700; */
   font-size: 18px;
