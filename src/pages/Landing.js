@@ -10,7 +10,7 @@ import useContext from "../utils/Context";
 import { useGoogleLogin } from "@react-oauth/google";
 import endpoints from "../utils/APIendpoints";
 import Google from "../components/GoogleIcon";
-import Typewriter from 'typewriter-effect';
+import Typewriter from "typewriter-effect";
 
 const Landing = () => {
   const [gameLive, setGameLive] = useState({
@@ -31,67 +31,61 @@ const Landing = () => {
   };
   const navigate = useNavigate();
 
-//   const createFirefly = () => {
-//   const firefly = document.createElement('div');
-//   firefly.className = 'firefly';
-//   document.body.appendChild(firefly);
+  //   const createFirefly = () => {
+  //   const firefly = document.createElement('div');
+  //   firefly.className = 'firefly';
+  //   document.body.appendChild(firefly);
 
- 
-//   const fireflySize = Math.random() * 10 + 5; 
-//   firefly.style.width = `${fireflySize}px`;
-//   firefly.style.height = `${fireflySize}px`;
-//   firefly.style.backgroundColor = '#FFA500'; 
-//   firefly.style.borderRadius = '50%';
-//   firefly.style.opacity = '0.8'; 
-//   firefly.style.boxShadow = '0 0 10px 5px #FFA500'; 
+  //   const fireflySize = Math.random() * 10 + 5;
+  //   firefly.style.width = `${fireflySize}px`;
+  //   firefly.style.height = `${fireflySize}px`;
+  //   firefly.style.backgroundColor = '#FFA500';
+  //   firefly.style.borderRadius = '50%';
+  //   firefly.style.opacity = '0.8';
+  //   firefly.style.boxShadow = '0 0 10px 5px #FFA500';
 
-  
-//   const animationDuration = Math.random() * 5 + 5;
-//   const randomX = Math.random() * window.innerWidth;
-//   const randomY = Math.random() * window.innerHeight;
-//   firefly.style.left = `${randomX}px`;
-//   firefly.style.top = `${randomY}px`;
+  //   const animationDuration = Math.random() * 5 + 5;
+  //   const randomX = Math.random() * window.innerWidth;
+  //   const randomY = Math.random() * window.innerHeight;
+  //   firefly.style.left = `${randomX}px`;
+  //   firefly.style.top = `${randomY}px`;
 
-//   setTimeout(() => {
-//     firefly.remove();
-//   }, animationDuration * 1000);
-// };
+  //   setTimeout(() => {
+  //     firefly.remove();
+  //   }, animationDuration * 1000);
+  // };
 
-//   setInterval(createFirefly, 1000);
+  //   setInterval(createFirefly, 1000);
 
+  window.addEventListener("DOMContentLoaded", (event) => {
+    const container = document.createElement("div");
+    container.classList.add("firefly-container");
+    document.body.appendChild(container);
 
-window.addEventListener('DOMContentLoaded', (event) => {
-  const container = document.createElement('div');
-  container.classList.add('firefly-container');
-  document.body.appendChild(container);
+    function createFirefly() {
+      const firefly = document.createElement("div");
+      firefly.classList.add("firefly");
+      const size = Math.random() * 6 + 4;
+      firefly.style.width = size + "px";
+      firefly.style.height = size + "px";
+      const x = Math.random() * (window.innerWidth - 80) + 40;
+      const y = Math.random() * (window.innerHeight - 80) + 40;
+      firefly.style.left = x + "px";
+      firefly.style.top = y + "px";
+      container.appendChild(firefly);
 
-  function createFirefly() {
-    const firefly = document.createElement('div');
-    firefly.classList.add('firefly');
-    const size = Math.random() * 6 + 4;
-    firefly.style.width = size + 'px';
-    firefly.style.height = size + 'px';
-    const x = Math.random() * (window.innerWidth - 80) + 40;
-    const y = Math.random() * (window.innerHeight - 80) + 40;
-    firefly.style.left = x + 'px';
-    firefly.style.top = y + 'px';
-    container.appendChild(firefly);
-
-    const duration = Math.random() * 3 + 1;
-    const delay = Math.random() * 2;
-    const angle = Math.random() * 360;
-    firefly.style.animation = `blink ${duration}s ${delay}s infinite, flying 10s linear infinite`;
-    firefly.style.transform = `rotate(${angle}deg)`; 
-    firefly.addEventListener('animationiteration', () => {
+      const duration = Math.random() * 3 + 1;
+      const delay = Math.random() * 2;
+      const angle = Math.random() * 360;
+      firefly.style.animation = `blink ${duration}s ${delay}s infinite, flying 10s linear infinite`;
+      firefly.style.transform = `rotate(${angle}deg)`;
+      firefly.addEventListener("animationiteration", () => {
         container.removeChild(firefly);
-    });
-}
+      });
+    }
 
-  setInterval(createFirefly, 150);
-});
-
-
-
+    setInterval(createFirefly, 150);
+  });
 
   const handleGoogleLogin = useGoogleLogin({
     onSuccess: (tokenResponse) => {
@@ -136,16 +130,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
         <div>
           <h1 className="fic">FICTIONARY </h1>
         </div>
-        <div className="ComSoon">
-          {/* <h2 className="ComSoon">Coming Soon </h2> */}
-                    <Typewriter className="ComSoon"
-                     options={{
-                      strings: ['Coming Soon'],
-                      autoStart: true,
-              loop: true,
-            }}
-/>
-        </div>
         {context.token || localStorage.getItem("fictionary_frontend") ? (
           gameLive.game_live ? (
             <div className="play_now">
@@ -177,21 +161,27 @@ window.addEventListener('DOMContentLoaded', (event) => {
                       <br />
                       But wait, that's not the end!
                       <br />
-                      <br/>
+                      <br />
                       <br />
                       The decision is your own voice, an opinion is the echo of
                       someone else's voice: Choose the right one.
                     </div>
-                    <div className="landing-sign-wrapper" style={{marginTop: "32px"}}>
+                    <div
+                      className="landing-sign-wrapper"
+                      style={{ marginTop: "32px" }}
+                    >
                       <button
                         className="landing-sign-in-2"
                         onClick={() => {
-                          const a = document.createElement('a');
-                          a.setAttribute("href", "https://www.instagram.com/p/CnKig3ESL81/?igshid=NDk5N2NlZjQ=");
+                          const a = document.createElement("a");
+                          a.setAttribute(
+                            "href",
+                            "https://www.instagram.com/p/CnKig3ESL81/?igshid=NDk5N2NlZjQ="
+                          );
                           a.setAttribute("_target", "blank");
                           document.body.appendChild(a);
-                          console.log("done")
-                          a.click()
+                          console.log("done");
+                          a.click();
                         }}
                       >
                         What's Next?
@@ -214,12 +204,25 @@ window.addEventListener('DOMContentLoaded', (event) => {
             </div>
           )
         ) : (
-          <div className="landing-sign-wrapper">
-            {/* <button className="landing-sign-in" onClick={handleGoogleLogin}>
-              <Google width="24" />
-              Sign In
-            </button> */}
-          </div>
+          <>
+            <div className="ComSoon">
+              {/* <h2 className="ComSoon">Coming Soon </h2> */}
+              <Typewriter
+                className="ComSoon"
+                options={{
+                  strings: ["Coming Soon"],
+                  autoStart: true,
+                  loop: true,
+                }}
+              />
+            </div>
+            <div className="landing-sign-wrapper">
+              <button className="landing-sign-in" onClick={handleGoogleLogin}>
+                <Google width="24" />
+                Sign In
+              </button>
+            </div>
+          </>
         )}
       </div>
       {/* <Stars /> */}
