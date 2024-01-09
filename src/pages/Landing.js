@@ -14,7 +14,7 @@ import Typewriter from 'typewriter-effect';
 
 const Landing = () => {
   const [gameLive, setGameLive] = useState({
-    game_live: true,
+    game_live: false,
     time_up: false,
     date: new Date(),
   });
