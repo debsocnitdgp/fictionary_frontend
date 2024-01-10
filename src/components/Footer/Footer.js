@@ -6,6 +6,7 @@ import {
   faFacebook,
   faInstagram,
   faGithub,
+  faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
 import image from "../../../src/DEBSOClogowhitePNG.png";
 import { useLocation } from "react-router";
@@ -61,12 +62,12 @@ const Footer = () => {
         <FontAwesomeIcon icon={faInstagram} size="2x" />
       </a>
       <a
-        href="https://github.com/debsocnitdgp"
-        className={styles.github}
+        href="https://in.linkedin.com/company/debating-society-nit-durgapur"
+        className={styles.linkedin}
         target="_blank"
         rel="noreferrer"
       >
-        <FontAwesomeIcon icon={faGithub} size="2x" />
+        <FontAwesomeIcon icon={faLinkedin} size="2x" />
       </a>
     </div>
   );
