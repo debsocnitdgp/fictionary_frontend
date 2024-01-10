@@ -81,16 +81,21 @@
 @media screen and (max-width: 480px){
   .clock{
     color: #f2e0d6;
-    font-size: 30px;
+    font-size: 36px;
     font-weight: bold;
-    
+    flex-direction: column;
+    gap: 4px;
   }
   .element span{
-    font-size: 12px;
+    font-size: 16px;
+    display: block !important;
+  }
+  .clock span {
+    display: none;
   }
 }
 
-@media screen and (max-width: 330px) {
+/* @media screen and (max-width: 330px) {
 
   .clock{
     color: #f2e0d6;
@@ -101,4 +106,4 @@
   .element span{
     font-size: 8px;
   }
-}
+} */
