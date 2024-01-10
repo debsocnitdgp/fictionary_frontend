@@ -1,16 +1,14 @@
-import React from "react";
+import React, { useMemo } from "react";
 import "./Landing.css";
 import "./Leaderboard/Stars";
-import Stars from "./Leaderboard/Stars";
 import Timer from "../components/Timer";
 import ENDPOINTS from "../utils/APIendpoints";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import useContext from "../utils/Context";
 import { useGoogleLogin } from "@react-oauth/google";
 import endpoints from "../utils/APIendpoints";
 import Google from "../components/GoogleIcon";
-import Typewriter from "typewriter-effect";
 
 const Landing = () => {
   const [gameLive, setGameLive] = useState({
@@ -20,16 +18,17 @@ const Landing = () => {
   });
 
   const context = useContext();
-  const refresh = () => {
+  const refresh = useCallback(() => {
     fetch(ENDPOINTS.CHECK_GAME_LIVE).then((res) => {
       if (res.status === 200) {
         res.json().then((serverResponse) => {
-          setGameLive({ ...gameLive, ...serverResponse });
+          setGameLive(live => ({ ...live, ...serverResponse }));
         });
       }
     });
-  };
+  }, []);
   const navigate = useNavigate();
+  const timeoutDate = useMemo(() => gameLive.date, [gameLive]);
 
   //   const createFirefly = () => {
   //   const firefly = document.createElement('div');
@@ -192,7 +191,7 @@ const Landing = () => {
                 </div>
               ) : (
                 <>
-                  <Timer timer={new Date(gameLive.date)} refresh={refresh} />
+                  <Timer timer={timeoutDate} refresh={refresh} />
                   {new URLSearchParams(window.location.search).get(
                     "redirected"
                   ) === "true" && (

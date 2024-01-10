@@ -21,7 +21,7 @@
   min-width: 60vw;
   max-width: 70vw;
   padding: 0 30px;
-  background: rgba(235, 182, 154, 0.4);
+  background: rgba(149, 109, 88, 0.4);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -101,11 +101,11 @@
   padding: 4px;
   transform: translateX(15px);
   margin-top: 1rem;
-  clip-path: polygon(0 30%, 100% 30%, 72% 100%, 0 100%);
+  clip-path: polygon(0 28%, 100% 30%, 73% 94%, 0 96%);
 }
 
 .hint {
-  clip-path: polygon(0 0, 96% 0, 72% 100%, 0 100%);
+  clip-path: polygon(0 0, 97% 3%, 72% 97%, 0 97%);
   font-family: "Oxanium";
   font-style: normal;
   border: none;
@@ -120,14 +120,14 @@
 
 .submit_bg {
   padding: 4px;
-  clip-path: polygon(25% 30%, 100% 30%, 100% 100%, 1% 100%);
+  clip-path: polygon(25% 31%, 100% 31%, 100% 95%, 1% 95%);
   background: #f2e0d6;
   height: fit-content;
   margin-top: 1rem;
 }
 
 .submit {
-  clip-path: polygon(25% 0, 100% 0, 100% 100%, 5% 100%);
+  clip-path: polygon(25% 10%, 100% 10%, 100% 100%, 5% 100%);
   font-family: "Oxanium", sans-serif;
   font-style: normal;
   border: none;
