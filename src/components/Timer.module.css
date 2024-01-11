@@ -39,6 +39,11 @@
   font-size: 30px;
 }
 
+.mobileclock {
+  display: flex;
+  flex-direction: row;
+}
+
 
 
 
@@ -48,12 +53,14 @@
 
   .clock{
     color: #f2e0d6;
-     font-size: 70px;
-     font-weight: bold;
+    font-size: 70px;
+    font-weight: bold;
+    
   }
   .element span {
     font-size: 24px;
   }
+  
 }
 
 @media screen and (max-width: 800px){
@@ -81,10 +88,9 @@
 @media screen and (max-width: 480px){
   .clock{
     color: #f2e0d6;
-    font-size: 36px;
+    font-size: 40px;
     font-weight: bold;
-    flex-direction: column;
-    gap: 4px;
+    gap: 8px;
   }
   .element span{
     font-size: 16px;
@@ -93,6 +99,11 @@
   .clock span {
     display: none;
   }
+  .mobileclock {
+    display: flex;
+    flex-direction: column;
+  }
+
 }
 
 /* @media screen and (max-width: 330px) {

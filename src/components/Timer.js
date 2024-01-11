@@ -64,14 +64,16 @@ const Timer = ({ timer, refresh }) => {
           <span>Hours</span>
         </div>
         <span>:</span>
-        <div className={styles.element}>
-          <p>{time.minutes}</p>
-          <span>Minutes</span>
-        </div>
-        <span>:</span>
-        <div className={styles.element}>
-          <p>{time.seconds}</p>
-          <span>Seconds</span>
+        <div className={styles.mobileclock}>
+          <div className={styles.element}>
+            <p>{time.minutes}</p>
+            <span>Minutes</span>
+          </div>
+          <span>:</span>
+          <div className={styles.element}>
+            <p>{time.seconds}</p>
+            <span>Seconds</span>
+          </div>
         </div>
       </div>
     </>
