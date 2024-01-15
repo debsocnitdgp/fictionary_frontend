@@ -150,7 +150,6 @@ a {
   text-shadow: 0 0 20px #9b2805, 0 0 30px #9b2805;
   font-size: clamp(16px, 4vw, 1.5rem);
   color: #f2e0d6;
-  text-transform: uppercase;
   display: flex;
   align-items: center;
   justify-content: center;

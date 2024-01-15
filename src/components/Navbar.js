@@ -109,6 +109,14 @@ const Navbar = (props) => {
               </Link>
             </ul>
           </div>
+
+          {/* <div className="leader vanish">
+            <ul>
+              <Link className="button" to="/leaderboard">
+                LEADERBOARD
+              </Link>
+            </ul>
+          </div> */}
         </div>
 
         {context.token || localStorage.getItem("fictionary_frontend") ? (

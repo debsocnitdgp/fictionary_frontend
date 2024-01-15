@@ -170,7 +170,7 @@ const Landing = () => {
                       className="landing-sign-wrapper"
                       style={{ marginTop: "32px" }}
                     >
-                      <button
+                      {/* <button
                         className="landing-sign-in-2"
                         onClick={() => {
                           const a = document.createElement("a");
@@ -185,7 +185,7 @@ const Landing = () => {
                         }}
                       >
                         What's Next?
-                      </button>
+                      </button> */}
                     </div>
                   </p>
                 </div>
