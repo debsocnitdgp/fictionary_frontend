@@ -13,7 +13,7 @@ import Google from "../components/GoogleIcon";
 const Landing = () => {
   const [gameLive, setGameLive] = useState({
     game_live: false,
-    time_up: false,
+    time_up: true,
     date: new Date(),
   });
 
@@ -153,7 +153,7 @@ const Landing = () => {
             </div>
           ) : (
             <div className="time">
-              {gameLive.time_up ? (
+              {true ? (
                 <div className="time-up">
                   <p>
                     <div>
@@ -165,6 +165,10 @@ const Landing = () => {
                       <br />
                       The decision is your own voice, an opinion is the echo of
                       someone else's voice: Choose the right one.
+                      <br />
+                      <br />
+                      <br />
+                      Reverberate. Coming Soon...
                     </div>
                     <div
                       className="landing-sign-wrapper"
@@ -176,7 +180,7 @@ const Landing = () => {
                           const a = document.createElement("a");
                           a.setAttribute(
                             "href",
-                            "https://www.instagram.com/p/CnKig3ESL81/?igshid=NDk5N2NlZjQ="
+                            "https://fictionary.debsocnitdgp.in/leaderboard"
                           );
                           a.setAttribute("_target", "blank");
                           document.body.appendChild(a);

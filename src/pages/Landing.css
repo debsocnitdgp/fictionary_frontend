@@ -156,6 +156,8 @@ a {
   flex-direction: column;
 }
 
+.time-up
+
 @keyframes fadeOut {
   from {
     opacity: 0.9;
