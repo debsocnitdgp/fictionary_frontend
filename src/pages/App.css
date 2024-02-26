@@ -13,6 +13,8 @@
   width: 100%;
   height: calc(100vh - 72px);
   overflow-y: auto;
+  position: relative;
+  z-index: 1;
 }
 
 *,
@@ -25,40 +27,40 @@
 @keyframes letter-flicker {
   0% {
     opacity: 0.1;
-    text-shadow: 0px 0px 29px #00b3ff;
+    text-shadow: 0px 0px 29px #9b2805;
   }
   2% {
     opacity: 0.1;
-    text-shadow: 0px 0px 29px #00b3ff;
+    text-shadow: 0px 0px 29px #9b2805;
   }
   4% {
     opacity: 1;
-    text-shadow: 0px 0px 29px #00b3ff;
+    text-shadow: 0px 0px 29px #9b2805;
   }
 
   19% {
     opacity: 1;
-    text-shadow: 0px 0px 29px #00b3ff;
+    text-shadow: 0px 0px 29px #9b2805;
   }
   21% {
     opacity: 0.1;
-    text-shadow: 0px 0px 29px #00b3ff;
+    text-shadow: 0px 0px 29px #9b2805;
   }
   23% {
     opacity: 1;
-    text-shadow: 0px 0px 29px #00b3ff;
+    text-shadow: 0px 0px 29px #9b2805;
   }
 
   80% {
     opacity: 1;
-    text-shadow: 0px 0px 29px #00b3ff;
+    text-shadow: 0px 0px 29px #9b2805;
   }
   83% {
     opacity: 0.4;
-    text-shadow: 0px 0px 29px #00b3ff;
+    text-shadow: 0px 0px 29px #9b2805;
   }
   87% {
     opacity: 1;
-    text-shadow: 0px 0px 29px #00b3ff;
+    text-shadow: 0px 0px 29px #9b2805;
   }
 }

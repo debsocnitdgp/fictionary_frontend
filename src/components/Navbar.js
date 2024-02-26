@@ -80,14 +80,16 @@ const Navbar = (props) => {
             </svg>
           </button>
         </div>
-        <div className="button" to="/">
-          FICTIONARY
-        </div>
+        <Link to="/">
+          <div className="button" to="/">
+            FICTIONARY
+          </div>
+        </Link>
         <div className="middle">
           <div className="home vanish">
             <ul>
               <Link className="button" to="/question">
-                Play
+                PLAY
               </Link>
             </ul>
           </div>
@@ -95,7 +97,7 @@ const Navbar = (props) => {
           <div className="test vanish">
             <ul>
               <a className="rules" onClick={showModalHandler}>
-                Rules
+                RULES
               </a>
             </ul>
           </div>
@@ -103,10 +105,18 @@ const Navbar = (props) => {
           <div className="leader vanish">
             <ul>
               <Link className="button" to="/leaderboard">
-                Leaderboard
+                LEADERBOARD
               </Link>
             </ul>
           </div>
+
+          {/* <div className="leader vanish">
+            <ul>
+              <Link className="button" to="/leaderboard">
+                LEADERBOARD
+              </Link>
+            </ul>
+          </div> */}
         </div>
 
         {context.token || localStorage.getItem("fictionary_frontend") ? (
@@ -114,10 +124,10 @@ const Navbar = (props) => {
             <button className="si">LOG OUT</button>
           </div>
         ) : (
-          <div className="sign" onClick={handleGoogleLogin}>
-            <button className="si"> <Google width={12} /> SIGN IN</button>
+          <div className="sign" >
+            <button className="si" onClick={handleGoogleLogin}><Google width={12} /> SIGN IN</button>
           </div>
-        )}
+        ) }
       </nav>
     </>
   );

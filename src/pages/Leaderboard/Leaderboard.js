@@ -33,6 +33,36 @@ const Leaderboard = () => {
     });
   };
 
+  window.addEventListener('DOMContentLoaded', (event) => {
+    const container = document.createElement('div');
+    container.classList.add('firefly-container');
+    document.body.appendChild(container);
+  
+    function createFirefly() {
+      const firefly = document.createElement('div');
+      firefly.classList.add('firefly');
+      const size = Math.random() * 6 + 4;
+      firefly.style.width = size + 'px';
+      firefly.style.height = size + 'px';
+      const x = Math.random() * (window.innerWidth - 80) + 40;
+      const y = Math.random() * (window.innerHeight - 80) + 40;
+      firefly.style.left = x + 'px';
+      firefly.style.top = y + 'px';
+      container.appendChild(firefly);
+  
+      const duration = Math.random() * 3 + 1;
+      const delay = Math.random() * 2;
+      const angle = Math.random() * 360;
+      firefly.style.animation = `blink ${duration}s ${delay}s infinite, flying 10s linear infinite`;
+      firefly.style.transform = `rotate(${angle}deg)`; 
+      firefly.addEventListener('animationiteration', () => {
+          container.removeChild(firefly);
+      });
+  }
+  
+    setInterval(createFirefly, 150);
+  });
+
   useEffect(getLeaderboard, [token]);
   return (
     <>
@@ -60,12 +90,11 @@ const Leaderboard = () => {
               ariaLabel="blocks-loading"
               wrapperStyle={{}}
               wrapperClass="blocks-wrapper"
-              colors={["#65beda", "#65beda", "#65beda", "#65beda", "#65beda"]}
+              colors={["#f2e0d6", "#f2e0d6", "#f2e0d6", "#f2e0d6", "#f2e0d6"]}
             />
           </div>
         )}
       </div>
-      <Stars />
     </>
   );
 };

@@ -32,7 +32,7 @@ export default function HintCountDown({ time, id }) {
     <span
       style={{
         textAlign: "center",
-        fontSize: "small",
+        fontSize: "x-large",
         margin: "12px 0",
       }}
     >

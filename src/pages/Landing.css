@@ -1,13 +1,74 @@
 .fic {
-  font-family: "Iceland", cursive;
+  font-family: 'Oxanium', sans-serif;
   text-align: center;
-  letter-spacing: 0.1rem;
-  text-shadow: 0 0 10px #00b3ff, 0 0 20px #00b3ff;
-  font-size: 12rem;
-  color: #afd5ed;
+  letter-spacing: 0.6rem;
+  text-shadow: 0 0 20px #9b2805, 0 0 30px #9b2805;
+  font-size: 10rem;
+  color: #f2e0d6;
+  opacity: 0.9;
+  margin: 0;
+  margin-bottom: 0px;
+  position: relative;
+  margin-bottom: 50px;
+  padding-bottom: 200px;
+}
+
+.ComSoon {
+  font-family: 'MedievalSharp', cursive;
+  text-align: center;
+  letter-spacing: 0.2rem;
+  text-shadow: 0 0 10px #3a150a, 0 0 20px #3a150a;
+  font-size: 6rem;
+  color: #faf4e3;
   opacity: 0.9;
   margin: 0;
 }
+
+.firefly-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.firefly {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: orange;
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+  box-shadow: 0 0 20px 10px rgba(255, 165, 0, 0.8);
+  animation: blink 2s 0s infinite, flying 10s linear infinite;
+}
+
+@keyframes blink {
+  50% {
+      opacity: 1;
+  }
+}
+
+@keyframes flying {
+  0% {
+      transform: translateX(0) translateY(0);
+  }
+  25% {
+      transform: translateX(20px) translateY(-20px);
+  }
+  50% {
+      transform: translateX(40px) translateY(0);
+  }
+  75% {
+      transform: translateX(20px) translateY(20px);
+  }
+  100% {
+      transform: translateX(0) translateY(0);
+  }
+}
+
 
 .play_now {
   display: flex;
@@ -15,24 +76,34 @@
 
 .play {
   text-align: center;
-  font-family: "Orbitron", sans-serif;
+  font-family: "Audiowide", sans-serif;
   font-size: 2.5rem;
   margin: auto;
-  color: #afecff;
-  text-shadow: 0 0 5px #afecff;
+  color: #f2e0d6;
+  text-shadow: 0 0 10px #9b2805, 0 0 20px #9b2805, 0 0 30px #9b2805; 
   margin-top: 104px;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 }
 
+
+
 a {
-  color: #afecff;
+  color: #9b2805;
   text-decoration: none;
 }
 
 .arrow {
   height: 50px;
   margin-left: 10px;
-  text-shadow: 0 0 5px #afecff;
+  text-shadow: 0 0 5px #9b2805;
 }
 
 .time {
@@ -43,46 +114,49 @@ a {
 }
 
 .game-not-live {
-  font-family: "Iceland", cursive;
+  font-family: "Audiowide", sans-serif;
   text-align: center;
   letter-spacing: 0.1rem;
-  text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000;
+  text-shadow: 0 0 20px #9b2805, 0 0 30px #9b2805;
   font-size: 2rem;
-  color: #edafaf;
+  color: #f2e0d6;
   opacity: 0.9;
   animation: fadeOut 0.2s linear forwards 5s;
 }
 
 .time-up {
-  font-family: "Iceland", cursive;
+  font-family: "Oxanium", sans-serif;
   text-align: center;
   letter-spacing: 0.1rem;
   font-size: 2rem;
-  color: #edafaf;
+  color: #f2e0d6;
   opacity: 0.9;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  margin-top: -150px;
+  background-color: transparent;
 }
 
 .time-up p {
   max-width: 40%;
   padding: 30px;
-  background: rgba(3, 61, 80, 0.7);
-  border: 3px solid #58a1b9;
+  background: rgba(119, 84, 48, 0.4);
+  border: 3px solid #f2e0d6;
   backdrop-filter: blur(16px);
   border-radius: 0px 12px;
-  text-shadow: 0 0 4px #00ff00, 0 0 12px #00ff00;
-  font-size: 1.5rem;
-  color: #afedb1;
-  text-transform: uppercase;
+  text-shadow: 0 0 20px #9b2805, 0 0 30px #9b2805;
+  font-size: clamp(16px, 4vw, 1.5rem);
+  color: #f2e0d6;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
+
+.time-up
 
 @keyframes fadeOut {
   from {
@@ -104,48 +178,82 @@ a {
 }
 
 .landing-sign-in {
-  font-family: "Orbitron", cursive;
+  font-family: "Audiowide", sans-serif;
   text-align: center;
   letter-spacing: 0.1rem;
   font-size: 1.5rem;
-  color: #00b3ff;
+  color: #f2e0d6;
   opacity: 0.9;
   margin: 0;
   padding: 12px 24px;
   border: none;
   text-transform: uppercase;
   backdrop-filter: blur(8px);
-  background: rgba(3, 61, 80, 0.4);
-  box-shadow: 0 0 10px #00b3ff, 0 0 20px #00b3ff;
-  border: 2px solid #58a1b9;
+  background: transparent;
+  box-shadow:   0 0 20px #9b2805, 0 0 30px #9b2805;
+  border: 2px solid #f2e0d6;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .landing-sign-in-2 {
-  font-family: "Orbitron", cursive;
+  font-family: "Audiowide", cursive;
   text-align: center;
   letter-spacing: 0.1rem;
-  font-size: 1.5rem;
-  color: #00b3ff;
+  font-size: clamp(16px, 4vw, 1.5rem);
+  color: #f2e0d6;
   opacity: 0.9;
   margin: 0;
   padding: 12px 24px;
   border: none;
   text-transform: uppercase;
   backdrop-filter: blur(8px);
-  background: rgba(3, 61, 80, 0.4);
-  box-shadow: 0 0 10px #00b3ff, 0 0 20px #00b3ff;
-  border: 2px solid #58a1b9;
+  background: rgba(80, 40, 3, 0.4);
+  box-shadow: 0 0 10px #9b2805, 0 0 20px #9b2805;
+  border: 2px solid #f2e0d6;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+
+/* .firefly {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background-color: #ffeeaa;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+  animation: flicker 2s infinite;
+}
+
+@keyframes flicker {
+  0%, 100% {
+      opacity: 1;
+  }
+  50% {
+      opacity: 0.5;
+  }
+}
+
+@keyframes move {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(20px, -20px);
+  }
+} */
+
+
 @media screen and (max-width: 1000px) {
   .fic {
-    font-size: 8rem;
+    font-size: 120px !important;
+  }
+  .ComSoon{
+    font-size: 90px !important;
   }
   .landing-sign-in {
     margin-top: 60px;
@@ -154,16 +262,35 @@ a {
     max-width: 90%;
   }
 }
+@media screen and (max-width: 800px) {
+  .fic {
+    font-size: 90px !important;
+    font-weight: 600;
+    margin-bottom: 0;
+  }
+  .ComSoon{
+    font-size: 70px !important;
+  }
+}
 @media screen and (max-width: 650px) {
   .fic {
-    font-size: 6rem;
+    font-size: 70px !important;
     font-weight: 600;
+    margin-bottom: 0;
+  }
+  .ComSoon{
+    font-size: 50px !important;
   }
 }
 @media screen and (max-width: 480px) {
   .fic {
-    font-size: 4rem;
+    font-size: 50px !important;
     font-weight: 600;
+    margin-bottom: 0;
+  }
+
+  .ComSoon{
+    font-size: 30px !important;
   }
 
   .play {
@@ -177,7 +304,7 @@ a {
   .arrow {
     height: 30px;
     margin-left: 10px;
-    text-shadow: 0 0 5px #afecff;
+    text-shadow: 0 0 5px #9b2805;
   }
 
   .landing-sign-in {
@@ -187,7 +314,12 @@ a {
 }
 @media screen and (max-width: 330px) {
   .fic {
-    font-size: 3rem;
+    font-size: 24px !important;
     font-weight: 600;
+    margin-bottom: 0;
+  }
+
+  .ComSoon{
+    font-size: 15px !important;
   }
 }

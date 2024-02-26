@@ -1,11 +1,29 @@
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Quantico', 'Electrolize', sans-serif;
+  font-family: 'MedievalSharp', cursive;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+@font-face {
+  font-family: 'Bord';
+  src: url(/public/fonts/Bord.ttf), format('ttf');
+}
+
+@font-face {
+  font-family: 'batmfa__';
+  src: url(/public/fonts/batmfa__-webfont.woff), format('woff');
+  src: url(/public/fonts/batmfa__-webfont.woff2), format('woff2');
+}
+
+@font-face {
+  font-family: 'Textura';
+  src: url(/public/fonts/textura-webfont.woff), format('woff');
+}
+
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

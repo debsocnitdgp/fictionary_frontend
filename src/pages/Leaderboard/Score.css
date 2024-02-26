@@ -9,11 +9,11 @@
     justify-content: space-between;
     align-items: center;
     padding: 0px 1rem;
-    font-family: "Orbitron";
+    font-family: "Oxanium";
     font-size: 1rem;
     color: #ffffff;
-    border: 3px solid #58a1b9;
-    background: rgba(3, 61, 80, 0.4);
+    border: 3px solid #f2e0d6;
+    background: rgba(175, 139, 103, 0.4);
     border-radius: 20px;
     width: 60%;
     margin-top: 1rem;
@@ -24,7 +24,7 @@
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    border: 3px solid #58a1b9;
+    border: 3px solid #f2e0d6;
     margin-right: 2rem;
 }
 
@@ -43,12 +43,12 @@
         justify-content: space-between;
         align-items: center;
         padding: 0px 9px;
-        font-family: "Orbitron";
+        font-family: "Oxanium";
         height: 3.8rem;
         font-size: 0.7rem;
         color: #ffffff;
-        border: 2px solid #58a1b9;
-        background: rgba(3, 61, 80, 0.4);
+        border: 2px solid #f2e0d6;
+        background: rgba(175, 139, 103, 0.4);
         /* background-color: yellow; */
         border-radius: 15px;
         width: 80%;
@@ -59,7 +59,7 @@
         width: 35px;
         height: 35px;
         border-radius: 50%;
-        border: 2px solid #58a1b9;
+        border: 2px solid #f2e0d6;
         margin-right: 0.7rem;
     }
 

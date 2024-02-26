@@ -3,14 +3,25 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Iceland", cursive;
+  font-family: "Audiowide";
   text-align: center;
   letter-spacing: 0.1rem;
-  text-shadow: 0 0 10px #00b3ff, 0 0 20px #00b3ff;
-  font-size: 4rem;
-  color: #090123;
+  text-shadow: 0 0 20px #9b2805, 0 0 30px #9b2805, 0 0 40px #9b2805;
+  font-size: 80px;
+  color: #f2e0d6;
   opacity: 0.9;
   font-weight: bold;
+}
+
+.clock span{
+  /* margin: auto; */
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  text-align: center; */
+  font-size: 60px;
+  align-items: normal;
 }
 .element {
   
@@ -25,42 +36,85 @@
 }
 
 .element span {
-  font-size: 2rem;
-  text-transform: uppercase;
+  font-size: 30px;
+}
+
+.mobileclock {
+  display: flex;
+  flex-direction: row;
+}
+
+
+
+
+
+
+@media screen and (max-width: 1000px){
+
+  .clock{
+    color: #f2e0d6;
+    font-size: 70px;
+    font-weight: bold;
+    
+  }
+  .element span {
+    font-size: 24px;
+  }
+  
+}
+
+@media screen and (max-width: 800px){
+  .clock{
+    color: #f2e0d6;
+     font-size: 50px;
+     font-weight: bold;
+  }
+  .element span {
+    font-size: 20px;
+  }
+} 
+
+@media screen and (max-width: 650px){
+  .clock{
+    color: #f2e0d6;
+     font-size: 40px;
+     font-weight: bold;
+  }
+  .element span {
+    font-size: 16px;
+  }
 }
 
 @media screen and (max-width: 480px){
   .clock{
-    color: #090123;
-    font-size: 16px;
+    color: #f2e0d6;
+    font-size: 40px;
     font-weight: bold;
-    
+    gap: 8px;
   }
   .element span{
     font-size: 16px;
+    display: block !important;
   }
-}
-@media screen and (max-width: 650px){
-  .clock{
-    color: #090123;
-     font-size: 16px;
-     font-weight: bold;
+  .clock span {
+    display: none;
   }
+  .mobileclock {
+    display: flex;
+    flex-direction: column;
+  }
+
 }
-@media screen and (max-width: 1000px){
+
+/* @media screen and (max-width: 330px) {
 
   .clock{
-    color: #090123;
-     font-size: 16px;
-     font-weight: bold;
-  }
-}
-@media screen and (max-width: 330px) {
-
-  .clock{
-    color: #090123;
-     font-size: 16px;
+    color: #f2e0d6;
+     font-size: 20px;
      font-weight: bold
 
   }
-}
+  .element span{
+    font-size: 8px;
+  }
+} */

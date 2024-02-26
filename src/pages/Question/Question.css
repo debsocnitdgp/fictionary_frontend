@@ -9,7 +9,7 @@
 .ques-container {
   height: fit-content;
   width: fit-content;
-  font-family: "Orbitron";
+  font-family: "Oxanium", sans-serif;
   font-style: normal;
   font-size: 50px;
   color: #ffffff;
@@ -21,11 +21,11 @@
   min-width: 60vw;
   max-width: 70vw;
   padding: 0 30px;
-  background: rgba(3, 61, 80, 0.4);
+  background: rgba(149, 109, 88, 0.4);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border: 3px solid #58a1b9;
+  border: 3px solid #f2e0d6;
   backdrop-filter: blur(16px);
   border-radius: 0px 12px;
 }
@@ -39,9 +39,9 @@
 .answer {
   width: 90%;
   height: 3rem;
-  background: rgba(116, 160, 192, 0.6);
+  background: rgba(175, 139, 103, 0.6);
   border: none;
-  border-bottom: 4px solid #58a1b9;
+  border-bottom: 4px solid #f2e0d6;
   border-top: 4px solid transparent;
   padding: 8px 16px;
   outline: none;
@@ -55,8 +55,8 @@
 
 .answer::placeholder {
   opacity: 0.6;
-  color: white;
-  font-family: "Orbitron";
+  color: #ffffff;
+  font-family: "Oxanium", sans-serif;
 }
 
 .btns {
@@ -66,52 +66,52 @@
 }
 
 .hint:hover {
-  color: #adff2f;
+  color: #f83e0a;
 }
 
 .hint_bg:hover {
-  box-shadow: 0px 0px 4px #c9fd7b;
-  background: #adff2f;
+  box-shadow: 0px 0px 4px #fc6a42;
+  background: #f83e0a;
 }
 
 .hint_bg.hintDisabled {
   cursor: not-allowed !important;
   box-shadow: none !important;
-  background: #58a1b9 !important;
+  background: #f2e0d6 !important;
 }
 .hintDisabled .hint:hover {
   cursor: not-allowed !important;
   box-shadow: none !important;
-  background: rgb(15, 93, 120) !important;
+  background: rgb(255, 169, 82) !important;
 }
 
 .submit:hover {
-  color: #adff2f;
+  color: #f83e0a;
 }
 
 .submit_bg:hover {
-  box-shadow: 0px 0px 4px #c9fd7b;
-  background: #adff2f;
+  box-shadow: 0px 0px 4px #f85e33;
+  background: #f83e0a;
 }
 
 .hint_bg {
-  background: #58a1b9;
+  background: #f2e0d6;
   width: fit-content;
   height: fit-content;
   padding: 4px;
   transform: translateX(15px);
   margin-top: 1rem;
-  clip-path: polygon(0 30%, 100% 30%, 72% 100%, 0 100%);
+  clip-path: polygon(0 28%, 100% 30%, 73% 94%, 0 96%);
 }
 
 .hint {
-  clip-path: polygon(0 0, 96% 0, 72% 100%, 0 100%);
-  font-family: "Orbitron";
+  clip-path: polygon(0 0, 97% 3%, 72% 97%, 0 97%);
+  font-family: "Oxanium";
   font-style: normal;
   border: none;
   font-size: 1.5rem;
   color: white;
-  background-color: rgb(15, 93, 120);
+  background-color: rgba(175, 139, 103, 1);
   padding: 5px;
   padding-right: 43px;
   padding-left: 27px;
@@ -120,20 +120,20 @@
 
 .submit_bg {
   padding: 4px;
-  clip-path: polygon(25% 30%, 100% 30%, 100% 100%, 1% 100%);
-  background: #58a1b9;
+  clip-path: polygon(25% 31%, 100% 31%, 100% 95%, 1% 95%);
+  background: #f2e0d6;
   height: fit-content;
   margin-top: 1rem;
 }
 
 .submit {
-  clip-path: polygon(25% 0, 100% 0, 100% 100%, 5% 100%);
-  font-family: "Orbitron";
+  clip-path: polygon(25% 10%, 100% 10%, 100% 100%, 5% 100%);
+  font-family: "Oxanium", sans-serif;
   font-style: normal;
   border: none;
   font-size: 1.5rem;
   color: white;
-  background-color: rgb(15, 93, 120);
+  background-color: rgba(175, 139, 103, 1);
   padding: 5px;
   padding-left: 43px;
   padding-right: 27px;
@@ -153,7 +153,7 @@ button {
   bottom: 30px;
   right: 70px;
   position: relative;
-  background: #58a1b9;
+  background: #f2e0d6;
   width: fit-content;
   height: fit-content;
   padding: 4px;
@@ -164,12 +164,12 @@ button {
 
 .round {
   clip-path: polygon(0 0, 96% 0, 72% 100%, 0 100%);
-  font-family: "Orbitron";
+  font-family: "Oxanium", sans-serif;
   font-style: normal;
   border: none;
   font-size: 1.5rem;
   color: white;
-  background-color: rgb(15, 93, 120);
+  background-color: rgba(175, 139, 103, 1);
   padding: 5px;
   padding-right: 43px;
   padding-left: 27px;
@@ -206,9 +206,9 @@ button {
   .answer {
     width: 90%;
     height: 1.8rem;
-    background: rgba(116, 160, 192, 0.6);
+    background: rgba(175, 139, 103, 0.6);
     border: none;
-    border-bottom: 4px solid #58a1b9;
+    border-bottom: 4px solid #f2e0d6;
     padding: 15px 16px;
     outline: none;
     color: white;
